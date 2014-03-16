@@ -1,0 +1,13 @@
+source ~/.vim/bundles.vim 
+source ~/.vim/global.vim   
+source ~/.vim/plugins.vim 
+source ~/.vim/macros.vim
+source ~/.vim/before.vim  
+
+Bundle 'derekwyatt/vim-scala'
+
+call pathogen#infect()
+call pathogen#helptags()
+
+let macvim_skip_colorscheme=1
+set runtimepath^=~/.vim/bundle/ctrlp.vim
