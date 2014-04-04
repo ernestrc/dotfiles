@@ -1,6 +1,14 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
+
+#AMAZON CLI CONFIG
+export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQ
+export AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/
+export JAVA_HOME=$(/usr/libexec/java_home)
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
+export EC2_URL=https://ec2.eu-west-1.amazonaws.com
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -38,7 +46,7 @@ setopt rm_star_silent
 unsetopt nomatch
 unsetopt correct_all
 
-export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/
+export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
@@ -60,16 +68,32 @@ function eecho
   echo $@ 1>&2
 }
 
+function dotfiles
+{
+    bash $HOME/dev/dotfiles/dotfiles/backup.sh
+}
+function roomserver
+{
+    ssh -i $HOME/dev/projects/Keys/roomapp.pem ec2-user@ec2-54-72-140-18.eu-west-1.compute.amazonaws.com
+}
+
+function jenkinsserver
+{
+    ssh -i $HOME/dev/projects/Keys/roomapp.pem ubuntu@ec2-54-72-163-192.eu-west-1.compute.amazonaws.com
+}
+
 function devpro
 {
     clear
-    cd ~/dev/
+    cd $HOME/dev/projects/room/
+    git status
     ls -a
 }
 
 function deverr
 {
-    cd ~/dev/everreach/website/
+    clear
+    cd $HOME/dev/everreach/website/
     git status
     play ~run
 }

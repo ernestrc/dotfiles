@@ -41,7 +41,7 @@ let g:Conque_Read_Timeout = 50 " timeout for waiting for command output.
 let g:Conque_TERM = 'xterm'
 " ,sh shell window
 nmap <Leader>sh :ConqueSplit bash<cr>
-" ,r run command
+",r run command
 nmap <Leader>R :ConqueSplit
 
 " yankring
@@ -69,7 +69,6 @@ nmap <leader>l :CtrlPLine<cr>
 nmap <leader>b :CtrlPBuff<cr>
 nmap <leader>m :CtrlPBufTag<cr>
 nmap <leader>M :CtrlPBufTagAll<cr>
-nmap <leader>P :CtrlP<cr>
 
 let g:ctrlp_clear_cache_on_exit = 1
 " ctrlp leaves stale caches behind if there is another vim process runnin
