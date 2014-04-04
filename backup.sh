@@ -1,11 +1,11 @@
 #TODO Function that checks if folder dotfiles exists in computer, if it doesnt. It creates it.
 echo "Starting dotfiles backup"
-cp $HOME/.zshrc $HOME/dev/dotfiles/dotfiles/
-cp -rf $HOME/.oh-my-zsh $HOME/dev/dotfiles/dotfiles/
+cp $HOME/.zshrc $PWD/zshrc
+cp -rf $HOME/.oh-my-zsh $PWD/oh-my-zsh
 echo "Finished ZSH backup"
-cp -rf $HOME/.vim $HOME/dev/dotfiles/dotfiles/
+cp -rf $HOME/.vim $PWD/vim
 echo "Finished VIM backup"
-cd $HOME/dev/dotfiles/dotfiles
+cd $PWD
 git add --all .
 git commit -m "Backup through script"
 git push origin master
