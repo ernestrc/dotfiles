@@ -3,7 +3,7 @@ echo "Starting dotfiles backup"
 cp $HOME/.zshrc $HOME/dev/dotfiles/dotfiles/
 cp -r $HOME/.oh-my-zsh $HOME/dev/dotfiles/dotfiles/
 echo "Finished ZSH backup"
-cp -r $HOME/.vim $HOME/dev/dotfiles/dotfiles/
+cp -rf $HOME/.vim $HOME/dev/dotfiles/dotfiles/
 echo "Finished VIM backup"
 cd $HOME/dev/dotfiles/dotfiles
 git add --all .
