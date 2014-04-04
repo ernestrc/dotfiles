@@ -1,6 +1,6 @@
 #TODO Function that checks if folder dotfiles exists in computer, if it doesnt. It creates it.
 echo "Starting dotfiles backup"
-cp $HOME/.zshrc $PWD/zshrc
+cp $HOME/.zshrc $PWD/zshrc/.zshrc
 cp -rf $HOME/.oh-my-zsh $PWD/oh-my-zsh
 echo "Finished ZSH backup"
 cp -rf $HOME/.vim $PWD/vim
