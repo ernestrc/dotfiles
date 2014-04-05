@@ -1,7 +1,4 @@
 
-let g:neocomplcache_enable_at_startup = 1
-let macvim_skip_colorscheme=1
-
 map <Tab> :NERDTreeToggle<CR>
 set foldmethod=indent
 set foldlevel=99
