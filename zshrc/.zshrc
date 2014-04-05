@@ -70,7 +70,7 @@ function eecho
 
 function dotfiles
 {
-    bash $HOME/dev/dotfiles/dotfiles/backup.sh
+    bash $HOME/.dotfiles/backup.sh
 }
 function roomserver
 {
