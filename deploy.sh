@@ -1,12 +1,13 @@
-#git clone git://github.com/ernestrc/dotfiles.git ~/.dotfiles
-#sh ~/.dotfiles/deploy
+#VIM
+file="$HOME/.vimrc"
+if [ -e "$file" ]
+then
+	echo ".vimrc does exist"
+else
+	touch .vimrc
+fi
 
-LINUX_TYPE="uname -a"
-eval $LINUX_TYPE
-cd $HOME/.dotfiles
-
-# VIM
-echo 'set runtimepath+=~/.vim_runtime
+echo 'set runtimepath+=~/.dotfiles
 
 source $HOME/.dotfiles/vimrcs/basic.vim
 source $HOME/.dotfiles/vimrcs/filetypes.vim
