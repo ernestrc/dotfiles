@@ -3,8 +3,12 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_THEME=""
 
 #AMAZON CLI CONFIG
-export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQ
-export AWS_SECRET_KEY=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
+if source $HOME/.dotfiles/amazonkeys.sh; then
+    echo "Loaded Amazon EC2 keys successfully"
+else
+    echo "Can't find Amazon EC2 keys"
+fi
+
 export JAVA_HOME=$(/usr/libexec/java_home)
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com

@@ -1,9 +1,10 @@
+ ,v
+export AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/,V
 *.key,V
 *.pom,V
 HEY="HEllo",V
     IdentityFile ~/dev/projects/Keys/roomapp.pem,V
  export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQ export AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/,v
-export AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/,V
 export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQ,V
 export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQexport AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/,v
 git clone git@github.com:ernestrc/dotfiles.git ~/.dotfiles,v
