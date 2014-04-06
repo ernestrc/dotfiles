@@ -10,7 +10,7 @@ else
 fi
 
 if export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"; then
-    echo "Found JAVA_HOME!"
+    export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"
 else
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
