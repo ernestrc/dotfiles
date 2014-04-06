@@ -9,12 +9,13 @@ else
     echo "Can't find Amazon EC2 keys"
 fi
 
-if export JAVA_HOME=$(/usr/libexec/java_home) then
-    echo "Found JAVA_HOME in /usr/libexec/java_home"
+if export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"; then
+    echo "Found JAVA_HOME!"
 else
-    export JAVA_HOME=$(/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java)
-    echo "Found JAVA_HOME in /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java"
+    export JAVA_HOME=$(/usr/libexec/java_home)
 fi
+
+$JAVA_HOME/bin/java -version
 
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
