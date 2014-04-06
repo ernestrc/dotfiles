@@ -1,4 +1,21 @@
+    Port 2828,V
+i-887d61c8,v
+i-73828432,v
+54.72.148.84,v
+ssh-dss AAAAB3NzaC1kc3MAAACBAIjYjOtgaZBlNBV8u1K4cfF/QFmh8m4rfft9Xta0nv4C5WG0Oj1npdUt8ugv2SC1SWEw1Eqne7vswBCl+btaxo4oG2vNFifMVPP2slOAGeb332aZq8AYq9LEzY99xPhndpeSvuxcQVoCq4/lSTi161pn7u8tzuzGvgl6tnuzETXxAAAAFQCsz6feb6yzNMnG9l9prOzPcpRfIwAAAIB3I9J9SWjDvA8d0xE2oGCNz8V6qca+Q46dCTQ3e/BD7EMMUyJYm4JvfA1O1V0comKIEBJhWJYcqDxeb//2VDdAMvJcm1SXiZZKLVEC50WdITsf3yRZPlQs9kUoV51WRdCX9jL3pxGDviV3xVicW4RIqKWpSCOapMe5P81JyXmGEgAAAIBAOkv8WTe3Fr88WTkk+3TgxYicNwrNtrfB4h1a52zGhQ87XgTdCaSLG+tFCQjhMzsUzjWPJ7bTkqAHO1ztT4R0ycg1lJS1JavyCvzO5jrudOTqBTi+8AiLXrU1KngX4jQHDQMJcnAfFVPb7XMcTlGvPuEA5Va03PUe8rmOn/7KHQ== ernestrc@macbook-pr0,v
+ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
+com.openssh.sshd,v
+    ssh -i ~/dev/projects/Keys/roomapp.pem -p 2828 ubuntu@ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,V
+    port 2828,V
+ssh -i ~/dev/projects/Keys/roomapp.pem -p 2828 ubuntu@ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
+54.72.163.192/32,v
+~/dev/projects/Keys,v
+kill -9 -1,v
+@ip-172-31-25-146,v
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGGbORWnGsaCGWrYqe+nGDomo1TDkaMjjdaN571EnPgjmVRMbjlhzYtNVyPo/aM6lbHKNkLOZ8R91TrXnNXI/VT14g61a2SCuay+ 0n8G5P+++GBqsrrdUvUfRtl9siNRkYhPeEIafW/D2IN5WEh7j8k4mr7DiM+swIMQz452N94OZ0Umz5c4rFsBOI2v94Mdh0tlc6fC6F4UMHxvzVNom8EIKXZjmF+                nzocMzLJXsXI6AyHzy7GOA0fCYe8H+ZLjMpTrzQFXKE9EaXU+Zp+UFQz0CDSty91tDO4kEgKu19Bh7mlAJjepWNw7Xq1lqgZhzT99NmqrlaV0/scsq5L3QH lordnesi28@gmail.  com,v
  ,v
+ernestrc is not in the sudoers file.  This incident will be reported.,v
+GPGKEY,v
 export AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/,V
 *.key,V
 *.pom,V
