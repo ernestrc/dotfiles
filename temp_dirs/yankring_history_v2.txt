@@ -1,1 +1,9 @@
+,V
+function roomserver,V
+{,V
+},V
+    ssh -i $HOME/dev/projects/Keys/roomapp.pem ec2-user@ec2-54-72-140-18.eu-west-1.compute.amazonaws.com,V
+function adamant,V
+    ssh -i $HOME/dev/projects/Keys/roomapp.pem ubuntu@ec2-54-72-163-192.eu-west-1.compute.amazonaws.com,V
+54.72.163.192,v
 https://github.com/amix/vimrc,v

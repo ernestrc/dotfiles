@@ -72,15 +72,6 @@ function dotfiles
 {
     bash $HOME/.dotfiles/backup.sh
 }
-function roomserver
-{
-    ssh -i $HOME/dev/projects/Keys/roomapp.pem ec2-user@ec2-54-72-140-18.eu-west-1.compute.amazonaws.com
-}
-
-function jenkinsserver
-{
-    ssh -i $HOME/dev/projects/Keys/roomapp.pem ubuntu@ec2-54-72-163-192.eu-west-1.compute.amazonaws.com
-}
 
 function devpro
 {
