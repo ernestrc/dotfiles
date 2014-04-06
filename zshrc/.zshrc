@@ -67,12 +67,20 @@ if which dircolors > /dev/null; then
   alias egrep='egrep --color=auto'
 fi
 
-function stopec2
+function stopservers
 {
     ec2stop i-73828432
     ec2stop i-fa464cba
     ec2stop i-887d61c8
 }
+
+function startservers
+{
+    ec2start i-73828432
+    ec2start i-fa464cba
+    ec2start i-887d61c8
+}
+
 
 function eecho
 {

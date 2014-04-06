@@ -1,3 +1,4 @@
+function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
     Port 2828,V
 i-887d61c8,v
 i-73828432,v
