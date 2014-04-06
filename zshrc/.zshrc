@@ -9,7 +9,13 @@ else
     echo "Can't find Amazon EC2 keys"
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+if export JAVA_HOME=$(/usr/libexec/java_home) then
+    echo "Found JAVA_HOME in /usr/libexec/java_home"
+else
+    export JAVA_HOME=$(/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java)
+    echo "Found JAVA_HOME in /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java"
+fi
+
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 
@@ -66,21 +72,6 @@ if which dircolors > /dev/null; then
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 fi
-
-function stopservers
-{
-    ec2stop i-73828432
-    ec2stop i-fa464cba
-    ec2stop i-887d61c8
-}
-
-function startservers
-{
-    ec2start i-73828432
-    ec2start i-fa464cba
-    ec2start i-887d61c8
-}
-
 
 function eecho
 {
