@@ -1,4 +1,13 @@
+fi,V
+if [ -d "/usr/libexec" ]; then     export JAVA_HOME=$(/usr/libexec/java_home)     echo "Found JAVA_HOME in /usr/libexec"else    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre"    else        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"        else            echo "Could not find JAVA_HOME"        fi    fi ,v
+ if [ -d "/usr/libexec" ]; then-    export JAVA_HOME=$(/usr/libexec/java_home) else-    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then-        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"|    else-        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then-            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"2        else-            echo "Could not find JAVA_HOME"2        fi  |    fi   fi,v
+        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre",V
+    echo "Found JAVA_HOME in /usr/libexec",V
+o,v
 function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
+ if [ -d "/usr/libexec" ]; then-    export JAVA_HOME=$(/usr/libexec/java_home)|    echo "Found JAVA_HOME in /usr/libexec" else-    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then-        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"2        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre"|    else-        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then-            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"2        else-            echo "Could not find JAVA_HOME"2        fi|    fi fi,v
+    export JAVA_HOME=$(/usr/libexec/java_home),V
+else,V
 http://54.72.148.84:8080/,v
 https://ec2.eu-west-1.amazonaws.com,v
 @reboot /home/ciserver/jenkins.sh >> 2&1 > /home/log/jenkinserver.log,V

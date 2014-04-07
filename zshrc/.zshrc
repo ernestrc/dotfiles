@@ -9,10 +9,18 @@ else
     echo "Can't find Amazon EC2 keys"
 fi
 
-if export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"; then
-    export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"
-else
+if [ -d "/usr/libexec" ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
+else
+    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then
+        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"
+    else
+        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then
+            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"
+        else
+            echo "Could not find JAVA_HOME"
+        fi
+    fi
 fi
 
 $JAVA_HOME/bin/java -version
