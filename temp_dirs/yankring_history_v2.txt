@@ -1,3 +1,6 @@
+function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
+http://54.72.148.84:8080/,v
+https://ec2.eu-west-1.amazonaws.com,v
 @reboot /home/ciserver/jenkins.sh >> 2&1 > /home/log/jenkinserver.log,V
     echo "Found JAVA_HOME!",V
 ,V
@@ -12,7 +15,6 @@ export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre",V
 [ -d "/usr/libexec" ] && {,V
 ssh-rsaAAAAB3NzaC1yc2EAAAADAQABAAABAQDGGbORWnGsaCGWrYqe+nGDomo1TDkaMjjdaN571EnPgjmVRMbjlhzYtNVyPo/aM6lbHKNkLOZ8R91TrXnNXI/VT14g61a2SCuay+0n8G5P+++GBqsrrdUvUfRtl9siNRkYhPeEIafW/D2IN5WEh7j8k4mr7DiM+swIMQz452N94OZ0Umz5c4rFsBOI2v94Mdh0tlc6fC6F4UMHxvzVNom8EIKXZjmF+nzocMzLJXsXI6AyHzy7GOA0fCYe8H+ZLjMpTrzQFXKE9EaXU+Zp+UFQz0CDSty91tDO4kEgKu19Bh7mlAJjepWNw7Xq1lqgZhzT99NmqrlaV0/scsq5L3QH lordnesi28@gmail.com,v
 <<<<<<< Updated upstream
-function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
     Port 2828,V
 i-887d61c8,v
 i-73828432,v
