@@ -1,3 +1,10 @@
+    export JAVA_HOME=$(/usr/libexec/java_home),V
+,V
+ export JAVA_HOME="/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java",v
+;[ -d "/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java" ];,v
+[-f "/usr/libexec/java_home" ];,v
+ export JAVA_HOME=$(/usr/libexec/java_home),v
+ec2-54-72-148-84.eu-west-1.compute.amazonaws.com,v
 ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
 export JAVA_HOME=$(/usr/libexec/java_home),v
 /usr/libexec/java_home,v
@@ -15,7 +22,6 @@ export EVERREACH_TEST_CONFIG=/,v
 if export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then,V
 export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/;,v
 export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then,v
-,V
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0export EC2_URL=https://ec2.eu-west-1.amazonaws.com,v
 $JAVA_HOME/bin/java -version,v
 export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/,V
@@ -46,7 +52,6 @@ if [ -d "/usr/libexec" ]; then     export JAVA_HOME=$(/usr/libexec/java_home) 
 o,v
 function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
  if [ -d "/usr/libexec" ]; then-    export JAVA_HOME=$(/usr/libexec/java_home)|    echo "Found JAVA_HOME in /usr/libexec" else-    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then-        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"2        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre"|    else-        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then-            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"2        else-            echo "Could not find JAVA_HOME"2        fi|    fi fi,v
-    export JAVA_HOME=$(/usr/libexec/java_home),V
 else,V
 http://54.72.148.84:8080/,v
 https://ec2.eu-west-1.amazonaws.com,v
@@ -93,8 +98,3 @@ HEY="HEllo",V
 export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQ,V
 export AWS_ACCESS_KEY=AKIAIZUNPHTDPQLRWMCQexport AWS_SECRET_KEY=tiPoL4vKasYGBtUXBIZSMunCD9L5xfVlTP0O1gq/,v
 git clone git@github.com:ernestrc/dotfiles.git ~/.dotfiles,v
-    User ec2-user,V
-    Hostname ec2-54-72-175-2.eu-west-1.compute.amazonaws.com,V
-Host roomserver,V
-function roomserver,V
-{,V
