@@ -1,3 +1,4 @@
+ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
     export JAVA_HOME=$(/usr/libexec/java_home),V
 ,V
  export JAVA_HOME="/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java",v
@@ -5,7 +6,6 @@
 [-f "/usr/libexec/java_home" ];,v
  export JAVA_HOME=$(/usr/libexec/java_home),v
 ec2-54-72-148-84.eu-west-1.compute.amazonaws.com,v
-ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
 export JAVA_HOME=$(/usr/libexec/java_home),v
 /usr/libexec/java_home,v
 /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java,v

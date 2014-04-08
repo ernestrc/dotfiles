@@ -19,7 +19,7 @@ else
         if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then
             export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"
         else
-            if [-d "/usr/libexec" ]; then
+            if [ -d "/usr/libexec" ]; then
                 export JAVA_HOME=$(/usr/libexec/java_home)
             else 
                 echo "Couldn't find JAVA_HOME"
