@@ -1,7 +1,30 @@
+,V
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0export EC2_URL=https://ec2.eu-west-1.amazonaws.com,v
+$JAVA_HOME/bin/java -version,v
+export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/,V
+if source $HOME/.dotfiles/amazonkeys.sh; then,V
+export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/,V
+s,v
+k,v
+y,v
+e,v
+if export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/; then    echo "Loaded Amazon EC2 keys successfully",V
+fiexport EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/,V
+if source $HOME/.dotfiles/amazonkeys.sh; then    echo "Loaded Amazon EC2 keys successfully"else    echo "Can't find Amazon EC2 keys"fi,v
+        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre",V
+The Art of Multiprocessor Programming, M. Herlihy and N Shavit, 2008. ISBN 978-0123705914,V
+/etc/everreach/,v
+export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/ export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/,v
+ /var/log/everreach/,v
+export EVERREACH_API_CONFIG=/Users/cvrabie1/Work/everreach/runtime-config/export EVERREACH_TEST_CONFIG=/Users/cvrabie1/Work/everreach/test-config/,v
+NullPointerException,v
+68787134,v
+foundation.min.js,v
+toggleable,v
+ $JAVA_HOME/bin/java -version,v
 fi,V
 if [ -d "/usr/libexec" ]; then     export JAVA_HOME=$(/usr/libexec/java_home)     echo "Found JAVA_HOME in /usr/libexec"else    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre"    else        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"        else            echo "Could not find JAVA_HOME"        fi    fi ,v
  if [ -d "/usr/libexec" ]; then-    export JAVA_HOME=$(/usr/libexec/java_home) else-    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then-        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"|    else-        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then-            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"2        else-            echo "Could not find JAVA_HOME"2        fi  |    fi   fi,v
-        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre",V
     echo "Found JAVA_HOME in /usr/libexec",V
 o,v
 function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
@@ -12,7 +35,6 @@ http://54.72.148.84:8080/,v
 https://ec2.eu-west-1.amazonaws.com,v
 @reboot /home/ciserver/jenkins.sh >> 2&1 > /home/log/jenkinserver.log,V
     echo "Found JAVA_HOME!",V
-,V
 export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre",v
 export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre",V
     echo "Found JAVA_HOME",V
