@@ -28,14 +28,16 @@ export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 
 #EVERREACH API CONFIG OVERRIDES
-if export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then
+if [ -d "Users/ernestrc/dev/everreach/test-config" ]; then
     echo "Loaded EVERREACH_TEST_CONFIG  successfully"
+    export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/
 else
     echo "Can't find EVERREACH_TEST_CONFIG"
 fi
 
-if export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/; then
+if [ -d "Users/ernestrc/dev/everreach/runtime-config/" ]; then
     echo "Loaded Amazon EVERREACH_API_CONFIG  successfully"
+    export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/
 else
     echo "Can't find EVERREACH_API_CONFIG"
 fi

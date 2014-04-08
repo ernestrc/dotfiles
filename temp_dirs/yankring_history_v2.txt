@@ -1,3 +1,12 @@
+export ,v
+ EVERREACH_API_CONFIG=/,v
+if export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/;,v
+",v
+Users/ernestrc/dev/everreach/test-config",v
+export EVERREACH_TEST_CONFIG=/,v
+if export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then,V
+export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/;,v
+export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then,v
 ,V
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0export EC2_URL=https://ec2.eu-west-1.amazonaws.com,v
 $JAVA_HOME/bin/java -version,v
