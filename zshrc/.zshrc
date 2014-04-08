@@ -3,13 +3,14 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_THEME=""
 
 #AMAZON CLI CONFIG
-if source $HOME/.dotfiles/amazonkeys.sh; then
+if  [ -d "$HOME/.dotfiles/amazonkeys.sh" ]; then
     echo "Loaded Amazon EC2 keys successfully"
+    source $HOME/.dotfiles/amazonkeys.sh
 else
     echo "Can't find Amazon EC2 keys"
 fi
 
-if [ -d "/usr/libexec" ]; then
+if [ -d "/usr/libexec/java_home" ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 else
     if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then
@@ -18,7 +19,11 @@ else
         if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then
             export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"
         else
-            echo "Could not find JAVA_HOME"
+            if [ -d "/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java" ]; then
+                export JAVA_HOME="/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java"
+            else 
+                echo "Couldn't find JAVA_HOME"
+            fi 
         fi
     fi
 fi

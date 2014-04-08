@@ -1,3 +1,7 @@
+echo "Could not find JAVA_HOME",v
+            echo "Could not find JAVA_HOME",V
+            echo "Could not find JAVA_HOME,v
+source $HOME/.dotfiles/amazonkeys.sh;,v
 export ,v
  EVERREACH_API_CONFIG=/,v
 if export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/;,v
@@ -94,5 +98,3 @@ function roomserver,V
     ssh -i $HOME/dev/projects/Keys/roomapp.pem ec2-user@ec2-54-72-140-18.eu-west-1.compute.amazonaws.com,V
 function adamant,V
     ssh -i $HOME/dev/projects/Keys/roomapp.pem ubuntu@ec2-54-72-163-192.eu-west-1.compute.amazonaws.com,V
-54.72.163.192,v
-https://github.com/amix/vimrc,v
