@@ -1,3 +1,7 @@
+ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
+export JAVA_HOME=$(/usr/libexec/java_home),v
+/usr/libexec/java_home,v
+/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java,v
 echo "Could not find JAVA_HOME",v
             echo "Could not find JAVA_HOME",V
             echo "Could not find JAVA_HOME,v
@@ -64,7 +68,6 @@ i-887d61c8,v
 i-73828432,v
 54.72.148.84,v
 ssh-dss AAAAB3NzaC1kc3MAAACBAIjYjOtgaZBlNBV8u1K4cfF/QFmh8m4rfft9Xta0nv4C5WG0Oj1npdUt8ugv2SC1SWEw1Eqne7vswBCl+btaxo4oG2vNFifMVPP2slOAGeb332aZq8AYq9LEzY99xPhndpeSvuxcQVoCq4/lSTi161pn7u8tzuzGvgl6tnuzETXxAAAAFQCsz6feb6yzNMnG9l9prOzPcpRfIwAAAIB3I9J9SWjDvA8d0xE2oGCNz8V6qca+Q46dCTQ3e/BD7EMMUyJYm4JvfA1O1V0comKIEBJhWJYcqDxeb//2VDdAMvJcm1SXiZZKLVEC50WdITsf3yRZPlQs9kUoV51WRdCX9jL3pxGDviV3xVicW4RIqKWpSCOapMe5P81JyXmGEgAAAIBAOkv8WTe3Fr88WTkk+3TgxYicNwrNtrfB4h1a52zGhQ87XgTdCaSLG+tFCQjhMzsUzjWPJ7bTkqAHO1ztT4R0ycg1lJS1JavyCvzO5jrudOTqBTi+8AiLXrU1KngX4jQHDQMJcnAfFVPb7XMcTlGvPuEA5Va03PUe8rmOn/7KHQ== ernestrc@macbook-pr0,v
-ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
 com.openssh.sshd,v
     ssh -i ~/dev/projects/Keys/roomapp.pem -p 2828 ubuntu@ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,V
     port 2828,V
@@ -95,6 +98,3 @@ git clone git@github.com:ernestrc/dotfiles.git ~/.dotfiles,v
 Host roomserver,V
 function roomserver,V
 {,V
-    ssh -i $HOME/dev/projects/Keys/roomapp.pem ec2-user@ec2-54-72-140-18.eu-west-1.compute.amazonaws.com,V
-function adamant,V
-    ssh -i $HOME/dev/projects/Keys/roomapp.pem ubuntu@ec2-54-72-163-192.eu-west-1.compute.amazonaws.com,V

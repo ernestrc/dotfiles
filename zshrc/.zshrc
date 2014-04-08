@@ -3,14 +3,14 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_THEME=""
 
 #AMAZON CLI CONFIG
-if  [ -d "$HOME/.dotfiles/amazonkeys.sh" ]; then
+if  [ -f "$HOME/.dotfiles/amazonkeys.sh" ]; then
     echo "Loaded Amazon EC2 keys successfully"
     source $HOME/.dotfiles/amazonkeys.sh
 else
     echo "Can't find Amazon EC2 keys"
 fi
 
-if [ -d "/usr/libexec/java_home" ]; then
+if export JAVA_HOME=$(/usr/libexec/java_home); then
     export JAVA_HOME=$(/usr/libexec/java_home)
 else
     if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then
@@ -33,14 +33,14 @@ export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 
 #EVERREACH API CONFIG OVERRIDES
-if [ -d "Users/ernestrc/dev/everreach/test-config" ]; then
+if [ -d "/Users/ernestrc/dev/everreach/test-config" ]; then
     echo "Loaded EVERREACH_TEST_CONFIG  successfully"
     export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/
 else
     echo "Can't find EVERREACH_TEST_CONFIG"
 fi
 
-if [ -d "Users/ernestrc/dev/everreach/runtime-config/" ]; then
+if [ -d "/Users/ernestrc/dev/everreach/runtime-config/" ]; then
     echo "Loaded Amazon EVERREACH_API_CONFIG  successfully"
     export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/
 else
