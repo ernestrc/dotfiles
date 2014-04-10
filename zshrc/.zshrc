@@ -84,7 +84,7 @@ setopt rm_star_silent
 unsetopt nomatch
 unsetopt correct_all
 
-export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin
+export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
@@ -105,14 +105,14 @@ function stopservers
 {
     ec2stop i-887d61c8
     ec2stop i-fa464cba
-    ec2stop i-73828432
+    ec2stop i-039d6e41
 }
 
 function startservers
 {
-    ec2start i-887d61c8
-    ec2start i-fa464cba
-    ec2start i-73828432
+    ec2start i-887d61c8 #CI SERVER
+    ec2start i-fa464cba #Room-Frontend
+    ec2start i-039d6e41 #Room-Core
 }
 
 
@@ -128,9 +128,7 @@ function dotfiles
 
 function devpro
 {
-    clear
-    cd $HOME/dev/projects/room/
-    git status
+    cd $HOME/dev/projects
     ls -a
 }
 
@@ -342,16 +340,24 @@ export JAVA_OPTS="-XX:ReservedCodeCacheSize=128m -XX:+CMSClassUnloadingEnabled -
 
 #GREETING
 
-echo "
-      ___           ___                                       ___                                                      
-     /__/\         /  /\                                     /  /\                                                     
-     \  \:\       /  /:/_                                   /  /::\                                                    
-      \__\:\     /  /:/ /\    ___     ___   ___     ___    /  /:/\:\                                                   
-  ___ /  /::\   /  /:/ /:/_  /__/\   /  /\ /__/\   /  /\  /  /:/  \:\                                                  
- /__/\  /:/\:\ /__/:/ /:/ /\ \  \:\ /  /:/ \  \:\ /  /:/ /__/:/ \__\:\                                                 
- \  \:\/:/__\/ \  \:\/:/ /:/  \  \:\  /:/   \  \:\  /:/  \  \:\ /  /:/                                                 
-  \  \::/       \  \::/ /:/    \  \:\/:/     \  \:\/:/    \  \:\  /:/                                                  
-   \  \:\        \  \:\/:/      \  \::/       \  \::/      \  \:\/:/                                                   
-    \  \:\        \  \::/        \__\/         \__\/        \  \::/                                                    
-     \__\/         \__\/                                     \__\/                                                     "
-
+echo " 
+                                                       ..       :
+                    .                  .               .   .  .
+      .           .                .               .. .  .  *
+             *          .                    ..        .
+                           .             .     . :  .   .    .  .
+            .                         .   .  .  .   .
+                                         . .  *:. . .
+.                                 .  .   . .. .         .
+                         .     . .  . ...    .    .
+       .              .  .  . .   : . .  . .
+                        .    .  :   . ...  ..   .       .
+                 .  .    . *.   . .
+    .                   :.  .           .
+                 .   .    .    .
+.            .  .  .    ./|\                 .
+            .  .. :.    . |             .               .
+     .   ... .            |
+ .    :.  . .   *.        |     .               .
+   .  *.             You are here.
+ . .    .               .             *.                         ."
