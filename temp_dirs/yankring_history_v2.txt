@@ -1,6 +1,83 @@
+<<<<<<< Updated upstream
 ,V
 function roomdb,V
 {,V
+=======
+    export JAVA_HOME=$(/usr/libexec/java_home),V
+      ___           ___           ___           ___           ___                       ___           ___                   /  /\         /  /\         /__/\         /  /\         /  /\          ___        /  /\         /  /\                 /  /:/_       /  /::\        \  \:\       /  /:/_       /  /:/_        /  /\      /  /::\       /  /:/                /  /:/ /\     /  /:/\:\        \  \:\     /  /:/ /\     /  /:/ /\      /  /:/     /  /:/\:\     /  /:/                /  /:/ /:/_   /  /:/~/:/    _____\__\:\   /  /:/ /:/_   /  /:/ /::\    /  /:/     /  /:/~/:/    /  /:/  ___           /__/:/ /:/ /\ /__/:/ /:/___ /__/::::::::\ /__/:/ /:/ /\ /__/:/ /:/\:\  /  /::\    /__/:/ /:/___ /__/:/  /  /\          \  \:\/:/ /:/ \  \:\/:::::/ \  \:\~~\~~\/ \  \:\/:/ /:/ \  \:\/:/~/:/ /__/:/\:\   \  \:\/:::::/ \  \:\ /  /:/           \  \::/ /:/   \  \::/~~~~   \  \:\  ~~~   \  \::/ /:/   \  \::/ /:/  \__\/  \:\   \  \::/~~~~   \  \:\  /:/             \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \__\/ /:/        \  \:\   \  \:\        \  \:\/:/               \  \::/       \  \:\        \  \:\        \  \::/        /__/:/          \__\/    \  \:\        \  \::/                 \__\/         \__\/         \__\/         \__\/         \__\/                     \__\/         \__\/             ,v
+      ___           ___                                       ___                                                           /__/\         /  /\                                     /  /\                                                          \  \:\       /  /:/_                                   /  /::\                                                          \__\:\     /  /:/ /\    ___     ___   ___     ___    /  /:/\:\                                                     ___ /  /::\   /  /:/ /:/_  /__/\   /  /\ /__/\   /  /\  /  /:/  \:\                                                   /__/\  /:/\:\ /__/:/ /:/ /\ \  \:\ /  /:/ \  \:\ /  /:/ /__/:/ \__\:\                                                  \  \:\/:/__\/ \  \:\/:/ /:/  \  \:\  /:/   \  \:\  /:/  \  \:\ /  /:/                                                   \  \::/       \  \::/ /:/    \  \:\/:/     \  \:\/:/    \  \:\  /:/                                                     \  \:\        \  \:\/:/      \  \::/       \  \::/      \  \:\/:/                                                       \  \:\        \  \::/        \__\/         \__\/        \  \::/                                                         \__\/         \__\/                                     \__\/                                                           ___           ___           ___           ___           ___                       ___           ___                   /  /\         /  /\         /__/\         /  /\         /  /\          ___        /  /\         /  /\                 /  /:/_       /  /::\        \  \:\       /  /:/_       /  /:/_        /  /\      /  /::\       /  /:/                /  /:/ /\     /  /:/\:\        \  \:\     /  /:/ /\     /  /:/ /\      /  /:/     /  /:/\:\     /  /:/                /  /:/ /:/_   /  /:/~/:/    _____\__\:\   /  /:/ /:/_   /  /:/ /::\    /  /:/     /  /:/~/:/    /  /:/  ___           /__/:/ /:/ /\ /__/:/ /:/___ /__/::::::::\ /__/:/ /:/ /\ /__/:/ /:/\:\  /  /::\    /__/:/ /:/___ /__/:/  /  /\          \  \:\/:/ /:/ \  \:\/:::::/ \  \:\~~\~~\/ \  \:\/:/ /:/ \  \:\/:/~/:/ /__/:/\:\   \  \:\/:::::/ \  \:\ /  /:/           \  \::/ /:/   \  \::/~~~~   \  \:\  ~~~   \  \::/ /:/   \  \::/ /:/  \__\/  \:\   \  \::/~~~~   \  \:\  /:/             \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \__\/ /:/        \  \:\   \  \:\        \  \:\/:/               \  \::/       \  \:\        \  \:\        \  \::/        /__/:/          \__\/    \  \:\        \  \::/                 \__\/         \__\/         \__\/         \__\/         \__\/                     \__\/         \__\/             ,V
+▓█████  ██▀███   ███▄    █ ▓█████   ██████ ▄▄▄█████▓ ██▀███   ▄████▄     ▓█   ▀ ▓██ ▒ ██▒ ██ ▀█   █ ▓█   ▀ ▒██    ▒ ▓  ██▒ ▓▒▓██ ▒ ██▒▒██▀ ▀█     ▒███   ▓██ ░▄█ ▒▓██  ▀█ ██▒▒███   ░ ▓██▄   ▒ ▓██░ ▒░▓██ ░▄█ ▒▒▓█    ▄    ▒▓█  ▄ ▒██▀▀█▄  ▓██▒  ▐▌██▒▒▓█  ▄   ▒   ██▒░ ▓██▓ ░ ▒██▀▀█▄  ▒▓▓▄ ▄██▒   ░▒████▒░██▓ ▒██▒▒██░   ▓██░░▒████▒▒██████▒▒  ▒██▒ ░ ░██▓ ▒██▒▒ ▓███▀ ░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ▒ ▒ ░░ ▒░ ░▒ ▒▓▒ ▒ ░  ▒ ░░   ░ ▒▓ ░▒▓░░ ░▒ ▒  ░    ░ ░  ░  ░▒ ░ ▒░░ ░░   ░ ▒░ ░ ░  ░░ ░▒  ░ ░    ░      ░▒ ░ ▒░  ░  ▒          ░     ░░   ░    ░   ░ ░    ░   ░  ░  ░    ░        ░░   ░ ░                  ░  ░   ░              ░    ░  ░      ░              ░     ░ ░                                                                             ░           ,v
+      ___           ___           ___           ___           ___                       ___           ___                   /  /\         /  /\         /__/\         /  /\         /  /\          ___        /  /\         /  /\                 /  /:/_       /  /::\        \  \:\       /  /:/_       /  /:/_        /  /\      /  /::\       /  /:/                /  /:/ /\     /  /:/\:\        \  \:\     /  /:/ /\     /  /:/ /\      /  /:/     /  /:/\:\     /  /:/                /  /:/ /:/_   /  /:/~/:/    _____\__\:\   /  /:/ /:/_   /  /:/ /::\    /  /:/     /  /:/~/:/    /  /:/  ___           /__/:/ /:/ /\ /__/:/ /:/___ /__/::::::::\ /__/:/ /:/ /\ /__/:/ /:/\:\  /  /::\    /__/:/ /:/___ /__/:/  /  /\          \  \:\/:/ /:/ \  \:\/:::::/ \  \:\~~\~~\/ \  \:\/:/ /:/ \  \:\/:/~/:/ /__/:/\:\   \  \:\/:::::/ \  \:\ /  /:/           \  \::/ /:/   \  \::/~~~~   \  \:\  ~~~   \  \::/ /:/   \  \::/ /:/  \__\/  \:\   \  \::/~~~~   \  \:\  /:/             \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \__\/ /:/        \  \:\   \  \:\        \  \:\/:/               \  \::/       \  \:\        \  \:\        \  \::/        /__/:/          \__\/    \  \:\        \  \::/                 \__\/         \__\/         \__\/         \__\/         \__\/                     \__\/         \__\/             ",v
+▓█████  ██▀███   ███▄    █ ▓█████   ██████ ▄▄▄█████▓ ██▀███   ▄████▄     ▓█   ▀ ▓██ ▒ ██▒ ██ ▀█   █ ▓█   ▀ ▒██    ▒ ▓  ██▒ ▓▒▓██ ▒ ██▒▒██▀ ▀█     ▒███   ▓██ ░▄█ ▒▓██  ▀█ ██▒▒███   ░ ▓██▄   ▒ ▓██░ ▒░▓██ ░▄█ ▒▒▓█    ▄    ▒▓█  ▄ ▒██▀▀█▄  ▓██▒  ▐▌██▒▒▓█  ▄   ▒   ██▒░ ▓██▓ ░ ▒██▀▀█▄  ▒▓▓▄ ▄██▒   ░▒████▒░██▓ ▒██▒▒██░   ▓██░░▒████▒▒██████▒▒  ▒██▒ ░ ░██▓ ▒██▒▒ ▓███▀ ░   ░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░   ▒ ▒ ░░ ▒░ ░▒ ▒▓▒ ▒ ░  ▒ ░░   ░ ▒▓ ░▒▓░░ ░▒ ▒  ░    ░ ░  ░  ░▒ ░ ▒░░ ░░   ░ ▒░ ░ ░  ░░ ░▒  ░ ░    ░      ░▒ ░ ▒░  ░  ▒         ░     ░░   ░    ░   ░ ░    ░   ░  ░  ░    ░        ░░   ░ ░              ░  ░   ░              ░    ░  ░      ░              ░     ░ ░                                                                      ░           ,V
+,V
+      ___           ___           ___           ___           ___                       ___           ___                   /  /\         /  /\         /__/\         /  /\         /  /\          ___        /  /\         /  /\                 /  /:/_       /  /::\        \  \:\       /  /:/_       /  /:/_        /  /\      /  /::\       /  /:/                /  /:/ /\     /  /:/\:\        \  \:\     /  /:/ /\     /  /:/ /\      /  /:/     /  /:/\:\     /  /:/                /  /:/ /:/_   /  /:/~/:/    _____\__\:\   /  /:/ /:/_   /  /:/ /::\    /  /:/     /  /:/~/:/    /  /:/  ___           /__/:/ /:/ /\ /__/:/ /:/___ /__/::::::::\ /__/:/ /:/ /\ /__/:/ /:/\:\  /  /::\    /__/:/ /:/___ /__/:/  /  /\          \  \:\/:/ /:/ \  \:\/:::::/ \  \:\~~\~~\/ \  \:\/:/ /:/ \  \:\/:/~/:/ /__/:/\:\   \  \:\/:::::/ \  \:\ /  /:/           \  \::/ /:/   \  \::/~~~~   \  \:\  ~~~   \  \::/ /:/   \  \::/ /:/  \__\/  \:\   \  \::/~~~~   \  \:\  /:/             \  \:\/:/     \  \:\        \  \:\        \  \:\/:/     \__\/ /:/        \  \:\   \  \:\        \  \:\/:/               \  \::/       \  \:\        \  \:\        \  \::/        /__/:/          \__\/    \  \:\        \  \::/                 \__\/         \__\/         \__\/         \__\/         \__\/                     \__\/         \__\/             ,V
+git clone https://github.com/rizzatti/dash.vim.git,v
+Bundle 'rizzatti/dash.vim',V
+Bundle 'rizzatti/funcoo.vim',V
+git clone https://github.com/rizzatti/funcoo.vim.gitgit clone https://github.com/rizzatti/dash.vim.git,v
+ec2-54-72-77-207.eu-west-1.compute.amazonaws.com,v
+Bundle 'rizzatti/funcoo.vim'Bundle 'rizzatti/dash.vim',v
+ export JAVA_HOME="/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java",v
+;[ -d "/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java" ];,v
+[-f "/usr/libexec/java_home" ];,v
+ export JAVA_HOME=$(/usr/libexec/java_home),v
+ec2-54-72-148-84.eu-west-1.compute.amazonaws.com,v
+export JAVA_HOME=$(/usr/libexec/java_home),v
+/usr/libexec/java_home,v
+/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java,v
+echo "Could not find JAVA_HOME",v
+            echo "Could not find JAVA_HOME",V
+            echo "Could not find JAVA_HOME,v
+source $HOME/.dotfiles/amazonkeys.sh;,v
+export ,v
+ EVERREACH_API_CONFIG=/,v
+if export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/;,v
+",v
+Users/ernestrc/dev/everreach/test-config",v
+export EVERREACH_TEST_CONFIG=/,v
+if export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then,V
+export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/;,v
+export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/; then,v
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0export EC2_URL=https://ec2.eu-west-1.amazonaws.com,v
+$JAVA_HOME/bin/java -version,v
+export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/,V
+if source $HOME/.dotfiles/amazonkeys.sh; then,V
+export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/,V
+s,v
+k,v
+y,v
+e,v
+if export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/; then    echo "Loaded Amazon EC2 keys successfully",V
+fiexport EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/,V
+if source $HOME/.dotfiles/amazonkeys.sh; then    echo "Loaded Amazon EC2 keys successfully"else    echo "Can't find Amazon EC2 keys"fi,v
+        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre",V
+The Art of Multiprocessor Programming, M. Herlihy and N Shavit, 2008. ISBN 978-0123705914,V
+/etc/everreach/,v
+export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/ export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/,v
+ /var/log/everreach/,v
+export EVERREACH_API_CONFIG=/Users/cvrabie1/Work/everreach/runtime-config/export EVERREACH_TEST_CONFIG=/Users/cvrabie1/Work/everreach/test-config/,v
+NullPointerException,v
+68787134,v
+foundation.min.js,v
+toggleable,v
+ $JAVA_HOME/bin/java -version,v
+fi,V
+if [ -d "/usr/libexec" ]; then     export JAVA_HOME=$(/usr/libexec/java_home)     echo "Found JAVA_HOME in /usr/libexec"else    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre"    else        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"        else            echo "Could not find JAVA_HOME"        fi    fi ,v
+ if [ -d "/usr/libexec" ]; then-    export JAVA_HOME=$(/usr/libexec/java_home) else-    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then-        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"|    else-        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then-            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"2        else-            echo "Could not find JAVA_HOME"2        fi  |    fi   fi,v
+    echo "Found JAVA_HOME in /usr/libexec",V
+o,v
+function stopec2{    ec2stop i-73828432    ec2stop i-fa464cba    ec2stop i-887d61c8},v
+ if [ -d "/usr/libexec" ]; then-    export JAVA_HOME=$(/usr/libexec/java_home)|    echo "Found JAVA_HOME in /usr/libexec" else-    if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then-        export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"2        echo "Found JAVA_HOME in /usr/lib/jvm/java-6-oenjdk-amd64/jre"|    else-        if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then-            export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"2        else-            echo "Could not find JAVA_HOME"2        fi|    fi fi,v
+else,V
+http://54.72.148.84:8080/,v
+https://ec2.eu-west-1.amazonaws.com,v
+@reboot /home/ciserver/jenkins.sh >> 2&1 > /home/log/jenkinserver.log,V
+    echo "Found JAVA_HOME!",V
+export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre",v
+export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre",V
+    echo "Found JAVA_HOME",V
+    export JAVA_HOME=$(/usr/bin),V
+>>>>>>> Stashed changes
 },V
     mysql -u ernestrc -p -h 54.72.202.120,V
     ec2stop i-039d6e41,V
