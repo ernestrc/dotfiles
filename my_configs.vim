@@ -7,3 +7,6 @@ filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
+set paste
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
