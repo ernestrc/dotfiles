@@ -140,6 +140,14 @@ function deverr
     play ~run
 }
 
+function devcore
+{
+    clear
+    cd $HOME/dev/everreach/core/
+    git status
+    sbt
+}
+
 function findWithSpec
 {
   local dirs=
