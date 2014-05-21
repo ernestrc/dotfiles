@@ -126,9 +126,17 @@ function dotfiles
     bash $HOME/.dotfiles/backup.sh
 }
 
+function blog
+{
+    clear
+    cd $HOME/dev/projects/blog
+    git status
+    play ~run
+}
+
 function devpro
 {
-    cd $HOME/dev/projects/room
+    cd $HOME/dev/projects/
     ls -a
 }
 
