@@ -141,6 +141,15 @@ function devblog
     git status
 }
 
+function devmoni
+{
+    clear
+    cd $HOME/dev/everreach/monitoring-api
+    git status
+    sbt
+}
+
+
 function devpro
 {
     cd $HOME/dev/projects/
