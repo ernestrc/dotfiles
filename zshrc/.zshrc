@@ -10,6 +10,22 @@ else
     echo "Can't find Amazon EC2 keys"
 fi
 
+#WORDPRESS_BLOG
+DB_NAME="wordpress"
+DB_USER="wordpress"
+DB_PASSWORD="wordpress28"
+DB_HOST="ernestrc-wordpressblog.cx47mu0a0z8l.eu-west-1.rds.amazonaws.com"
+DB_CHARSET="utf8"
+DB_COLLATE=""
+AUTH_KEY=""
+SECURE_AUTH_KEY=""
+LOGGED_IN_KEY=""
+NONCE_KEY=
+AUTH_SALT=
+SECURE_AUTH_SALT=
+NONCE_SALT=
+
+#JAVA HOME
 if [ -d "/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java" ]; then
     export JAVA_HOME="/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java"
 else
@@ -133,24 +149,25 @@ function devwebsite
     git status
     play ~run
 }
+alias devwebsite="devpro -w"
 
 function devblog
 {
     clear
-    cd $HOME/dev/projects/blog
+    cd $HOME/dev/projects/wordpress
     git status
 }
 
 function devmoni
 {
     clear
-    cd $HOME/dev/everreach/monitoring-api
+    cd $HOME/dev/everreach/operations-api
     git status
     sbt
 }
 
 
-function devpro
+function devproj
 {
     cd $HOME/dev/projects/
     ls -a
