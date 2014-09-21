@@ -100,12 +100,12 @@ setopt rm_star_silent
 unsetopt nomatch
 unsetopt correct_all
 
-export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin
+export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
 
-export SBT_OPTS=-XX:PermSize=256M
+export CONSCRIPT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xmx3G -XX:MaxPermSize=1G -Duser.timezone=UTC"
 
 export EDITOR=vim
 
@@ -162,6 +162,9 @@ function devmoni
 {
     clear
     cd $HOME/dev/everreach/operations-api
+    rm /private/etc/everreach/typesafe-console/var/RUNNING_PID
+    /etc/everreach/typesafe-console/bin/typesafe-console atmos -port 2829 &
+    /etc/everreach/typesafe-console/bin/typesafe-console ui -port 2828 &
     git status
     sbt
 }
