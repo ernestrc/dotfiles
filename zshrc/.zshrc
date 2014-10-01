@@ -142,15 +142,6 @@ function dotfiles
     bash $HOME/.dotfiles/backup.sh
 }
 
-function devwebsite
-{
-    clear
-    cd $HOME/dev/projects/website
-    git status
-    play ~run
-}
-alias devwebsite="devpro -w"
-
 function devblog
 {
     clear
@@ -158,7 +149,7 @@ function devblog
     git status
 }
 
-function devmoni
+function erops
 {
     clear
     cd $HOME/dev/everreach/operations-api
@@ -170,13 +161,13 @@ function devmoni
 }
 
 
-function devproj
+function dev
 {
     cd $HOME/dev/projects/
     ls -a
 }
 
-function deverr
+function erweb
 {
     clear
     cd $HOME/dev/everreach/website/
@@ -184,7 +175,7 @@ function deverr
     play ~run
 }
 
-function devcore
+function ercore
 {
     clear
     cd $HOME/dev/everreach/core/
