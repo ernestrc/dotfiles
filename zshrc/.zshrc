@@ -163,8 +163,8 @@ function devmoni
     clear
     cd $HOME/dev/everreach/operations-api
     rm /private/etc/everreach/typesafe-console/var/RUNNING_PID
-    /etc/everreach/typesafe-console/bin/typesafe-console atmos -port 2829 &
-    /etc/everreach/typesafe-console/bin/typesafe-console ui -port 2828 &
+    /etc/everreach/typesafe-console/bin/typesafe-console atmos &
+    /etc/everreach/typesafe-console/bin/typesafe-console ui &
     git status
     sbt
 }
@@ -190,6 +190,11 @@ function devcore
     cd $HOME/dev/everreach/core/
     git status
     sbt
+}
+
+function swift
+{
+    xcrun swift -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
 }
 
 function findWithSpec
