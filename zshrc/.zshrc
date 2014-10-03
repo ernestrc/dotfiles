@@ -160,17 +160,35 @@ function erops
     sbt
 }
 
+bindkey "^A" beginning-of-line
+
+bindkey "^E" end-of-line
+
+function er
+{
+    cd $HOME/dev/everreach/
+    ls -l
+}
+
+function erpuppet 
+{
+    cd $HOME/dev/everreach/puppet
+    git fetch
+    git status
+    ls -l
+}
 
 function dev
 {
     cd $HOME/dev/projects/
-    ls -a
+    ls -l
 }
 
 function erweb
 {
     clear
     cd $HOME/dev/everreach/website/
+    git fetch
     git status
     play ~run
 }
@@ -179,6 +197,7 @@ function ercore
 {
     clear
     cd $HOME/dev/everreach/core/
+    git fetch
     git status
     sbt
 }
