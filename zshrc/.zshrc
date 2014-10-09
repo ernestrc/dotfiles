@@ -160,6 +160,17 @@ function erops
     sbt
 }
 
+function deveng
+{
+    clear
+    cd $HOME/dev/projects/unstable-engine
+    rm /private/etc/everreach/typesafe-console/var/RUNNING_PID
+    /etc/everreach/typesafe-console/bin/typesafe-console atmos &
+    /etc/everreach/typesafe-console/bin/typesafe-console ui &
+    git status
+    sbt
+}
+
 bindkey "^A" beginning-of-line
 
 bindkey "^E" end-of-line
