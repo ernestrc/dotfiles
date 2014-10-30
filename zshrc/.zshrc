@@ -47,6 +47,7 @@ fi
 $JAVA_HOME/bin/java -version
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:/usr/lib:$JAVA_HOME/jre/lib/amd64/server/:$LD_LIBRARY_PATH
 
 #EVERREACH API CONFIG OVERRIDES
 if [ -d "/Users/ernestrc/dev/everreach/test-config" ]; then
@@ -117,6 +118,8 @@ if which dircolors > /dev/null; then
   alias egrep='egrep --color=auto'
 fi
 
+
+
 function stopservers
 {
     ec2stop i-887d61c8
@@ -164,9 +167,6 @@ function deveng
 {
     clear
     cd $HOME/dev/projects/unstable-engine
-    rm /private/etc/everreach/typesafe-console/var/RUNNING_PID
-    /etc/everreach/typesafe-console/bin/typesafe-console atmos &
-    /etc/everreach/typesafe-console/bin/typesafe-console ui &
     git status
     sbt
 }
@@ -201,7 +201,7 @@ function erweb
     cd $HOME/dev/everreach/website/
     git fetch
     git status
-    play ~run
+    activator
 }
 
 function ercore
@@ -211,6 +211,19 @@ function ercore
     git fetch
     git status
     sbt
+}
+
+function edx
+{
+    cd ~/dev/edx
+    atom ~/dev/edx
+}
+
+
+function udacity 
+{
+    cd ~/dev/udacity
+    atom ~/dev/udacity
 }
 
 function swift
@@ -425,3 +438,6 @@ echo "
  / /___/ /  / / / /  __(__  ) /_/ _, _/ /___   
 /_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/   
 "
+
+# added by travis gem
+[ -f /Users/ernestrc/.travis/travis.sh ] && source /Users/ernestrc/.travis/travis.sh
