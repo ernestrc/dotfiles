@@ -204,6 +204,16 @@ function erweb
     activator
 }
 
+function sbtproject
+{
+    $HOME/.dotfiles/sbtproject.sh
+}
+
+function scalascript
+{
+    $HOME/.dotfiles/scalascript.sh
+}
+
 function ercore
 {
     clear
@@ -402,6 +412,11 @@ function gitall
     (cd $x; git "$@")
   done
 }
+
+#custom aliases
+alias scalass='scalascript'
+alias sbtp='sbtproject'
+
 
 # Assorted
 alias swps='find . -name .\*.sw[op]'
