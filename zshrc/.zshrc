@@ -106,6 +106,8 @@ export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Us
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
 
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+
 export CONSCRIPT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xmx3G -XX:MaxPermSize=1G -Duser.timezone=UTC"
 
 export EDITOR=vim
@@ -222,6 +224,13 @@ function ercore
     git status
     sbt
 }
+
+function nanodegree 
+{
+    cd ~/odrive/Dropbox/data_analyst_udacity
+}
+
+alias nd="nanodegree"
 
 function edx
 {

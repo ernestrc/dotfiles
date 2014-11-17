@@ -100,13 +100,12 @@ resolvers ++= Seq(
   \"Spray Nightlies\"           at        \"http://nightlies.spray.io\"
 )
 
+
 parallelExecution in Test := false
 
 testOptions in Test += Tests.Argument(TestFrameworks.Specs2, \"junitxml\", \"console\")" > ${directoryName}/build.sbt
 
 echo "resolvers += \"Sonatype snapshots\" at \"https://oss.sonatype.org/content/repositories/snapshots/\"
-
-addSbtPlugin(\"io.spray\" % \"sbt-revolver\" % \"0.7.2\")
 
 addSbtPlugin(\"com.github.mpeltonen\" % \"sbt-idea\" % \"1.7.0-SNAPSHOT\")
 " > ${directoryName}/project/plugins.sbt
