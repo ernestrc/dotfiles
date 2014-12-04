@@ -17,3 +17,4 @@ nnoremap ,h <C-w>s
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set relativenumber
+colorscheme dracula

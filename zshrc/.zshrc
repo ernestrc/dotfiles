@@ -227,7 +227,7 @@ function ercore
 
 function nanodegree 
 {
-    cd ~/odrive/Dropbox/data_analyst_udacity
+    cd ~/dev/udacity
 }
 
 alias nd="nanodegree"
@@ -238,6 +238,10 @@ function edx
     atom ~/dev/edx
 }
 
+function scalar
+{
+    cd ~/dev/scala/scalar
+}
 
 function udacity 
 {
@@ -249,6 +253,9 @@ function swift
 {
     xcrun swift -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
 }
+
+
+export EDITOR='subl -w'
 
 function findWithSpec
 {
