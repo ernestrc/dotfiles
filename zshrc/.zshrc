@@ -225,6 +225,13 @@ function ercore
     sbt
 }
 
+function scalatron {
+    cd ~/dev/scala/scalatron_bots
+    git add --all .
+    git commit -m "pushed through script"
+    git push
+}
+
 function nanodegree 
 {
     cd ~/dev/udacity
