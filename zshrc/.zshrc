@@ -237,6 +237,42 @@ function nanodegree
     cd ~/dev/udacity
 }
 
+function xarxa6
+{
+    cd ~/dev/xarxa6
+    ls
+}
+
+function pythonp
+{
+    declare -r TRUE = 0
+    declare -r FALSE = 1
+    
+    while [ 1 ]; do
+    read -p "Define file name: " filename
+    filename = ${filename:-python_module} 
+    done
+
+    echo """#!/usr/bin/env python
+
+import sys
+
+def main(argv):
+    hello = \"Hello World!\"
+    for arg in argv:
+        hello = hello + \" \" + arg
+    print hello
+
+
+if __name__ == \"__main__\":
+    main(sys.argv[1:])
+""" >> ${filename}.py
+echo ""
+echo "Created python module" + $filename + ".py"
+chmod u+x ${filename}.py
+${filename}.py
+}
+
 alias nd="nanodegree"
 
 function edx
