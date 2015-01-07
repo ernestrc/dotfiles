@@ -79,6 +79,9 @@ fi
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+#CAPTURE LAST COMMANDS OUTPUT
+PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
+
 if [[ -z ${MY_SHELL_LEVEL} ]]; then
   export MY_SHELL_LEVEL=0
 else
@@ -120,7 +123,10 @@ if which dircolors > /dev/null; then
   alias egrep='egrep --color=auto'
 fi
 
-
+function dockerlog #https://gist.github.com/yarcowang/370e63e68972afbff970
+{
+    $HOME/.dotfiles/dockerlog.sh $@
+}
 
 function stopservers
 {
@@ -241,6 +247,12 @@ function xarxa6
 {
     cd ~/dev/xarxa6
     ls
+}
+
+function mkgo {
+
+mkdir $1 && cd $1
+
 }
 
 function pythonp
@@ -513,5 +525,11 @@ echo "
 /_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/   
 "
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # added by travis gem
 [ -f /Users/ernestrc/.travis/travis.sh ] && source /Users/ernestrc/.travis/travis.sh
+
+#docker vm
+$(boot2docker shellinit)
