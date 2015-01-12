@@ -128,6 +128,19 @@ function dockerlog #https://gist.github.com/yarcowang/370e63e68972afbff970
     $HOME/.dotfiles/dockerlog.sh $@
 }
 
+function mongocsv
+{
+    $HOME/.dotfiles/mongocsv
+}
+
+export DOCKER=54.154.24.170
+
+function dockerClean 
+{
+    docker rm $(docker ps -a -q)
+    docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+}
+
 function stopservers
 {
     ec2stop i-887d61c8
