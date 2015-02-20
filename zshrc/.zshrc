@@ -10,6 +10,8 @@ else
     echo "Can't find Amazon EC2 keys"
 fi
 
+export AWS_CREDENTIAL_FILE=$HOME/.elasticbeanstalk/aws_credential_file
+
 #WORDPRESS_BLOG
 DB_NAME="wordpress"
 DB_USER="wordpress"
@@ -37,9 +39,9 @@ else
         else
             if [ -d "/usr/libexec" ]; then
                 export JAVA_HOME=$(/usr/libexec/java_home)
-            else 
+            else
                 echo "Couldn't find JAVA_HOME"
-            fi 
+            fi
         fi
     fi
 fi
@@ -104,7 +106,7 @@ setopt rm_star_silent
 unsetopt nomatch
 unsetopt correct_all
 
-export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt
+export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt:~/dev/Amazon/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
@@ -135,10 +137,15 @@ function mongocsv
 
 export DOCKER=54.154.24.170
 
-function dockerClean 
+function dockerClean
 {
     docker rm $(docker ps -a -q)
     docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+}
+
+function replesent
+{
+    $HOME/.dotfiles/replesent.sh $1
 }
 
 function stopservers
@@ -202,7 +209,7 @@ function er
     ls -l
 }
 
-function erpuppet 
+function erpuppet
 {
     cd $HOME/dev/everreach/puppet
     git fetch
@@ -251,7 +258,7 @@ function scalatron {
     git push
 }
 
-function nanodegree 
+function nanodegree
 {
     cd ~/dev/udacity
 }
@@ -272,10 +279,10 @@ function pythonp
 {
     declare -r TRUE = 0
     declare -r FALSE = 1
-    
+
     while [ 1 ]; do
     read -p "Define file name: " filename
-    filename = ${filename:-python_module} 
+    filename = ${filename:-python_module}
     done
 
     echo """#!/usr/bin/env python
@@ -311,7 +318,7 @@ function scalar
     cd ~/dev/scala/scalar
 }
 
-function udacity 
+function udacity
 {
     cd ~/dev/udacity
     atom ~/dev/udacity
@@ -533,9 +540,9 @@ export JAVA_OPTS="-XX:ReservedCodeCacheSize=128m -XX:+CMSClassUnloadingEnabled -
 echo "
     ______                     __  ____  ______
    / ____/________  ___  _____/ /_/ __ \/ ____/
-  / __/ / ___/ __ \/ _ \/ ___/ __/ /_/ / /     
- / /___/ /  / / / /  __(__  ) /_/ _, _/ /___   
-/_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/   
+  / __/ / ___/ __ \/ _ \/ ___/ __/ /_/ / /
+ / /___/ /  / / / /  __(__  ) /_/ _, _/ /___
+/_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/
 "
 
 ### Added by the Heroku Toolbelt
