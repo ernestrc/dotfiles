@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPLesent=$HOME/dev/scala/replesent/replesent.scala
+REPLesent=$HOME/dev/replesent/replesent.scala
 MSG="[REPLesent] -"
 
 if [ $# -eq 0 ]

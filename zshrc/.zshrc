@@ -2,14 +2,6 @@
 ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_THEME=""
 
-#AMAZON CLI CONFIG
-if  [ -f "$HOME/.dotfiles/amazonkeys.sh" ]; then
-    echo "Loaded Amazon EC2 keys successfully"
-    source $HOME/.dotfiles/amazonkeys.sh
-else
-    echo "Can't find Amazon EC2 keys"
-fi
-
 export AWS_CREDENTIAL_FILE=$HOME/.elasticbeanstalk/aws_credential_file
 
 #WORDPRESS_BLOG
@@ -50,21 +42,6 @@ $JAVA_HOME/bin/java -version
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:/usr/lib:$JAVA_HOME/jre/lib/amd64/server/:$LD_LIBRARY_PATH
-
-#EVERREACH API CONFIG OVERRIDES
-if [ -d "/Users/ernestrc/dev/everreach/test-config" ]; then
-    echo "Loaded EVERREACH_TEST_CONFIG  successfully"
-    export EVERREACH_TEST_CONFIG=/Users/ernestrc/dev/everreach/test-config/
-else
-    echo "Can't find EVERREACH_TEST_CONFIG"
-fi
-
-if [ -d "/Users/ernestrc/dev/everreach/runtime-config/" ]; then
-    echo "Loaded Amazon EVERREACH_API_CONFIG  successfully"
-    export EVERREACH_API_CONFIG=/Users/ernestrc/dev/everreach/runtime-config/
-else
-    echo "Can't find EVERREACH_API_CONFIG"
-fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -135,8 +112,6 @@ function mongocsv
     $HOME/.dotfiles/mongocsv
 }
 
-export DOCKER=54.154.24.170
-
 function dockerClean
 {
     docker rm $(docker ps -a -q)
@@ -147,21 +122,6 @@ function replesent
 {
     $HOME/.dotfiles/replesent.sh $1
 }
-
-function stopservers
-{
-    ec2stop i-887d61c8
-    ec2stop i-fa464cba
-    ec2stop i-039d6e41
-}
-
-function startservers
-{
-    ec2start i-887d61c8 #CI SERVER
-    ec2start i-fa464cba #Room-Frontend
-    ec2start i-039d6e41 #Room-Core
-}
-
 
 function eecho
 {
@@ -180,15 +140,10 @@ function devblog
     git status
 }
 
-function erops
+function tb
 {
-    clear
-    cd $HOME/dev/everreach/operations-api
-    rm /private/etc/everreach/typesafe-console/var/RUNNING_PID
-    /etc/everreach/typesafe-console/bin/typesafe-console atmos &
-    /etc/everreach/typesafe-console/bin/typesafe-console ui &
-    git status
-    sbt
+    cd $HOME/dev/tokbox
+    ls -l
 }
 
 function deveng
@@ -203,33 +158,10 @@ bindkey "^A" beginning-of-line
 
 bindkey "^E" end-of-line
 
-function er
-{
-    cd $HOME/dev/everreach/
-    ls -l
-}
-
-function erpuppet
-{
-    cd $HOME/dev/everreach/puppet
-    git fetch
-    git status
-    ls -l
-}
-
 function dev
 {
     cd $HOME/dev/projects/
     ls -l
-}
-
-function erweb
-{
-    clear
-    cd $HOME/dev/everreach/website/
-    git fetch
-    git status
-    activator
 }
 
 function sbtproject
@@ -242,31 +174,11 @@ function scalascript
     $HOME/.dotfiles/scalascript.sh
 }
 
-function ercore
-{
-    clear
-    cd $HOME/dev/everreach/core/
-    git fetch
-    git status
-    sbt
-}
-
 function scalatron {
     cd ~/dev/scala/scalatron_bots
     git add --all .
     git commit -m "pushed through script"
     git push
-}
-
-function nanodegree
-{
-    cd ~/dev/udacity
-}
-
-function xarxa6
-{
-    cd ~/dev/xarxa6
-    ls
 }
 
 function mkgo {
@@ -305,32 +217,10 @@ chmod u+x ${filename}.py
 ${filename}.py
 }
 
-alias nd="nanodegree"
-
-function edx
-{
-    cd ~/dev/edx
-    atom ~/dev/edx
-}
-
-function scalar
-{
-    cd ~/dev/scala/scalar
-}
-
-function udacity
-{
-    cd ~/dev/udacity
-    atom ~/dev/udacity
-}
-
 function swift
 {
-    xcrun swift -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
+    xcrun swift -sdk /Applications/Xcode.app/Contents/Develope//Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
 }
-
-
-export EDITOR='subl -w'
 
 function findWithSpec
 {
