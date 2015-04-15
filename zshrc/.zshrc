@@ -83,7 +83,7 @@ setopt rm_star_silent
 unsetopt nomatch
 unsetopt correct_all
 
-export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt:~/dev/Amazon/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/
+export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt:~/dev/Amazon/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/:/opt/local/bin
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
@@ -142,7 +142,7 @@ function devblog
 
 function tb
 {
-    cd $HOME/dev/tokbox
+    cd $HOME/tokbox
     ls -l
 }
 
@@ -185,6 +185,10 @@ function mkgo {
 
 mkdir $1 && cd $1
 
+}
+
+function pyclean {
+find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf
 }
 
 function pythonp
@@ -435,11 +439,10 @@ echo "
 /_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/
 "
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # added by travis gem
 [ -f /Users/ernestrc/.travis/travis.sh ] && source /Users/ernestrc/.travis/travis.sh
 
 #docker vm
 $(boot2docker shellinit)
+
+export PATH=$PATH:$HOME/dev/chromium/depot_tools:/usr/local/share/npm/bin

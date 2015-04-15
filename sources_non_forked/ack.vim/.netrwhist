@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/ernest/dev/tokbox/analytics'
+let g:netrw_dirhist_2='/Users/ernest/.config'
+let g:netrw_dirhist_3='/Users/ernest/tokbox/quokka-yardstick/kits/test1'
+let g:netrw_dirhist_4='/Users/ernest/tokbox/longboard/etls/quokka-assimilator/kits/analytics'
