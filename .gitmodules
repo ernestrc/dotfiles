@@ -1,0 +1,3 @@
+[submodule "sources_forked/autoformat"]
+	path = sources_forked/autoformat
+	url = git@github.com:Chiel92/vim-autoformat.git
