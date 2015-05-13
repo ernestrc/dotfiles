@@ -20,15 +20,19 @@ NONCE_SALT=
 #JAVA HOME
 if [ -d "/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java" ]; then
     export JAVA_HOME="/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java"
+    $JAVA_HOME/bin/java -version
 else
     if [ -d "/usr/lib/jvm/java-6-openjdk-amd64/jre" ]; then
         export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64/jre"
+        $JAVA_HOME/bin/java -version
     else
         if [ -d "/usr/lib/jvm/java-7-openjdk-amd64/jre" ]; then
             export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/jre"
+            $JAVA_HOME/bin/java -version
         else
-            if [ -d "/usr/libexec" ]; then
+            if [ -d "/usr/libexec/java_home" ]; then
                 export JAVA_HOME=$(/usr/libexec/java_home)
+                $JAVA_HOME/bin/java -version
             else
                 echo "Couldn't find JAVA_HOME"
             fi
@@ -36,7 +40,6 @@ else
     fi
 fi
 
-$JAVA_HOME/bin/java -version
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.3.2
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:/usr/lib:$JAVA_HOME/jre/lib/amd64/server/:$LD_LIBRARY_PATH
@@ -448,15 +451,6 @@ echo "
  / /___/ /  / / / /  __(__  ) /_/ _, _/ /___
 /_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/
 "
-
-# added by travis gem
-[ -f /Users/ernestrc/.travis/travis.sh ] && source /Users/ernestrc/.travis/travis.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/ernest/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables bash completion for gcloud.
-source '/Users/ernest/google-cloud-sdk/completion.zsh.inc'
 
 # etcd endpoint
 export ETCD_ENDPOINT="127.0.0.1:4001"
