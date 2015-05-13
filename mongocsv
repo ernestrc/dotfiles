@@ -6,15 +6,15 @@ import csv
 from pymongo import MongoClient
 
 # File to import. Full path required
-FILE = '/Users/ernestrc/dev/udacity/data_wrangling/datasets/cities.csv'
-DB = 'udacity'
-COLLECTION = 'cities'
+FILE = '/Users/ernest/tokbox/analytics-scripts/data/partners.csv'
+DB = 'analytics'
+COLLECTION = 'partners'
 HOST = 'mongodb://localhost:27017/'
-CLEAN_ID = True #remove id field from csv dataset
-DROP_PREVIOUS = True #drop previous collection named $COLLECTION
+CLEAN_ID = False #remove id field from csv dataset
+DROP_PREVIOUS = False #drop previous collection named $COLLECTION
 CLEAN_URLS = False #If value is a URL, get the last '/$STR'
-CLEAN_NULL = True #clean 'NULL' or empty values
-MULTIPLE_TO_ARRAY = True #If field has multiple values, create array, otherwise pick value with more information
+CLEAN_NULL = False #clean 'NULL' or empty values
+MULTIPLE_TO_ARRAY = False #If field has multiple values, create array, otherwise pick value with more information
 
 def eval_row(keys,values):
     document = {}

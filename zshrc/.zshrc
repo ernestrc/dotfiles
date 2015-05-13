@@ -2,8 +2,6 @@
 ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_THEME=""
 
-export AWS_CREDENTIAL_FILE=$HOME/.elasticbeanstalk/aws_credential_file
-
 #WORDPRESS_BLOG
 DB_NAME="wordpress"
 DB_USER="wordpress"
@@ -39,7 +37,7 @@ else
 fi
 
 $JAVA_HOME/bin/java -version
-export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.3.2
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:/usr/lib:$JAVA_HOME/jre/lib/amd64/server/:$LD_LIBRARY_PATH
 
@@ -83,7 +81,7 @@ setopt rm_star_silent
 unsetopt nomatch
 unsetopt correct_all
 
-export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt:~/dev/Amazon/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/:/opt/local/bin
+export PATH=.:~/bin:~/local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/ernestrc/dev/scala/play/:$EC2_HOME/bin:/usr/local/mysql/bin:~/bin/sbt:~/dev/Amazon/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/:/opt/local/bin:$HOME/dev/chromium/depot_tools:/usr/local/share/npm/bin:$HOME/etcd-v0.4.6-darwin-amd64
 
 export GPGKEY=B2F6D883
 export GPG_TTY=$(tty)
@@ -138,6 +136,10 @@ function devblog
     clear
     cd $HOME/dev/projects/wordpress
     git status
+}
+
+function lbe {
+    python $HOME/tokbox/longboard/src/utils/bootstrapReport.py
 }
 
 function tb
@@ -428,6 +430,14 @@ test -f ~/.zshrc_local && . ~/.zshrc_local
 # Auvik Settings
 export JAVA_OPTS="-XX:ReservedCodeCacheSize=128m -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=1024m -Xmx1024m -Xss2m -XX:+UseCodeCacheFlushing"
 
+alias kb="kubectl"
+alias toktok2="gcloud compute ssh toktok2"
+alias toktok1="gcloud compute ssh toktok1"
+alias toktok-db="gcloud compute ssh toktok-database"
+alias toktok-master="gcloud compute ssh toktok-master"
+
+alias xclip="xclip -selection c"
+alias lbemailer="python /Users/ernest/tokbox/longboard/src/emailer/emailer.py"
 
 #GREETING
 
@@ -442,7 +452,16 @@ echo "
 # added by travis gem
 [ -f /Users/ernestrc/.travis/travis.sh ] && source /Users/ernestrc/.travis/travis.sh
 
-#docker vm
-$(boot2docker shellinit)
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/ernest/google-cloud-sdk/path.zsh.inc'
 
-export PATH=$PATH:$HOME/dev/chromium/depot_tools:/usr/local/share/npm/bin
+# The next line enables bash completion for gcloud.
+source '/Users/ernest/google-cloud-sdk/completion.zsh.inc'
+
+# etcd endpoint
+export ETCD_ENDPOINT="127.0.0.1:4001"
+
+# Kitematic
+export DOCKER_HOST=tcp://192.168.99.100:2376 
+export DOCKER_CERT_PATH=/Users/ernest/.docker/machine/machines/dev 
+export DOCKER_TLS_VERIFY=1
