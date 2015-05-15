@@ -6,6 +6,9 @@ filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
+
+let g:NERDTreeWinSize=40
+
 set paste
 map ∆ <c-w>j
 map ˚ <c-w>k
@@ -16,8 +19,8 @@ nnoremap ,h <C-w>s
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-noremap <c-h> :blast<CR>
-noremap <c-l> :bn<CR>
+nnoremap <C-h> :blast<CR>
+nnoremap <C-l> :bn<CR>
 
 set number
 noremap <C-b> :Autoformat<CR><CR>
