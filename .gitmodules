@@ -7,3 +7,6 @@
 [submodule "sources_forked/vim-scala"]
 	path = sources_forked/vim-scala
 	url = https://github.com/derekwyatt/vim-scala
+[submodule "fonts"]
+	path = fonts
+	url = git@github.com:powerline/fonts.git
