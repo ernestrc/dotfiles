@@ -8,7 +8,7 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
 let g:NERDTreeWinSize=40
-
+let g:gitgutter_enabled = 1
 set paste
 map ∆ <c-w>j
 map ˚ <c-w>k
