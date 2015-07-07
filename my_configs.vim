@@ -22,6 +22,8 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap <C-h> :blast<CR>
 nnoremap <C-l> :bn<CR>
 
+nnoremap <C-a> :bufdo bdelete<CR>
+
 set number
 noremap <C-b> :Autoformat<CR><CR>
 
