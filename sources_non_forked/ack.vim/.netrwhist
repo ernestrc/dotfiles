@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/ernest/dev/tokbox/analytics'
 let g:netrw_dirhist_2='/Users/ernest/.config'
 let g:netrw_dirhist_3='/Users/ernest/tokbox/quokka-yardstick/kits/test1'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/ernest/tokbox/longboard/specs/test_emails'
 let g:netrw_dirhist_6='/home/ernest/.dotfiles/sources_non_forked'
 let g:netrw_dirhist_7='/src/longboard-ernest'
 let g:netrw_dirhist_8='/home/ernest/.dotfiles/sources_forked'
+let g:netrw_dirhist_9='/Users/ernest/dev/scala/akka-http-rest-example'

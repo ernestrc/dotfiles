@@ -32,6 +32,9 @@ colo dracula
 " size of a hard tabstop
 set tabstop=4
 
+set exrc
+set secure
+
 " size of an "indent"
 set shiftwidth=4
 
@@ -53,3 +56,8 @@ set smarttab
 
 " always uses spaces instead of tab characters
 set expandtab
+
+let g:ycm_global_ycm_extra_conf = "~/.dotfiles/ycm_extra_conf.py"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+noremap <ENTER> :make!<cr>

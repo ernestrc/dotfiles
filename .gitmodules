@@ -10,3 +10,9 @@
 [submodule "fonts"]
 	path = fonts
 	url = git@github.com:powerline/fonts.git
+[submodule "sources_forked/YouCompleteMe"]
+	path = sources_forked/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "sources_forked/ultisnips"]
+	path = sources_forked/ultisnips
+	url = https://github.com/SirVer/ultisnips
