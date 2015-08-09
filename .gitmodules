@@ -10,9 +10,27 @@
 [submodule "fonts"]
 	path = fonts
 	url = git@github.com:powerline/fonts.git
-[submodule "sources_forked/YouCompleteMe"]
-	path = sources_forked/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "sources_forked/ultisnips"]
 	path = sources_forked/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "sources_forked/rust-vim"]
+	path = sources_forked/rust-vim
+	url = git@github.com:rust-lang/rust.vim.git
+[submodule "sources_forked/rust-racer"]
+	path = sources_forked/rust-racer
+	url = git@github.com:phildawes/racer.git
+[submodule "sources_forked/rust"]
+	path = sources_forked/rust
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "sources_forked/fruity-vim-colorscheme"]
+	path = sources_forked/fruity-vim-colorscheme
+	url = git@github.com:mitsuhiko/fruity-vim-colorscheme.git
+[submodule "sources_forked/codeschool"]
+	path = sources_forked/codeschool
+	url = git@github.com:antlypls/vim-colors-codeschool.git
+[submodule "sources_forked/valloric-colorscheme"]
+	path = sources_forked/valloric-colorscheme
+	url = git@github.com:Valloric/vim-valloric-colorscheme.git
+[submodule "sources_forked/solarized-colorscheme"]
+	path = sources_forked/solarized-colorscheme
+	url = git://github.com/altercation/vim-colors-solarized.git

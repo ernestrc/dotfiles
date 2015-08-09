@@ -419,7 +419,6 @@ alias grss='for f in $(find . -type d -a -name .git); do x=${f%/.git}; echo ====
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias o=octave
-alias mvn=~/bin/mvn-colour
 
 alias sc=screen
 alias scl="screen -list"
