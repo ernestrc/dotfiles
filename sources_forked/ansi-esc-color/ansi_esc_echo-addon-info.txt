@@ -1,0 +1,22 @@
+{
+    "name": "ansi_esc_echo",
+    "version": "0.0",
+    "author": "ZyX <kp-pav@yandex.ru>",
+    "maintainer": "ZyX <kp-pav@yandex.ru>",
+    "description": "Plugin for echoing system() output preserving color and other information",
+    "repository": {
+        "type": "hg",
+        "url": "https://bitbucket.org/ZyX_I/ansi_esc_echo",
+    },
+    "dependencies": {
+        "frawor": {
+            "type": "hg",
+            "url": "https://bitbucket.org/ZyX_I/frawor",
+        },
+    },
+    "use_help_for_vimorg": 1,
+    "files": [
+        "autoload/ansi_esc_echo.vim",
+        "config/ansi_esc_echo/colors.yaml"
+    ],
+}

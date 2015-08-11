@@ -29,7 +29,7 @@ noremap <C-b> :Autoformat<CR><CR>
 
 let g:solarized_termcolors=256
 set background=dark
-colo solarized
+colo valloric
 
 " size of a hard tabstop
 set tabstop=4
@@ -67,9 +67,20 @@ set hidden
 let g:racer_cmd = "~/.dotfiles/sources_forked/rust-racer/target/release/racer"
 let $RUST_SRC_PATH="/usr/local/src/rust/src"
 
+"custom fletype color themes
+autocmd FileType rust set background=dark
+autocmd FileType rust colo solarized
+
+" custom filetype mappings
 autocmd FileType cpp noremap <ENTER> :make!<cr>
 autocmd FileType rust nnoremap <ENTER> :exe 'w' <bar> !cargo build<cr>
+autocmd FileType rust nnoremap <D-ENTER> :exe 'w' <bar> !cargo run<cr>
+autocmd FileType rust nnoremap <c-ENTER> :exe 'w' <bar> !cargo test<cr>
 autocmd FileType scala nnoremap <ENTER> :exe 'w' <bar> !sbt compile<cr>
+autocmd FileType scala nnoremap <D-ENTER> :exe 'w' <bar> !sbt run<cr>
+autocmd FileType scala nnoremap <c-ENTER> :exe 'w' <bar> !sbt test<cr>
 inoremap <C-@> <C-x><C-o>
 inoremap <C-SPACE> <C-x><C-o>
 noremap <C-w> :bd<cr>
+
+set guifont=Menlo Regular:h13
