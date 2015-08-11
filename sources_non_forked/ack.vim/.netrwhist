@@ -9,3 +9,6 @@ let g:netrw_dirhist_6='/home/ernest/.dotfiles/sources_non_forked'
 let g:netrw_dirhist_7='/src/longboard-ernest'
 let g:netrw_dirhist_8='/home/ernest/.dotfiles/sources_forked'
 let g:netrw_dirhist_9='/Users/ernest/dev/scala/akka-http-rest-example'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/src/longboard-ernest/etls/BaseETL/users_log'
+let g:netrw_dirhist_2='/src/longboard-ernest/etls/BaseETL/accounts_lifecycle'
