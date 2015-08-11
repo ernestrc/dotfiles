@@ -34,3 +34,6 @@
 [submodule "sources_forked/solarized-colorscheme"]
 	path = sources_forked/solarized-colorscheme
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "sources_forked/darcula-colorscheme"]
+	path = sources_forked/darcula-colorscheme
+	url = git@github.com:blueshirts/darcula.git
