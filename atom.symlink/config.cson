@@ -1,0 +1,86 @@
+"*":
+  editor:
+    invisibles: {}
+    tabLength: 2
+    showIndentGuide: true
+    softWrap: true
+    fontFamily: "Inconsolata"
+    preferredLineLength: 90
+    fontSize: 13
+    lineHeight: 1.3
+  core:
+    disabledPackages: [
+      "language-mustache"
+      "linter-gjslint"
+      "vim-mode-next"
+      "linter-scalac"
+    ]
+    projectHome: "/Users/ernest/dev"
+    ignoredNames: [
+      ".pyc"
+    ]
+    excludeVcsIgnoredPaths: false
+  "exception-reporting":
+    userId: "fa99b016-f265-f5d7-af11-22f0d34a0f68"
+  welcome:
+    showOnStartup: false
+  "project-manager":
+    closeCurrent: true
+  linter:
+    lintOnChange: false
+    showInfoMessages: true
+    statusBar: "Show error of the selected line"
+    subtleLinterErrors: [
+      "pep8"
+    ]
+  "atom-beautify":
+    _analyticsUserId: "0f3b3e32-45e7-439a-9dcc-bc41dabe34d1"
+    analytics: false
+    beautifyOnSave: false
+    python_max_line_length: 75
+    js_jslint_happy: true
+    language_handlebars_beautify_on_save: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  jshint: {}
+  racer:
+    rustSrcPath: "/usr/local/src/rust/src"
+    racerBinPath: "/Users/ernest/.dotfiles/sources_forked/rust-racer/target/release/racer"
+    show: "Right"
+  "linter-rust":
+    rustcPath: "/usr/local/bin/rustc"
+    cargoPath: "/usr/local/bin/cargo"
+  "vim-mode": {}
+  "autocomplete-plus":
+    suggestionListFollows: "Cursor"
+  build:
+    stealFocus: false
+    panelVisibility: "Keep Visible"
+    minimizedHeight: 0.1
+    scrollOnError: true
+    buildOnSave: true
+  "run-command2": {}
+  mcduino:
+    arduinoPath: "/usr/local/src/Arduino-1.0.5"
+  "tool-bar":
+    visible: false
+  "linter-scalac": {}
+  Ensime:
+    sbtExec: "/usr/local/bin/sbt"
+".arduino.source":
+  editor:
+    preferredLineLength: 90
+".scala.source":
+  core:
+    themes: [
+      "Monokai"
+      "Atom Dark"
+    ]
+".rust.source":
+  editor:
+    preferredLineLength: 99
+".particle.source":
+  editor:
+    preferredLineLength: 90
+stripTrailingWhitespace:
+  singleTrailingNewline: true
