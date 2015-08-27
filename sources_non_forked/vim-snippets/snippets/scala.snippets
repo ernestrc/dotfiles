@@ -85,10 +85,10 @@ snippet prdef
 snippet ovdef
 	override def ${1:name}(${2:arg}) = ${0:}
 #first class function(see scalabook p 188)
-snippet fcf
+snippet fcf=>
 	(${1:a}: ${2:T}) => $1 ${0}
 snippet =>
-	${1:name} => ${0}
+	${1:name} ⇒ ${0}
 #recursion
 snippet rec
 	def ${1:name}(${0:arg}) =

@@ -45,7 +45,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
@@ -84,3 +84,15 @@ inoremap <C-SPACE> <C-x><C-o>
 noremap <C-w> :bd<cr>
 
 set guifont=Menlo Regular:h13
+autocmd FileType scala inoremap gd <c-]>
+set tags=./tags,tags,../tags
+
+set autoindent
+set copyindent
+set shiftwidth=4
+set history=1000
+set undolevels=1000
+set wildignore+=*.swp,*.bak,*.pyc,*.class
+let g:ctrlp_custom_ignore ='target\|node_modules\|^\.DS_Store\|^\.git\|^\.coffee|^.class'
+set title
+nnoremap <C-D> :CtrlP /usr/local/src/rust/<CR>

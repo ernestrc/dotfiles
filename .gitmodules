@@ -37,3 +37,9 @@
 [submodule "sources_forked/darcula-colorscheme"]
 	path = sources_forked/darcula-colorscheme
 	url = git@github.com:blueshirts/darcula.git
+[submodule "sources_forked/sbt-vim"]
+	path = sources_forked/sbt-vim
+	url = git@github.com:ktvoelker/sbt-vim.git
+[submodule "sources_forked/syntastic"]
+	path = sources_forked/syntastic
+	url = git@github.com:scrooloose/syntastic.git
