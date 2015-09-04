@@ -9,7 +9,7 @@ else
 	touch .vimrc
 fi
 
-echo 'set runtimepath+=~/.dotfiles
+echo 'set runtimepath+=~/.dotfiles/vim
 
 source $HOME/.dotfiles/vim/pathogen.vim
 source $HOME/.dotfiles/vim/basic.vim
@@ -23,5 +23,3 @@ catch
 endtry' > $HOME/.vimrc
 
 echo "Installed VIM Succesfully"
-
-

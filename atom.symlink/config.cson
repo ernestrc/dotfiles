@@ -13,13 +13,16 @@
       "language-mustache"
       "linter-gjslint"
       "vim-mode-next"
-      "linter-scalac"
     ]
     projectHome: "/Users/ernest/dev"
     ignoredNames: [
       ".pyc"
     ]
     excludeVcsIgnoredPaths: false
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
   "exception-reporting":
     userId: "fa99b016-f265-f5d7-af11-22f0d34a0f68"
   welcome:
@@ -33,6 +36,7 @@
     subtleLinterErrors: [
       "pep8"
     ]
+    showErrorTabLine: true
   "atom-beautify":
     _analyticsUserId: "0f3b3e32-45e7-439a-9dcc-bc41dabe34d1"
     analytics: false
@@ -40,16 +44,18 @@
     python_max_line_length: 75
     js_jslint_happy: true
     language_handlebars_beautify_on_save: true
+    rust_rustfmt_path: "/Users/ernest/bin/rustfmt"
   "tree-view":
     hideVcsIgnoredFiles: true
   jshint: {}
   racer:
     rustSrcPath: "/usr/local/src/rust/src"
-    racerBinPath: "/Users/ernest/.dotfiles/sources_forked/rust-racer/target/release/racer"
+    racerBinPath: "/Users/ernest/.dotfiles/bin/racer"
     show: "Right"
   "linter-rust":
     rustcPath: "/usr/local/bin/rustc"
     cargoPath: "/usr/local/bin/cargo"
+    jobsNumber: 4
   "vim-mode": {}
   "autocomplete-plus":
     suggestionListFollows: "Cursor"
@@ -67,19 +73,20 @@
   "linter-scalac": {}
   Ensime:
     sbtExec: "/usr/local/bin/sbt"
-".arduino.source":
+  "one-dark-ui": {}
+".particle.source":
   editor:
     preferredLineLength: 90
+".rust.source":
+  editor:
+    preferredLineLength: 99
 ".scala.source":
   core:
     themes: [
       "Monokai"
       "Atom Dark"
     ]
-".rust.source":
-  editor:
-    preferredLineLength: 99
-".particle.source":
+".arduino.source":
   editor:
     preferredLineLength: 90
 stripTrailingWhitespace:

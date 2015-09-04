@@ -15,8 +15,6 @@ brew update
 # Install homebrew packages
 $ZSH/homebrew/install.sh 2>&1
 
-echo "Starting dotfiles backup"
-cp -f $HOME/.zshrc $HOME/.dotfiles/zsh/zshrc.symlink
 cd $HOME/.dotfiles
 git add --all .
 git commit -m "dotsync"

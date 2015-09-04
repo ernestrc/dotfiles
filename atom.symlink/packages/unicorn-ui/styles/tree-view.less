@@ -1,0 +1,56 @@
+@import "ui-variables";
+
+.tree-view {
+  font-size: @font-size;
+  background: @tree-view-background-color !important;
+
+  .selected:before {
+    background: darken(@background-color-selected, 5%);
+    box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
+  }
+}
+
+.focusable-panel {
+
+  &:focus {
+    background: lighten(@tool-panel-background-color, 1%);
+
+    .selected:before {
+      background: @background-color-selected;
+    }
+
+    .selected > .name,
+    .selected > .name:before,
+    .selected > .list-item > .name,
+    .selected > .list-item > .name:before {
+      color: #fff !important;
+    }
+  }
+}
+
+
+.file-list-view, .list-view {
+  background: rgb(21,23,24);
+  color: #FFF;
+  padding: 10px;
+
+  .file.selected {
+    .filename {
+      background: #262b30;
+    }
+  }
+
+  .selected {
+    text-shadow: none;
+    background: #333;
+  }
+
+  .selected:before {
+    background: rgb(85,181,219);
+  }
+}
+
+
+.list-inline.tab-bar.inset-panel {
+  margin-bottom: 0px;
+}

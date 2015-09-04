@@ -1,0 +1,34 @@
+{
+  "name": "oceanic-next-dark",
+  "theme": "syntax",
+  "version": "0.0.8",
+  "description": "Based on the Sublime Text theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riophae/oceanic-next-dark-syntax.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "readme": "# oceanic-next-dark-syntax theme\n\nBased on the textmate theme by Voronianski [https://github.com/voronianski/oceanic-next-theme](https://github.com/voronianski/oceanic-next-theme)\nForked from the oceanic-next-syntax them by [https://github.com/smlombardi/oceanic-next-syntax](https://github.com/smlombardi/oceanic-next-syntax)\n\n## Screenshots\n\n###LESS\n![image](https://raw.githubusercontent.com/riophae/oceanic-next-dark-syntax/master/screenshots/less.png)\n\n###HTML\n![image](https://raw.githubusercontent.com/riophae/oceanic-next-dark-syntax/master/screenshots/html.png)\n\n###JS\n![image](https://raw.githubusercontent.com/riophae/oceanic-next-dark-syntax/master/screenshots/js.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/riophae/oceanic-next-dark-syntax/issues"
+  },
+  "homepage": "https://github.com/riophae/oceanic-next-dark-syntax#readme",
+  "_id": "oceanic-next-dark@0.0.8",
+  "_shasum": "65a3347384d09f66318d5cf1bbc9aaa87b5f738d",
+  "_resolved": "file:../d-11583-89145-1uoneu0/package.tgz",
+  "_from": "../d-11583-89145-1uoneu0/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

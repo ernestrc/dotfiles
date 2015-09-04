@@ -1,2 +1,4 @@
 amazonkeys.sh
 *.pyc
+atom.symlink/storage/
+atom.symlink/compile-cache

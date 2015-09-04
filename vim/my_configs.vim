@@ -7,9 +7,8 @@ filetype plugin indent on    " enable loading indent file for filetype
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=30
 let g:gitgutter_enabled = 1
-set paste
 nnoremap ∆ <c-w>j
 nnoremap ˚ <c-w>k
 nnoremap ¬ <c-w>l
@@ -22,7 +21,7 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap <C-h> :blast<CR>
 nnoremap <C-l> :bn<CR>
 
-nnoremap <C-a> :bufdo bdelete<CR>
+nnoremap <C-a> :bufdo Bclose<CR>
 
 set number
 noremap <C-b> :Autoformat<CR><CR>
@@ -34,8 +33,8 @@ colo valloric
 " size of a hard tabstop
 set tabstop=4
 
-set exrc
-set secure
+"set exrc
+"set secure
 
 " size of an "indent"
 set shiftwidth=4
@@ -59,29 +58,19 @@ set smarttab
 " always uses spaces instead of tab characters
 set expandtab
 
-let g:ycm_global_ycm_extra_conf = "~/.dotfiles/ycm_extra_conf.py"
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-
 set hidden
-let g:racer_cmd = "~/.dotfiles/sources_forked/rust-racer/target/release/racer"
-let $RUST_SRC_PATH="/usr/local/src/rust/src"
-
 "custom fletype color themes
-autocmd FileType rust set background=dark
-autocmd FileType rust colo solarized
+" autocmd FileType rust set background=dark
+" autocmd FileType rust colo solarized
 
 " custom filetype mappings
-autocmd FileType cpp noremap <ENTER> :make!<cr>
-autocmd FileType rust nnoremap <ENTER> :exe 'w' <bar> !cargo build<cr>
-autocmd FileType rust nnoremap <D-ENTER> :exe 'w' <bar> !cargo run<cr>
-autocmd FileType rust nnoremap <c-ENTER> :exe 'w' <bar> !cargo test<cr>
-autocmd FileType scala nnoremap <ENTER> :exe 'w' <bar> !sbt compile<cr>
-autocmd FileType scala nnoremap <D-ENTER> :exe 'w' <bar> !sbt run<cr>
-autocmd FileType scala nnoremap <c-ENTER> :exe 'w' <bar> !sbt test<cr>
+autocmd FileType cpp noremap <CR> :make!<cr>
+autocmd FileType scala nnoremap <CR> :exe 'w' <bar> !sbt compile<cr>
+autocmd FileType scala nnoremap <D-CR> :exe 'w' <bar> !sbt run<cr>
+autocmd FileType scala nnoremap <c-CR> :exe 'w' <bar> !sbt test<cr>
 inoremap <C-@> <C-x><C-o>
 inoremap <C-SPACE> <C-x><C-o>
-noremap <C-w> :bd<cr>
+noremap <C-w> :Bclose<cr>
 
 set guifont=Menlo Regular:h13
 autocmd FileType scala inoremap gd <c-]>
@@ -94,5 +83,11 @@ set history=1000
 set undolevels=1000
 set wildignore+=*.swp,*.bak,*.pyc,*.class
 let g:ctrlp_custom_ignore ='target\|node_modules\|^\.DS_Store\|^\.git\|^\.coffee|^.class'
-set title
-nnoremap <C-D> :CtrlP /usr/local/src/rust/<CR>
+
+let g:rustc_pat = "/usr/local/bin/rustc"
+autocmd FileType rust nnoremap <CR> :exe 'w' <bar> !cargo build<cr>
+autocmd FileType rust nnoremap <D-CR> :exe 'w' <bar> !cargo run<cr>
+autocmd FileType rust nnoremap <c-CR> :exe 'w' <bar> !cargo test<cr>
+" let g:racer_cmd = "~/.dotfiles/vim/sources_forked/rust-racer/target/release/racer"
+" let $RUST_SRC_PATH="/usr/local/src/rust/src"
+let g:rust_recommended_style = 1

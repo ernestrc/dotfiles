@@ -1,0 +1,116 @@
+@import "ui-variables";
+@import "icon-variables";
+@import "ui-mixins";
+
+atom-pane atom-text-editor {
+  .gutter {
+    padding: 6px 0;
+  }
+
+  .scroll-view {
+    padding: 6px;
+  }
+}
+
+atom-text-editor {
+  .wrap-guide {
+    background-color: #2C220C;
+  }
+
+  .gutter {
+    .line-number {
+      &.cursor-line {
+        background-color: #3a2a13;
+      }
+
+      &.git-line-ignored {
+        border-color: @color-status-ignored;
+        opacity: 1;
+      }
+
+      &.git-line-added {
+        border-color: @color-status-added;
+        opacity: 1;
+      }
+
+      &.git-line-renamed {
+        border-color: @color-status-renamed;
+        opacity: 1;
+      }
+
+      &.git-line-modified {
+        border-color: @color-status-modified;
+        opacity: 1;
+      }
+
+      &.git-line-removed {
+        border-color: @color-status-removed;
+        opacity: 1;
+
+        &:before {
+          bottom: inherit !important;
+          content: " ";
+          display: inline-block;
+          height: auto;
+          margin: 0 !important;
+          position: relative;
+          width: 1em !important;
+        }
+      }
+
+      &:before {
+        bottom: inherit !important;
+        content: " ";
+        display: inline-block;
+        height: auto;
+        margin: 0 !important;
+        position: relative;
+        width: 1em !important;
+      }
+    }
+  }
+
+  .gutter.drop-shadow {
+    -webkit-box-shadow: -2px 0 10px 2px #222;
+  }
+
+  .highlighted.selection .region {
+    -webkit-animation-name: highlight;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+  }
+}
+
+atom-text-editor[mini] {
+  border: 1px solid @input-border-color;
+  box-shadow: none;
+  border-radius: @component-border-radius;
+  padding-left: @component-padding/2;
+
+  .cursor { border-color: @input-text-color; }
+
+  .selection .region { background-color: darken(@input-background-color, 10%); }
+}
+
+atom-text-editor[mini].is-focused {
+  background-color: @input-background-color;
+  color: @input-text-color-selected;
+
+  .selection .region { background-color: desaturate(@background-color-info, 50%); }
+}
+
+@-webkit-keyframes highlight {
+  from { background-color: rgba(100, 255, 100, 0.7); }
+  to { background-color: null; }
+}
+
+
+.select-list.command-palette.overlay.from-top {
+  .error-message {
+    padding: 3px 0px 0px 6px;
+  }
+
+  atom-text-editor[mini].is-focused {
+    padding: 1px;
+  }
+}
