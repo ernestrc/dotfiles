@@ -22,7 +22,7 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark
+brew install grc coreutils spark entr
 brew tap neovim/neovim
 brew install --HEAD neovim
 ln -s /usr/local/bin/nvim ~/bin/nvim

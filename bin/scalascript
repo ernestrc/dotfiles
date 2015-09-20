@@ -55,4 +55,4 @@ echo "Script created! Executing for the first time..."
 
 chmod u+x ${filename}.scala
 
-${filename}.scala
+./${filename}.scala

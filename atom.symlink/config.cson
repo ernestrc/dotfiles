@@ -19,10 +19,6 @@
       ".pyc"
     ]
     excludeVcsIgnoredPaths: false
-    themes: [
-      "one-dark-ui"
-      "solarized-dark-syntax"
-    ]
   "exception-reporting":
     userId: "fa99b016-f265-f5d7-af11-22f0d34a0f68"
   welcome:
@@ -39,7 +35,6 @@
     showErrorTabLine: true
   "atom-beautify":
     _analyticsUserId: "0f3b3e32-45e7-439a-9dcc-bc41dabe34d1"
-    analytics: false
     beautifyOnSave: false
     python_max_line_length: 75
     js_jslint_happy: true
@@ -74,19 +69,22 @@
   Ensime:
     sbtExec: "/usr/local/bin/sbt"
   "one-dark-ui": {}
-".particle.source":
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+".arduino.source":
   editor:
     preferredLineLength: 90
-".rust.source":
-  editor:
-    preferredLineLength: 99
 ".scala.source":
   core:
     themes: [
       "Monokai"
       "Atom Dark"
     ]
-".arduino.source":
+".rust.source":
+  editor:
+    preferredLineLength: 99
+".particle.source":
   editor:
     preferredLineLength: 90
 stripTrailingWhitespace:

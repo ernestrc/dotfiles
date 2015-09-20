@@ -40,6 +40,10 @@ done
 
 unset config_files
 
+SAVEHIST=100
+
+HISTFILE=~/.zsh_history
+
 echo "
     ______                     __  ____  ______
    / ____/________  ___  _____/ /_/ __ \/ ____/
