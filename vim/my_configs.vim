@@ -16,6 +16,11 @@ nnoremap ˙ <c-w>h
 nnoremap ,v <C-w>v
 nnoremap ,h <C-w>s
 
+nnoremap <a-j> <c-w>j
+nnoremap <a-k> <c-w>k
+nnoremap <a-l> <c-w>l
+nnoremap <a-h> <c-w>h
+
 nnoremap <C-h> :blast<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-a> :bufdo Bclose<CR>
