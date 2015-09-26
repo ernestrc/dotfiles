@@ -38,7 +38,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/arch/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
@@ -214,8 +214,8 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
+    awful.key({ modkey,           }, "Left",  function () awful.tag.incmwfact( 0.05)    end),
+    awful.key({ modkey,           }, "Right", function () awful.tag.incmwfact( -0.05)    end),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     awful.key({ modkey,           }, "l",
@@ -249,8 +249,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
+    awful.key({ modkey, "Control", "Shift" }, "l",     function () awful.tag.incmwfact( 0.05)    end),
+    awful.key({ modkey, "Control", "Shift" }, "h",     function () awful.tag.incmwfact( -0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
@@ -365,9 +365,15 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Scudcloud" },
+      properties = { tag = tags[1][7] } },
+    { rule = { class = "jetbrains-idea" },
+      properties = { tag = tags[1][4] } },
+     { rule = { class = "Thunderbird" },
+      properties = { tag = tags[1][2] } },
+      -- Set Firefox to always map on tags number 3 of screen 1.
+     { rule = { class = "Firefox" },
+       properties = { tag = tags[1][3] } },
 }
 -- }}}
 
@@ -446,7 +452,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- vicious = require("vicious")
 awful.util.spawn_with_shell("nm-applet")
---awful.util.spawn_with_shell("blueberry-tray")
-
--- custom key bindings
-awful.button({ modkey }, 3, function() awful.util.spawn("firefox") end)
+awful.util.spawn_with_shell("scudcloud")
