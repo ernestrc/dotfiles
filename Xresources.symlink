@@ -1,6 +1,10 @@
 xterm*loginShell: true
 xterm*vt100*geometry: 80x50
 xterm*saveLines: 2000
+xterm*termName: xterm-256color
+XTerm*locale: true
+
+XTerm*metaSendsEscape: true
 
 #colors
 xterm*foreground: rgb:a8/a8/a8

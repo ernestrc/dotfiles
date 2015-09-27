@@ -228,7 +228,6 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -261,7 +260,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey },            "space",     function () mypromptbox[mouse.screen]:run() end),
+    -- awful.key({ modkey },            "space",     function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -276,7 +275,7 @@ globalkeys = awful.util.table.join(
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-    awful.key({ modkey   }, "q",      function (c) c:kill()                         end),
+    awful.key({ modkey   }, "w",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
@@ -374,6 +373,9 @@ awful.rules.rules = {
       -- Set Firefox to always map on tags number 3 of screen 1.
      { rule = { class = "Firefox" },
        properties = { tag = tags[1][3] } },
+     { rule = { class = "chromium" },
+       properties = { tag = tags[1][3] } },
+
 }
 -- }}}
 
@@ -450,6 +452,11 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- vicious = require("vicious")
+vicious = require("vicious")
+
+
+
 awful.util.spawn_with_shell("nm-applet")
 awful.util.spawn_with_shell("scudcloud")
+awful.util.spawn_with_shell("mutate")
+awful.util.spawn_with_shell("xcompmgr")
