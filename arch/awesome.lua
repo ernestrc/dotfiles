@@ -55,18 +55,18 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.floating,
+    --awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
+    awful.layout.suit.tile.bottom,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.max,
+    --awful.layout.suit.max.fullscreen,
+    --awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -83,7 +83,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "TERM", "MAIL", "WEB", "DEV", "DOC", "MISC", "IC" }, s, layouts[1])
+    tags[s] = awful.tag({ "TERM", "MAIL", "WEB", "DEV", "DOC", "MUS", "IC" }, s, layouts[2])
 end
 -- }}}
 
@@ -216,7 +216,6 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",  function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "Right", function () awful.tag.incmwfact( -0.05)    end),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     awful.key({ modkey,           }, "l",
         function ()
@@ -254,8 +253,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-    awful.key({ modkey, "Control" }, "space", function () awful.layout.inc(layouts,  1) end),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey,           }, "Escape", function () awful.layout.inc(layouts,  1) end),
+    awful.key({ modkey, "Shift"   }, "Escape", function () awful.layout.inc(layouts, -1) end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -373,8 +372,10 @@ awful.rules.rules = {
       -- Set Firefox to always map on tags number 3 of screen 1.
      { rule = { class = "Firefox" },
        properties = { tag = tags[1][3] } },
-     { rule = { class = "chromium" },
+     { rule = { class = "Chromium" },
        properties = { tag = tags[1][3] } },
+    { rule = { class = "spotify" },
+       properties = { tag = tags[1][6] } },
 
 }
 -- }}}
@@ -451,12 +452,46 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+
+local wibox = require("wibox")
+local awful = require("awful")
+ 
+volume_widget = wibox.widget.textbox()
+volume_widget:set_align("right")
+ 
+function update_volume(widget)
+   local fd = io.popen("amixer sget Master")
+   local status = fd:read("*all")
+   fd:close()
+ 
+   -- local volume = tonumber(string.match(status, "(%d?%d?%d)%%")) / 100
+   local volume = string.match(status, "(%d?%d?%d)%%")
+   volume = string.format("% 3d", volume)
+ 
+   status = string.match(status, "%[(o[^%]]*)%]")
+
+   if string.find(status, "on", 1, true) then
+       -- For the volume numbers
+       volume = volume .. "%"
+   else
+       -- For the mute button
+       volume = volume .. "M"
+       
+   end
+   widget:set_markup(volume)
+end
+ 
+update_volume(volume_widget)
+ 
+mytimer = timer({ timeout = 0.2 })
+mytimer:connect_signal("timeout", function () update_volume(volume_widget) end)
+mytimer:start()
 
 vicious = require("vicious")
-
-
 
 awful.util.spawn_with_shell("nm-applet")
 awful.util.spawn_with_shell("scudcloud")
 awful.util.spawn_with_shell("mutate")
 awful.util.spawn_with_shell("xcompmgr")
+awful.util.spawn_with_shell("spotify")
