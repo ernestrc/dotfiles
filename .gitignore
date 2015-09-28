@@ -2,3 +2,4 @@ amazonkeys.sh
 *.pyc
 atom.symlink/storage/
 atom.symlink/compile-cache
+vim/sources_non_forked/ctrlp.vim/.netrwhist
