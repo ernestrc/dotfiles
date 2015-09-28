@@ -9,6 +9,7 @@ Run this:
 ```sh
 git clone https://github.com/ernestrc/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+git submodule init && git submodule update
 ./bootstrap && ./install.sh
 ```
 
