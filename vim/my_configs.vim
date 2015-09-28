@@ -27,7 +27,7 @@ endif
 
 nnoremap ,v <C-w>v
 nnoremap ,h <C-w>s
-nnoremap <C-h> :blast<CR>
+nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-a> :bufdo Bclose<CR>
 
