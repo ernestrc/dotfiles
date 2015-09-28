@@ -1,7 +1,0 @@
-.DS_Store
-npm-debug.log
-node_modules
-ensime_port
-ensime_update_
-classpath_*
-**/target

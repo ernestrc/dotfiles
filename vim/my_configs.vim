@@ -9,13 +9,24 @@ let g:SuperTabDefaultCompletionType = "context"
 
 let g:NERDTreeWinSize=30
 let g:gitgutter_enabled = 1
-nnoremap ∆ <c-w>j
-nnoremap ˚ <c-w>k
-nnoremap ¬ <c-w>l
-nnoremap ˙ <c-w>h
+
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        nnoremap ∆ <c-w>j
+        nnoremap ˚ <c-w>k
+        nnoremap ¬ <c-w>l
+        nnoremap ˙ <c-w>h
+    else
+        nnoremap ê <c-w>j
+        nnoremap ë <c-w>k
+        nnoremap ì <c-w>l
+        nnoremap è <c-w>h
+    endif
+endif
+
 nnoremap ,v <C-w>v
 nnoremap ,h <C-w>s
-
 nnoremap <C-h> :blast<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-a> :bufdo Bclose<CR>
@@ -27,6 +38,7 @@ let g:solarized_termcolors=256
 set background=dark
 
 colo mustang
+"colo desert
 
 " size of a hard tabstop
 set tabstop=4
@@ -103,7 +115,7 @@ set laststatus=2
 "set relativenumber
 set undofile
 
-nnoremap <c-y> :YRShow<CR>
+nnoremap <C-y> :YRShow<CR>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -111,5 +123,5 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:yankring_replace_n_pkey = '<C-I-O>'
 
 if has('gui_running')
-  set guifont=Menlo:h13
+    set guifont=Menlo:h13
 endif

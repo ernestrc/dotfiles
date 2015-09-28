@@ -1,0 +1,4 @@
+[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
+#exec awesome
+#exec gnome-session
+exec i3

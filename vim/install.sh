@@ -16,10 +16,6 @@ source $HOME/.dotfiles/vim/basic.vim
 source $HOME/.dotfiles/vim/filetypes.vim
 source $HOME/.dotfiles/vim/plugins_config.vim
 source $HOME/.dotfiles/vim/extended.vim
-
-try
-source $HOME/.dotfiles/vim/my_configs.vim
-catch
-endtry' > $HOME/.vimrc
+source $HOME/.dotfiles/vim/my_configs.vim' > $HOME/.vimrc
 
 echo "Installed VIM Succesfully"
