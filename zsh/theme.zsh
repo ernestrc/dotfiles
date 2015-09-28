@@ -94,6 +94,7 @@ function steeef_precmd {
     fi
 }
 add-zsh-hook precmd steeef_precmd
-symbol="%(?.🐵.🙈)%  "
+# symbol="%(?.🐵.🙈)%  "
+symbol="@"
 PROMPT=$'
 %{$purple%}%n%{$reset_color%} ${symbol} %{$limegreen%}%m %~%{$reset_color%}$vcs_info_msg_0_%{$orange%} λ%{$reset_color%} '

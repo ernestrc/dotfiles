@@ -1,4 +1,4 @@
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
 #exec awesome
 #exec gnome-session
 exec i3

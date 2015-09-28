@@ -1,14 +1,5 @@
-xterm*loginShell: true
-xterm*vt100*geometry: 80x50
-xterm*saveLines: 2000
-XTerm*locale: true
-XTerm*metaSendsEscape: true
-! XTerm*reverseVideo: on
-xterm*termName: xterm-256color
-
 ! terminal colors ------------------------------------------------------------
 
-! tangoesque scheme
 *background: #111111
 *foreground: #babdb6
 ! Black (not tango) + DarkGrey
@@ -35,3 +26,46 @@ xterm*termName: xterm-256color
 ! LightGrey + White
 *color7:  #cccccc
 *color15: #ffffff
+
+! Xcursor --------------------------------------------------------------------
+
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size:  22
+
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+
+! xterm ----------------------------------------------------------------------
+
+xterm*VT100.geometry:     80x25
+xterm*faceName:           Terminus:style=Regular:size=9
+xterm*dynamicColors:      true
+xterm*utf8:               2
+xterm*eightBitInput:      true
+xterm*saveLines:          2000
+xterm*scrollKey:          true
+xterm*scrollTtyOutput:    false
+xterm*scrollBar:          true
+xterm*rightScrollBar:     true
+xterm*jumpScroll:         true
+xterm*multiScroll:        true
+xterm*toolBar:            false
+xterm*loginShell: true
+XTerm*metaSendsEscape: true
+xterm*termName: xterm-256color
+
+
+! xpdf -----------------------------------------------------------------------
+
+xpdf*enableFreetype:    yes
+xpdf*antialias:         yes
+xpdf*foreground:        black
+xpdf*background:        white
+xpdf*urlCommand:        /usr/bin/firefox %
+

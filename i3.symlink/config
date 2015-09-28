@@ -84,10 +84,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Ctrl+h split h
+bindsym $mod+Ctrl+v split h
 
 # split in vertical orientation
-bindsym $mod+Ctrl+v split v
+bindsym $mod+Ctrl+h split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -190,8 +190,7 @@ bar {
         status_command i3status
 }
 
-##########################################################################
-
+# assigments
 assign [class="Spotify"] $ws6
 assign [class="Thunderbird"] $ws2
 assign [class="Firefox"] $ws3
