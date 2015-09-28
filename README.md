@@ -1,23 +1,17 @@
-RUN ->  `git clone git@github.com:ernestrc/dotfiles.git ~/.dotfiles`
+# Dotfiles
 
-IF PERMISSION DENIED, RUN ->
+A fork from [Zach Holman dotfiles](https://github.com/holman/dotfiles) and [Amix's Vimrc](https://github.com/amix/vimrc)
 
- `ssh-keygen -t rsa -C "your email"`
+## install
 
- ``eval `ssh-agent -s``
+Run this:
 
- `ssh-add ~/.ssh/id_rsa`
- 
-COPY CONTENTS OF `~/.ssh/id_rsa.pub` TO YOUR GITHUB
- 
- `git clone git@github.com:ernestrc/dotfiles.git ~/.dotfiles`
- 
-ONCE INSTALLED, DEPLOY ->
+```sh
+git clone https://github.com/ernestrc/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+git submodule init && git submodule update
+./bootstrap && ./install.sh
+```
 
- `sh ~/.dotfiles/deploy.sh`
- 
- 
-NOTE: Used https://github.com/amix/vimrc for Vim configuration and https://github.com/robbyrussell/oh-my-zsh for ZSH
-
- To install new plugins: `git clone git://{ path to plugin }.git sources_non_forked/{ plugin }`
-
+## doc
+TODO

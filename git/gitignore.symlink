@@ -1,0 +1,7 @@
+.DS_Store
+*~
+*.swp
+atom.symlink/.npm
+atom.symlink/.apm
+atom.symlink/.node-gyp
+atom.symlink/packages

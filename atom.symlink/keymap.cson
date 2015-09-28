@@ -1,0 +1,43 @@
+'.workspace':
+  'ctrl-left': 'pane:show-previous-item'
+  'ctrl-right': 'pane:show-next-item'
+  'alt-tab': 'tree-view:toggle'
+  'g d': 'racer:find-definition'
+
+'.workspace .editor:not(.mini)':
+  'cmd-g': 'go-to-line:toggle'
+  'shift-cmd-up': 'editor:move-line-up'
+  'shift-cmd-down': 'editor:move-line-down'
+
+'.platform-darwin':
+  'cmd-o': 'project-manager:toggle'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+
+'atom-text-editor':
+  'ctrl-b': 'atom-beautify:beautify-editor'
+  'ctrl-d': 'dash:shortcut'
+  'cmd-t': 'application:new-file'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'cmd-r': 'find-and-replace:show'
+  'cmd-alt-r': 'symbols-view:toggle-file-symbols'
+  ', v': 'pane:split-right'
+  ', h': 'pane:split-down'
+  'ctrl-alt-cmd-enter': 'window:reload'
+  'alt-k': 'window:focus-pane-above'
+  'alt-j': 'window:focus-next-pane'
+  'alt-h': 'window:focus-previous-pane'
+  'alt-l': 'window:focus-pane-on-right'
+  'cmd-enter': 'build:trigger'
+
+'.platform-darwin .find-and-replace':
+  'cmd-f': 'find-and-replace:toggle-regex-option'
+
+'.vim-mode.command-mode:not(.mini)':
+  '/': 'find-and-replace:show'
+'.vim-mode.normal-mode':
+  'shift-;-!': 'run-command:run'
+
+'atom-text-editor.vim-mode.normal-mode':
+  'g f': 'open-this:here'
+  'ctrl-w f': 'open-this:split-down'
+  'ctrl-w F': 'open-this:split-right'

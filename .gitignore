@@ -1,3 +1,6 @@
 amazonkeys.sh
 *.pyc
 sources_non_forked/ack.vim/.netrwhist
+atom.symlink/storage/
+atom.symlink/compile-cache
+vim/sources_non_forked/ctrlp.vim/.netrwhist

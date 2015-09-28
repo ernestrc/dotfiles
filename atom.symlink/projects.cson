@@ -1,0 +1,30 @@
+longboard:
+  title: "longboard"
+  paths: [
+    "/Users/ernest/tokbox/longboard"
+  ]
+viz:
+  title: "viz"
+  paths: [
+    "/Users/ernest/tokbox/viz"
+  ]
+termust:
+  title: "termust"
+  paths: [
+    "/Users/ernest/dev/rust/termust"
+  ]
+"rust-lab":
+  title: "rust-lab"
+  paths: [
+    "/Users/ernest/dev/rust/lab"
+  ]
+hubble:
+  title: "hubble"
+  paths: [
+    "/Users/ernest/tokbox/hubble"
+  ]
+kaiburr:
+  title: "kaiburr"
+  paths: [
+    "/Users/ernest/dev/rust/kaiburr"
+  ]
