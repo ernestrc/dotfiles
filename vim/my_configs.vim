@@ -37,7 +37,8 @@ noremap <C-b> :Autoformat<CR><CR>
 let g:solarized_termcolors=256
 set background=dark
 
-" colo mustang
+colo mustang
+"colo desert
 
 " size of a hard tabstop
 set tabstop=4
