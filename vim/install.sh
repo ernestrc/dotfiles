@@ -18,6 +18,7 @@ source $HOME/.dotfiles/vim/plugins_config.vim
 source $HOME/.dotfiles/vim/extended.vim
 source $HOME/.dotfiles/vim/my_configs.vim
 try
+catch
     source $HOME/.localvimrc
 endtry
 ' > $HOME/.vimrc
