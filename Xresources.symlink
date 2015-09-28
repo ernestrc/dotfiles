@@ -46,7 +46,7 @@ Xft.hintstyle:  hintslight
 xterm*VT100.geometry:     80x25
 xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=9
 xterm*dynamicColors:      true
-xterm*utf8:               2
+! xterm*utf8:               2
 xterm*eightBitInput:      true
 xterm*saveLines:          2000
 xterm*scrollKey:          true
@@ -57,7 +57,7 @@ xterm*jumpScroll:         true
 xterm*multiScroll:        true
 xterm*toolBar:            false
 xterm*loginShell: true
-XTerm*metaSendsEscape: true
+! XTerm*metaSendsEscape: true
 xterm*termName: xterm-256color
 
 
