@@ -61,9 +61,27 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-airline config (force color)
+" => vim-airline config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme="luna"
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+"let g:airline_theme="kolor"
+let g:airline_theme="badwolf"
+"let g:airline_left_sep = '⎬'
+"let g:airline_right_sep = '⎬'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '♌'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = '❭'
+"let g:airline#extensions#tabline#left_alt_sep = '❱'
+let g:airline_powerline_fonts= 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
