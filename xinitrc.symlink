@@ -1,4 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb ~/.Xresources
 #exec awesome
 #exec gnome-session
+xset r rate 200 50
 exec i3
