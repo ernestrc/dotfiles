@@ -121,7 +121,3 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 let g:yankring_replace_n_pkey = '<C-I-O>'
-
-if has('gui_running')
-    set guifont=Menlo:h13
-endif
