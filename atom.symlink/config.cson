@@ -12,7 +12,6 @@
     disabledPackages: [
       "language-mustache"
       "linter-gjslint"
-      "vim-mode-next"
     ]
     projectHome: "/Users/ernest/dev"
     ignoredNames: [
@@ -72,19 +71,19 @@
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
-".arduino.source":
+".particle.source":
   editor:
     preferredLineLength: 90
+".rust.source":
+  editor:
+    preferredLineLength: 99
 ".scala.source":
   core:
     themes: [
       "Monokai"
       "Atom Dark"
     ]
-".rust.source":
-  editor:
-    preferredLineLength: 99
-".particle.source":
+".arduino.source":
   editor:
     preferredLineLength: 90
 stripTrailingWhitespace:
