@@ -210,8 +210,6 @@ exec --no-startup-id spotify
 exec --no-startup-id xcompmgr
 exec --no-startup-id thunderbird
 exec --no-startup-id zeal
-exec --no-startup-id i3-msg "workspace SYS; split horizontal; exec /usr/bin/xterm -e \"htop\"; exec /usr/bin/xterm; split vertical; exec /usr/bin/xterm -e \"systemctl --all\"; exec /usr/bin/xterm -e \"journalctl -p 0..3 -xn\""
-#exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "systemctl --all"'
-#exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm'
-#exec --no-startup-id i3-msg 'workspace SYS; 
-#exec --no-startup-id i3-msg 'workspace SYS;'
+exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "systemctl --all"'
+exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "htop"'
+exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'

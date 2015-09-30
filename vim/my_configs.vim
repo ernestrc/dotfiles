@@ -37,8 +37,7 @@ noremap <C-b> :Autoformat<CR><CR>
 let g:solarized_termcolors=256
 set background=dark
 
-colo mustang
-"colo desert
+colo desert
 
 " size of a hard tabstop
 set tabstop=4
@@ -112,7 +111,7 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-"set relativenumber
+set relativenumber
 set undofile
 
 nnoremap <C-y> :YRShow<CR>
@@ -121,3 +120,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 let g:yankring_replace_n_pkey = '<C-I-O>'
+
+set clipboard+=unnamed
+set clipboard+=unnamedplus
+set go+=a " Visual selection automatically copied to the clipboard
+
+highlight LineNr ctermfg=darkgrey ctermbg=None

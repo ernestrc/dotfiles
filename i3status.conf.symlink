@@ -14,7 +14,6 @@ order += "path_exists VPN"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "tztime local"
-order += "tztime barcelona"
 
 wireless _first_ {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -43,11 +42,6 @@ path_exists VPN {
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
-}
-
-tztime barcelona {
-        format = "%Y-%m-%d %H:%M:%S %Z"
-        timezone = "Europe/Madrid"
 }
 
 load {
