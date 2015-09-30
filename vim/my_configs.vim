@@ -111,13 +111,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-<<<<<<< HEAD
-"set relativenumber
-"set undofile
-=======
 set relativenumber
 set undofile
->>>>>>> 34d9465ef7e17b78a424921ba19f09170b28900b
 
 nnoremap <C-y> :YRShow<CR>
 

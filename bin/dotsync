@@ -21,7 +21,6 @@ brew update
 $ZSH/homebrew/install.sh 2>&1
 
 cd $HOME/.dotfiles
-git pull origin master
 git add --all .
 git commit -m "dotsync"
 git push origin master
