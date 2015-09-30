@@ -203,10 +203,13 @@ assign [class="Zeal"] $ws10
 exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper-2.png
 
 # startup processes
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id scudcloud
 exec --no-startup-id mutate
 exec --no-startup-id spotify
 exec --no-startup-id xcompmgr
 exec --no-startup-id thunderbird
 exec --no-startup-id zeal
+exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "systemctl --all"'
+exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "htop"'
+exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
