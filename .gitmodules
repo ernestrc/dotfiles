@@ -2,9 +2,9 @@
 	path = vim/sources_forked/vim-racer
 	url = git@github.com:ebfe/vim-racer.git
 
-[submodule "vim/sources_forked/autoformat"]
-	path = vim/sources_forked/autoformat
-	url = git@github.com:chiel92/autoformat.git
+[submodule "vim/sources_forked/vim-autoformat"]
+	path = vim/sources_forked/vim-autoformat
+    url = git@github.com:Chiel92/vim-autoformat.git
 
 [submodule "vim/sources_forked/vim-fugitive"]
 	path = vim/sources_forked/vim-fugitive

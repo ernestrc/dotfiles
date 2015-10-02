@@ -45,6 +45,19 @@ set $ws8 VIII
 set $ws9 IX
 set $ws10 DOC
 
+# default displays
+workspace $ws0 output HDMI-0
+workspace $ws1 output DP-2
+workspace $ws2 output DP-2
+workspace $ws3 output HDMI-0
+workspace $ws4 output IV
+workspace $ws5 output V
+workspace $ws6 output HDMI-0
+workspace $ws7 output HDMI-0
+workspace $ws8 output VIII
+workspace $ws9 output IX
+workspace $ws10 output HDMI-0
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -198,6 +211,7 @@ assign [class="Chromium"] $ws3
 assign [class="Scudcloud"] $ws7
 assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
+assign [class="weechat"] $ws7
 
 # set up wallpaper
 exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper-2.png
@@ -213,3 +227,4 @@ exec --no-startup-id zeal
 exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "systemctl --all"'
 exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "htop"'
 exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
+exec --no-startup-id i3-msg 'workspace IM; exec /usr/bin/xterm -e "weechat"'
