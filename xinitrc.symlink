@@ -1,5 +1,6 @@
 [[ -f ~/.Xresources ]] && xrdb ~/.Xresources
 #exec awesome
 #exec gnome-session
+xrandr --output DP-2 --auto --output HDMI-0 --auto --left-of DP-2
 xset r rate 200 50
 exec i3

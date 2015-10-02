@@ -126,3 +126,6 @@ set clipboard+=unnamedplus
 set go+=a " Visual selection automatically copied to the clipboard
 
 highlight LineNr ctermfg=darkgrey ctermbg=None
+
+"use current tab to open new buffers
+set switchbuf=usetab
