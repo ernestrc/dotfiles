@@ -129,3 +129,19 @@ highlight LineNr ctermfg=darkgrey ctermbg=None
 
 "use current tab to open new buffers
 set switchbuf=usetab
+
+"GO
+au FileType go nmap <CR> <Plug>(go-run)
+au FileType go nmap <D-CR> <Plug>(go-build)
+au FileType go nmap <S-CR> <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap gdh <Plug>(go-def-split)
+au FileType go nmap gdv <Plug>(go-def-vertical)
+au FileType go nmap gd :GoDef<CR>
+au FileType go nmap gdt <Plug>(go-def-tab)
+au FileType go nmap <C-gdh> <Plug>(go-doc)
+au FileType go nmap <C-gd> <Plug>(go-doc-vertical)
+au FileType go nmap <C-gdb> <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)

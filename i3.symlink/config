@@ -41,7 +41,7 @@ set $ws4 IV
 set $ws5 V
 set $ws6 MUSIC
 set $ws7 IM
-set $ws8 VIII
+set $ws8 STEAM
 set $ws9 IX
 set $ws10 DOC
 
@@ -211,7 +211,6 @@ assign [class="Chromium"] $ws3
 assign [class="Scudcloud"] $ws7
 assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
-assign [class="weechat"] $ws7
 
 # set up wallpaper
 exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper-2.png
@@ -227,4 +226,3 @@ exec --no-startup-id zeal
 exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "systemctl --all"'
 exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "htop"'
 exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
-exec --no-startup-id i3-msg 'workspace IM; exec /usr/bin/xterm -e "weechat"'

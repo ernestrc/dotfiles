@@ -9,3 +9,6 @@
 [submodule "vim/sources_forked/vim-autoformat"]
 	path = vim/sources_forked/vim-autoformat
 	url = git@github.com:Chiel92/vim-autoformat.git
+[submodule "vim/sources_forked/vim-go"]
+	path = vim/sources_forked/vim-go
+	url = git@github.com:fatih/vim-go.git
