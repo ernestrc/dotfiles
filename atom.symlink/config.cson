@@ -5,14 +5,13 @@
     showIndentGuide: true
     softWrap: true
     preferredLineLength: 90
-    fontSize: 13
+    fontSize: 10
     lineHeight: 1.3
     fontFamily: "Droid Sans Mono for Powerline"
   core:
     disabledPackages: [
       "language-mustache"
       "linter-gjslint"
-      "vim-mode-plus"
     ]
     projectHome: "/Users/ernest/dev"
     ignoredNames: [
