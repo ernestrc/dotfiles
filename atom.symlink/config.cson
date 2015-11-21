@@ -72,19 +72,19 @@
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
   "vim-mode-plus": {}
-".particle.source":
+".arduino.source":
   editor:
     preferredLineLength: 90
-".rust.source":
-  editor:
-    preferredLineLength: 99
 ".scala.source":
   core:
     themes: [
       "Monokai"
       "Atom Dark"
     ]
-".arduino.source":
+".rust.source":
+  editor:
+    preferredLineLength: 99
+".particle.source":
   editor:
     preferredLineLength: 90
 stripTrailingWhitespace:

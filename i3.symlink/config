@@ -33,17 +33,17 @@ set $right l
 
 set $mod Mod4
 
-set $ws0 SYS
-set $ws1 DEV
-set $ws2 MAIL
-set $ws3 WEB
-set $ws4 IV
-set $ws5 V
-set $ws6 MUSIC
-set $ws7 IM
-set $ws8 STEAM
-set $ws9 IX
-set $ws10 DOC
+set $ws0 0
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
 
 # default displays
 workspace $ws0 output HDMI-0
@@ -196,11 +196,37 @@ bindsym $mod+r mode "resize"
 # start dmenu (a program launcher)
 bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
 
+set $bg     #21252B
+set $fg     #282c34
+set $hi     #111111
+set $ac     #353b45
+set $tx     #ABB2B1
+set $ia     #656b77
+set $yw     #d19a64
+set $gn     #59ab79
+set $rd     #ce5a52
+set $be     #8faf9f
+
+# set some nice colors      border     background  text
+client.focused              $ac        $ac         $tx
+client.unfocused            $bg        $bg         $ia
+client.focused_inactive     $bg        $bg         $ac
+client.urgent               $rd        $rd         $tx
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
+
+    colors {
+        background          $bg
+        statusline          $fg
+        separator           $hi
+        focused_workspace   $gn        $ac        $tx
+        active_workspace    $gn        $bg        $ac
+        inactive_workspace  $bg        $bg        $ia
+        urgent_workspace    $rd        $bg        $ac
+    }
 }
 
 # assigments
@@ -223,6 +249,6 @@ exec --no-startup-id spotify
 exec --no-startup-id xcompmgr
 exec --no-startup-id thunderbird
 exec --no-startup-id zeal
-exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "systemctl --all"'
-exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "htop"'
-exec --no-startup-id i3-msg 'workspace SYS; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
+exec --no-startup-id i3-msg 'workspace 0; exec /usr/bin/xterm -e "systemctl --all"'
+exec --no-startup-id i3-msg 'workspace 0; exec /usr/bin/xterm -e "htop"'
+exec --no-startup-id i3-msg 'workspace 0; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
