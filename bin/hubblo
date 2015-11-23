@@ -1,0 +1,8 @@
+for i in `hubble -x ps | grep $2`
+do
+url=`hubble results $i | grep $1 | grep $2 | grep true  | awk ' {for(i=1; i< NF;i++) {if($i ~ /http/) {print $i}}} '` 
+if [ -n "$url" ]
+    then
+        /usr/bin/open -a Google\ Chrome\ Canary $url
+fi
+done

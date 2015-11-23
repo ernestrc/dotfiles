@@ -4,3 +4,11 @@ snippet display
 			write!(f, "{}", ${2})
 		}
 	}
+
+snippet ord
+	impl Ord for ${1} {
+	    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+	        self.${2}.cmp(&other.${2})
+	    }
+	}
+	
