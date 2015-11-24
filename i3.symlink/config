@@ -33,7 +33,7 @@ set $right l
 
 set $mod Mod4
 
-set $ws0 0
+set $ws0 ~
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -46,17 +46,17 @@ set $ws9 9
 set $ws10 10
 
 # default displays
-workspace $ws0 output HDMI-0
-workspace $ws1 output DP-2
-workspace $ws2 output DP-2
-workspace $ws3 output HDMI-0
-workspace $ws4 output IV
-workspace $ws5 output V
-workspace $ws6 output HDMI-0
-workspace $ws7 output HDMI-0
-workspace $ws8 output VIII
-workspace $ws9 output IX
-workspace $ws10 output HDMI-0
+# workspace $ws0 output HDMI-0
+# workspace $ws1 output DP-2
+# workspace $ws2 output DP-2
+# workspace $ws3 output HDMI-0
+# workspace $ws4 output IV
+# workspace $ws5 output V
+# workspace $ws6 output HDMI-0
+# workspace $ws7 output HDMI-0
+# workspace $ws8 output VIII
+# workspace $ws9 output IX
+# workspace $ws10 output HDMI-0
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -169,24 +169,24 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+    bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+# same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
         bindsym Down        resize grow height 10 px or 10 ppt
         bindsym Up          resize shrink height 10 px or 10 ppt
         bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+# back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -204,28 +204,33 @@ set $tx     #ABB2B1
 set $ia     #656b77
 set $yw     #d19a64
 set $gn     #59ab79
-set $rd     #ce5a52
+set $rd     #00AFFF
+set $bu     #005FFF
 set $be     #8faf9f
+set $muesli #AF875F
+set $kourni #FFD75F
+set $orange #FFAF00
 
 # set some nice colors      border     background  text
 client.focused              $ac        $ac         $tx
 client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
-client.urgent               $rd        $rd         $tx
+client.urgent               $orange    $kourni     $hi
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# TODO paint instead of red, arch linux blue, or vim insert blue themed
 bar {
-        status_command i3status
+    status_command i3status
 
     colors {
-        background          $bg
-        statusline          $fg
-        separator           $hi
-        focused_workspace   $gn        $ac        $tx
-        active_workspace    $gn        $bg        $ac
-        inactive_workspace  $bg        $bg        $ia
-        urgent_workspace    $rd        $bg        $ac
+            background          $bg
+            statusline          $ia
+            separator           $hi
+            focused_workspace   $bu        $bu        $rd
+            active_workspace    $rd        $bg        $ac
+            inactive_workspace  $bg        $bg        $ia
+            urgent_workspace    $orang     $orange    $muesli
     }
 }
 
@@ -239,16 +244,17 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper-2.png
+exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper.jpg
 
 # startup processes
 # exec --no-startup-id nm-applet
 exec --no-startup-id scudcloud
 exec --no-startup-id mutate
 exec --no-startup-id spotify
-exec --no-startup-id xcompmgr
+exec --no-startup-id xcompmgr -f -I 0.10 -O 0.75 -D 0
 exec --no-startup-id thunderbird
 exec --no-startup-id zeal
-exec --no-startup-id i3-msg 'workspace 0; exec /usr/bin/xterm -e "systemctl --all"'
-exec --no-startup-id i3-msg 'workspace 0; exec /usr/bin/xterm -e "htop"'
-exec --no-startup-id i3-msg 'workspace 0; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
+exec --no-startup-id nm-applet
+exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "systemctl --all"'
+exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "htop"'
+exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'

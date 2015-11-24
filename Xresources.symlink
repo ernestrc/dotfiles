@@ -32,15 +32,6 @@
 Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:  22
 
-! Xft settings ---------------------------------------------------------------
-
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-
-
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
@@ -69,3 +60,11 @@ xpdf*foreground:        black
 xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/firefox %
 
+! xft ---------------------------------------------------------------------
+Xft*dpi: 96
+# Xft*autohint: 0
+# Xft*lcdfilter: lcddefault
+# Xft*hintstyle: hintfull
+Xft*hinting: true
+Xft*antialias: true
+Xft*rgba: rgb
