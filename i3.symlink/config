@@ -160,6 +160,9 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioMute exec amixer set Master toggle
 
+# focus
+focus_follows_mouse no
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -248,5 +251,6 @@ exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper.jpg
 exec --no-startup-id mutate
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox
+exec --no-startup-id i3-msg 'workspace 5; exec /usr/bin/electron ~/Downloads/typ3r/main.js'
 exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "systemctl --all"'
 exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'
