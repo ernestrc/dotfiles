@@ -209,13 +209,14 @@ set $yw     #d19a64
 set $gn     #59ab79
 set $rd     #00AFFF
 set $bu     #005FFF
+set $wh     #FFFFFF
 set $be     #8faf9f
 set $muesli #AF875F
 set $kourni #FFD75F
 set $orange #FFAF00
 
 # set some nice colors      border     background  text
-client.focused              $ac        $ac         $tx
+client.focused              $bu        $bu         $wh
 client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ia
 client.urgent               $orange    $kourni     $hi
@@ -229,7 +230,7 @@ bar {
             background          $bg
             statusline          $ia
             separator           $hi
-            focused_workspace   $bu        $bu        $rd
+            focused_workspace   $bu        $bu        $wh
             active_workspace    $rd        $bg        $ac
             inactive_workspace  $bg        $bg        $ia
             urgent_workspace    $orang     $orange    $muesli
