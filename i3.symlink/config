@@ -230,15 +230,15 @@ client.urgent               $orange    $kourni     $hi
 bar {
     status_command i3status
 
-    colors {
+        colors {
             background          $bg
-            statusline          $ia
-            separator           $hi
-            focused_workspace   $bu        $bu        $wh
-            active_workspace    $rd        $bg        $ac
-            inactive_workspace  $bg        $bg        $ia
-            urgent_workspace    $orang     $orange    $muesli
-    }
+                statusline          $ia
+                separator           $hi
+                focused_workspace   $bu        $bu        $wh
+                active_workspace    $rd        $bg        $ac
+                inactive_workspace  $bg        $bg        $ia
+                urgent_workspace    $orang     $orange    $muesli
+        }
 }
 
 # assigments
@@ -253,9 +253,5 @@ assign [class="Zeal"] $ws10
 exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper.jpg
 
 # startup processes
-exec --no-startup-id mutate
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox
-exec --no-startup-id i3-msg 'workspace 5; exec /usr/bin/electron ~/Downloads/typ3r/main.js'
-exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "systemctl --all"'
-exec --no-startup-id i3-msg 'workspace ~; exec /usr/bin/xterm -e "journalctl -p 0..3 -xn"'

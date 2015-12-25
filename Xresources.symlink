@@ -20,7 +20,7 @@
 ! DarkMagenta + Magenta
 *color5:  #ce5c00
 *color13: #f57900
-!DarkCyan + Cyan (both not tango)
+!DarkCyan + Cyan
 *color6:  #89b6e2
 *color14: #46a4ff
 ! LightGrey + White
@@ -29,8 +29,8 @@
 
 ! Xcursor --------------------------------------------------------------------
 
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size:  22
+Xcursor.theme: whiteglass
+Xcursor.size: 24
 
 ! xterm ----------------------------------------------------------------------
 
@@ -51,7 +51,31 @@ xterm*loginShell: true
 ! XTerm*metaSendsEscape: true
 xterm*termName: xterm-256color
 
-
+!rxvt
+URxvt.font:                           xft:DejaVu Sans Mono for Powerline:style=Regular:size=8
+!URxvt*termName:                       rxvt-unicode
+URxvt*loginShell:                     true
+URxvt*jumpScroll:                     true
+URxvt*scrollBar:                      false
+URxvt*scrollTtyOutput:                false
+URxvt*scrollTtyKeypress:              true
+URxvt*fading:                         30
+URxvt*visualBell:                     true
+URxvt*cursorUnderline:                false
+URxvt*cursorBlink:                    true
+URxvt*background:                     [95]#000000
+URxvt*highlightColor:                 rgb:20/30/20
+URxvt*cursorColor:                    green
+URxvt*saveLines:                      8192
+URxvt*buffered:                       true
+URxvt*depth:                          32
+URxvt*perl-ext-common:                default,resize-font,vtwheel,clipboard,url-select,keyboard-select
+URvxt.url-select.button:              1
+URxvt.url-select.launcher:            firefox
+URxvt.url-select.underline:           true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
 ! xpdf -----------------------------------------------------------------------
 
 xpdf*enableFreetype:    yes
@@ -60,11 +84,9 @@ xpdf*foreground:        black
 xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/firefox %
 
-! xft ---------------------------------------------------------------------
-Xft*dpi: 138
-# Xft*autohint: 0
-# Xft*lcdfilter: lcddefault
-# Xft*hintstyle: hintfull
-Xft*hinting: true
-Xft*antialias: true
-Xft*rgba: rgb
+! fonts ----------------------------------------------------------------------
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+Xft.dpi:       220
