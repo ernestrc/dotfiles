@@ -15,7 +15,7 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono for Powerline 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -201,7 +201,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+p exec --no-startup-id j4-dmenu-desktop
 
 set $bg     #21252B
 set $fg     #282c34
@@ -220,7 +220,7 @@ set $kourni #FFD75F
 set $orange #FFAF00
 
 # set some nice colors      border     background  text
-client.focused              $bu        $bu         $wh
+client.focused              $ac        $ac         $wh
 client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ia
 client.urgent               $orange    $kourni     $hi
