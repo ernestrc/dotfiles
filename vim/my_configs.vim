@@ -161,3 +161,6 @@ endfunction
 if has("autocmd")
   autocmd VimEnter * :call SetupCtrlP()
 endif
+
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
