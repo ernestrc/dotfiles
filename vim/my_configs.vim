@@ -146,3 +146,18 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 set nofoldenable
+
+" CtrlP auto cache clearing.
+" ----------------------------------------------------------------------------
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
+    augroup END
+  endif
+endfunction
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
+endif
