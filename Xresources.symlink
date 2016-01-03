@@ -64,7 +64,7 @@ URxvt.url-select.underline: true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.colorUL: #4682B4
-URxvt.keysym.C-v:   perl:clipboard:paste
+URxvt.keysym.Mod4-v:   perl:clipboard:paste
 URxvt.clipboard.autocopy: true
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
@@ -95,6 +95,7 @@ URxvt*buffered:                       true
 URxvt*depth:                          32
 URxvt.meta8:                          false
 URxvt.keysym.C-f:                     perl:keyboard-select:search
+URxvt.modifier:                       Alt
 
 ! Compile xft: Turn on/off double-buffering for xft (default enabled).  On some card/driver combination enabling it slightly decreases performance, on most it greatly helps it. The slowdown is
 ! URxvt*buffered: boolean
@@ -374,9 +375,9 @@ xpdf*urlCommand:        /usr/bin/firefox %
 
 ! xft ---------------------------------------------------------------------
 Xft*dpi: 96
-# Xft*autohint: 0
-# Xft*lcdfilter: lcddefault
-# Xft*hintstyle: hintfull
+! Xft*autohint: 0
+! Xft*lcdfilter: lcddefault
+! Xft*hintstyle: hintfull
 Xft*hinting: true
 Xft*antialias: true
 Xft*rgba: rgb

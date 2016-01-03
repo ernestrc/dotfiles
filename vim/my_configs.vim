@@ -25,6 +25,23 @@ if has("unix")
     endif
 endif
 
+function! Altmap(char)
+  if has('gui_running') | return ' <A-'.a:char.'> ' | else | return ' <Esc>'.a:char.' '|endif
+endfunction
+
+if $TERM == 'rxvt-unicode-256color'&&!has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    autocmd InsertEnter * set timeoutlen=0
+    autocmd InsertLeave * set timeoutlen=2000
+  augroup END
+  execute 'nnoremap <silent>'.Altmap('h').'<C-w>h'
+  execute 'nnoremap <silent>'.Altmap('k').'<C-w>k'
+  execute 'nnoremap <silent>'.Altmap('j').'<C-w>j'
+  execute 'nnoremap <silent>'.Altmap('l').'<C-w>l'
+endif
+
 nnoremap ,v <C-w>v
 nnoremap ,h <C-w>s
 nnoremap <C-h> :bprevious<CR>
