@@ -1,5 +1,6 @@
 alias reload!='. ~/.zshrc'
 alias grep='grep --color'
+alias ls='ls --color'
 alias l='ls -altr'
 
 function clean-steam {
