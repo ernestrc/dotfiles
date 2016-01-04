@@ -95,6 +95,7 @@ URxvt*buffered:                       true
 URxvt*depth:                          32
 URxvt.meta8:                          false
 URxvt.keysym.C-f:                     perl:keyboard-select:search
+URxvt.keysym.C-s:                     perl:keyboard-select:activate
 URxvt.modifier:                       Alt
 
 ! Compile xft: Turn on/off double-buffering for xft (default enabled).  On some card/driver combination enabling it slightly decreases performance, on most it greatly helps it. The slowdown is
@@ -374,7 +375,7 @@ xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/firefox %
 
 ! xft ---------------------------------------------------------------------
-Xft*dpi: 220
+Xft*dpi: 96
 ! Xft*autohint: 0
 ! Xft*lcdfilter: lcddefault
 ! Xft*hintstyle: hintfull
