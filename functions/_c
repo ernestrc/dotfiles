@@ -1,5 +1,6 @@
 #compdef c
 _files -W $PROJECTS -/
 _files -W $TB -/
+_files -W $CLASS -/
 
 # See further documentation in `functions/c`.
