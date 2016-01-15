@@ -203,10 +203,11 @@ bindsym $mod+r mode "resize"
 # start dmenu (a program launcher)
 bindsym $mod+p exec --no-startup-id j4-dmenu-desktop
 
-set $bg     #21252B
+#set $bg     #21252B
+set $bg     #000000
 set $fg     #282c34
 set $hi     #111111
-set $ac     #353b45
+set $ac     #1A1A1A
 set $tx     #ABB2B1
 set $ia     #656b77
 set $yw     #d19a64
@@ -250,7 +251,7 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper-2.png
+exec --no-startup-id feh --bg-fill ~/.wallpaper/milky.jpg
 
 # startup processes
 exec --no-startup-id nm-applet
