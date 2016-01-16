@@ -1,6 +1,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 # xrandr --output DP-2 --auto --output HDMI-0 --auto --left-of DP-2
-compton -b --backend glx --vsync opengl
+compton -bcCf--backend glx --vsync opengl --sw-opti
 # xrandr --dpi 160
 # nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 urxvtd -q -o -f

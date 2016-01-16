@@ -71,4 +71,4 @@ if __name__ == '__main__':
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
         j.insert(0, docker_active())
         # and echo back new encoded json
-        print_line(prefix+json.dumps(j))
+        print_line(prefix+json.dumps(j).replace('#00FF00', '#00D8FF').replace('#FF0000', '#A5473A'))
