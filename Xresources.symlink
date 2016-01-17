@@ -70,13 +70,13 @@ URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
 ! Change font size on Control-Plus/Minus
-URxvt.keysym.C-Up: perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.Mod-Up: perl:font-size:increase
+URxvt.keysym.Mod-Down: perl:font-size:decrease
 
 ! Transparency w/out compositor
 URxvt*.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading:8
+URxvt*.shading:19
 
 ! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
 URxvt*scrollBar: 0
