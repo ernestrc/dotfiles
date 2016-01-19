@@ -101,14 +101,12 @@ set tags=./tags,tags,../tags
 
 let g:ctrlp_custom_ignore ='target\|node_modules\|^\.DS_Store\|^\.git\|^\.coffee|^.class'
 
-let g:rustc_pat = "/usr/local/bin/rustc"
 autocmd FileType rust nnoremap <CR> :exe 'w' <bar> !RUST_BACKTRACE=1 cargo build<cr>
 autocmd FileType rust nnoremap <D-CR> :exe 'w' <bar> !RUST_BACKTRACE=1 cargo run<cr>
 autocmd FileType rust nnoremap <c-CR> :exe 'w' <bar> !RUST_BACKTRACE=1 cargo test<cr>
 
-let g:racer_cmd = "/usr/local/src/racer/target/release/racer"
-let $RUST_SRC_PATH="/usr/local/src/rust/src"
 let g:rust_recommended_style = 1
+let g:ycm_rust_src_path = '/usr/local/src/rust/src'
 
 set copyindent
 set history=1000
