@@ -112,7 +112,7 @@ set copyindent
 set history=1000
 set undolevels=1000
 set wildignore+=*.swp,*.bak,*.pyc,*.class
-set shiftwidth=4
+set shiftwidth=2
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -179,3 +179,6 @@ endif
 
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
+
+au FileType python nmap <CR> :!python2.7 % <CR>
+au FileType javascript nmap <CR> :!node % <CR>

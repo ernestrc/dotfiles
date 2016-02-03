@@ -61,6 +61,9 @@ set $ws10 10
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# take a screenshot
+bindsym shift+ctrl+3 exec scrot
+
 # kill focused window
 bindsym $mod+w kill
 bindsym $mod+q kill
@@ -245,7 +248,7 @@ bar {
 # assigments
 assign [class="Spotify"] $ws6
 assign [class="Thunderbird"] $ws2
-assign [class="Firefox"] $ws3
+assign [class="chromium"] $ws3
 assign [class="Scudcloud"] $ws7
 assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
