@@ -179,3 +179,5 @@ endif
 
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
+
+nmap gd :YcmCompleter GoToDefinition <CR>
