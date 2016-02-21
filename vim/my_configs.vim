@@ -107,6 +107,11 @@ autocmd FileType rust nnoremap <c-CR> :exe 'w' <bar> !RUST_BACKTRACE=1 cargo tes
 
 let g:rust_recommended_style = 1
 let g:ycm_rust_src_path = '/usr/local/src/rust/src'
+let g:ycm_global_ycm_extra_conf = "~/.dotfiles/vim/.ycm_extra_conf.py"
+
+" to avoid clash with ultisnips
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 set copyindent
 set history=1000

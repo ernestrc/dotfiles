@@ -70,8 +70,8 @@ URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
 ! Change font size on Control-Plus/Minus
-URxvt.keysym.C-Up: perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.C-0x3d: perl:font-size:increase
+URxvt.keysym.C-0x2d: perl:font-size:decrease
 
 ! Transparency w/out compositor
 URxvt*.transparent: true

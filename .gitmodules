@@ -1,0 +1,6 @@
+[submodule "vim/sources_forked/ultisnips"]
+	path = vim/sources_forked/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "vim/sources_forked/ycm_generator"]
+	path = vim/sources_forked/ycm_generator
+	url = git@github.com:rdnetto/YCM-Generator.git
