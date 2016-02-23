@@ -46,7 +46,7 @@ nnoremap ,v <C-w>v
 nnoremap ,h <C-w>s
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bn<CR>
-nnoremap <C-a> :bufdo Bclose<CR>
+nnoremap <C-a> :bufdo bd<CR>
 
 set number
 noremap <C-b> :Autoformat<CR><CR>
@@ -94,7 +94,7 @@ autocmd FileType scala nnoremap <D-CR> :exe 'w' <bar> !sbt run<cr>
 autocmd FileType scala nnoremap <c-CR> :exe 'w' <bar> !sbt test<cr>
 inoremap <C-@> <C-x><C-o>
 inoremap <C-SPACE> <C-x><C-o>
-noremap <C-w> :Bclose<cr>
+noremap <C-w> :bd<cr>
 
 autocmd FileType scala inoremap gd <c-]>
 set tags=./tags,tags,../tags
@@ -188,3 +188,5 @@ let g:formatters_rust = ['rustfmt']
 nmap gd :YcmCompleter GoToDefinition <CR>
 au FileType python nmap <CR> :!python2.7 % <CR>
 au FileType javascript nmap <CR> :!node % <CR>
+
+nmap gd :YcmCompleter GoToDefinition<CR>
