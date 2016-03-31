@@ -88,3 +88,52 @@ let g:syntastic_python_checkers=['pyflakes']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+
+
+let g:NERDTreeWinSize=30
+let g:gitgutter_enabled = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+
+let g:rust_recommended_style = 1
+let g:ycm_rust_src_path = '/usr/local/src/rust/src'
+let g:ycm_global_ycm_extra_conf = "~/.dotfiles/vim/.ycm_extra_conf.py"
+
+" to avoid clash with ultisnips
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:yankring_replace_n_pkey = '<C-I-O>'
+
+" CtrlP auto cache clearing.
+" ----------------------------------------------------------------------------
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
+    augroup END
+  endif
+endfunction
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
+endif
+
+let g:ctrlp_custom_ignore ='target\|node_modules\|^\.DS_Store\|^\.git\|^\.coffee|^.class'
+
+set tags=./tags,tags,../tags
