@@ -28,12 +28,19 @@ import sys
 import json
 import subprocess
 
-def docker_active():
-    """ Get the current governor for cpu0, assuming all CPUs use the same. """
-    if subprocess.call('systemctl is-active docker &> /dev/null', shell=True) == 0:
-        return {'full_text' : "Docker: yes", 'name' : 'docker', 'color' : '#00FF00'}
+def server_active(name, port):
+    """ Get if there is a server listening on port """
+    if subprocess.call('nc -zv 127.0.0.1 ' + port, shell=True) == 0:
+        return {'full_text' : name + ": yes", 'name' : name, 'color' : '#00FF00'}
     else:
-        return {'full_text' : "Docker: no", 'name' : 'docker', 'color' : '#FF0000'}
+        return {'full_text' : name + ": no", 'name' : name, 'color' : '#FF0000'}
+
+def docker_active():
+    """ Get if docker daemon is active """
+    if subprocess.call('systemctl is-active docker &> /dev/null', shell=True) == 0:
+        return {'full_text' : "docker: yes", 'name' : 'docker', 'color' : '#00FF00'}
+    else:
+        return {'full_text' : "docker: no", 'name' : 'docker', 'color' : '#FF0000'}
 
 def print_line(message):
     """ Non-buffered printing to stdout. """
@@ -70,5 +77,7 @@ if __name__ == '__main__':
         # insert information into the start of the json, but could be anywhere
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
         j.insert(0, docker_active())
+        j.insert(0, server_active('ycmd', '46641'))
+        j.insert(0, server_active('racerd', '54209'))
         # and echo back new encoded json
         print_line(prefix+json.dumps(j).replace('#00FF00', '#00D8FF').replace('#FF0000', '#A5473A'))

@@ -108,5 +108,6 @@ set switchbuf=usetab
 
 set nofoldenable
 
-nmap gd :YcmCompleter GoToDefinition<CR>
+nmap gd :YcmCompleter GoTo<CR>
 map <Tab> :NERDTreeToggle<CR>
+set nowrap
