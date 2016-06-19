@@ -19,3 +19,6 @@
 [submodule "vim/sources_forked/airline"]
 	path = vim/sources_forked/airline
 	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim/sources_forked/airline-themes"]
+	path = vim/sources_forked/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

@@ -1,0 +1,1 @@
+/home/ernestrc/.vimrc
