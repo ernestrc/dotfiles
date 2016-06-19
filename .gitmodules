@@ -1,6 +1,12 @@
 [submodule "vim/sources_forked/ultisnips"]
-	path = vim/sources_forked/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
+  path = vim/sources_forked/ultisnips
+  url = git@github.com:SirVer/ultisnips.git
 [submodule "vim/sources_forked/ycm_generator"]
-	path = vim/sources_forked/ycm_generator
-	url = git@github.com:rdnetto/YCM-Generator.git
+  path = vim/sources_forked/ycm_generator
+  url = git@github.com:rdnetto/YCM-Generator.git
+[submodule "vim/sources_forked/YouCompleteMe"]
+  path = vim/sources_forked/YouCompleteMe
+  url = git@github.com:Valloric/YouCompleteMe.git
+[submodule "vim/sources_forked/vim-autoformat"]
+  path = vim/sources_forked/vim-autoformat
+  url = git@github.com:Chiel92/vim-autoformat.git
