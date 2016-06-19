@@ -10,3 +10,6 @@
 [submodule "vim/sources_forked/vim-autoformat"]
   path = vim/sources_forked/vim-autoformat
   url = git@github.com:Chiel92/vim-autoformat.git
+[submodule "vim/sources_forked/syntastic"]
+	path = vim/sources_forked/syntastic
+	url = https://github.com/scrooloose/syntastic.git
