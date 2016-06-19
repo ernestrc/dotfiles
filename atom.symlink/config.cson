@@ -1,90 +1,90 @@
 "*":
-  editor:
-    invisibles: {}
-    tabLength: 2
-    showIndentGuide: true
-    softWrap: true
-    preferredLineLength: 90
-    fontSize: 10
-    lineHeight: 1.3
-    fontFamily: "Droid Sans Mono for Powerline"
+  Ensime:
+    sbtExec: "/usr/local/bin/sbt"
+  "atom-beautify":
+    _analyticsUserId: "0f3b3e32-45e7-439a-9dcc-bc41dabe34d1"
+    beautifyOnSave: false
+    js_jslint_happy: true
+    language_handlebars_beautify_on_save: true
+    python_max_line_length: 75
+    rust_rustfmt_path: "/Users/ernest/bin/rustfmt"
+  "autocomplete-plus":
+    suggestionListFollows: "Cursor"
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+  build:
+    buildOnSave: true
+    minimizedHeight: 0.1
+    panelVisibility: "Keep Visible"
+    scrollOnError: true
+    stealFocus: false
   core:
     disabledPackages: [
       "language-mustache"
       "linter-gjslint"
     ]
-    projectHome: "/Users/ernest/dev"
+    excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".pyc"
     ]
-    excludeVcsIgnoredPaths: false
+    projectHome: "/Users/ernest/dev"
+  editor:
+    fontFamily: "Droid Sans Mono for Powerline"
+    fontSize: 10
+    invisibles: {}
+    lineHeight: 1.3
+    preferredLineLength: 90
+    showIndentGuide: true
+    softWrap: true
+    tabLength: 2
   "exception-reporting":
     userId: "fa99b016-f265-f5d7-af11-22f0d34a0f68"
-  welcome:
-    showOnStartup: false
-  "project-manager":
-    closeCurrent: true
+  jshint: {}
   linter:
     lintOnChange: false
+    showErrorTabLine: true
     showInfoMessages: true
     statusBar: "Show error of the selected line"
     subtleLinterErrors: [
       "pep8"
     ]
-    showErrorTabLine: true
-  "atom-beautify":
-    _analyticsUserId: "0f3b3e32-45e7-439a-9dcc-bc41dabe34d1"
-    beautifyOnSave: false
-    python_max_line_length: 75
-    js_jslint_happy: true
-    language_handlebars_beautify_on_save: true
-    rust_rustfmt_path: "/Users/ernest/bin/rustfmt"
-  "tree-view":
-    hideVcsIgnoredFiles: true
-  jshint: {}
+  "linter-rust":
+    cargoPath: "/usr/local/bin/cargo"
+    jobsNumber: 4
+    rustcPath: "/usr/local/bin/rustc"
+  "linter-scalac": {}
+  mcduino:
+    arduinoPath: "/usr/local/src/Arduino-1.0.5"
+  "one-dark-ui": {}
+  "project-manager":
+    closeCurrent: true
   racer:
     rustSrcPath: "/usr/local/src/rust"
     show: "Right"
-  "linter-rust":
-    rustcPath: "/usr/local/bin/rustc"
-    cargoPath: "/usr/local/bin/cargo"
-    jobsNumber: 4
-  "vim-mode": {}
-  "autocomplete-plus":
-    suggestionListFollows: "Cursor"
-  build:
-    stealFocus: false
-    panelVisibility: "Keep Visible"
-    minimizedHeight: 0.1
-    scrollOnError: true
-    buildOnSave: true
   "run-command2": {}
-  mcduino:
-    arduinoPath: "/usr/local/src/Arduino-1.0.5"
   "tool-bar":
     visible: false
-  "linter-scalac": {}
-  Ensime:
-    sbtExec: "/usr/local/bin/sbt"
-  "one-dark-ui": {}
-  "bracket-matcher":
-    autocompleteBrackets: false
-    autocompleteSmartQuotes: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
   "vim-mode-plus": {}
+  welcome:
+    showOnStartup: false
 ".arduino.source":
   editor:
     preferredLineLength: 90
+".particle.source":
+  editor:
+    preferredLineLength: 90
+".rust.source":
+  editor:
+    preferredLineLength: 99
 ".scala.source":
   core:
     themes: [
       "Monokai"
       "Atom Dark"
     ]
-".rust.source":
-  editor:
-    preferredLineLength: 99
-".particle.source":
-  editor:
-    preferredLineLength: 90
 stripTrailingWhitespace:
   singleTrailingNewline: true

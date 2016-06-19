@@ -13,3 +13,9 @@
 [submodule "vim/sources_forked/syntastic"]
 	path = vim/sources_forked/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/sources_forked/rust.vim"]
+	path = vim/sources_forked/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
+[submodule "vim/sources_forked/airline"]
+	path = vim/sources_forked/airline
+	url = git@github.com:vim-airline/vim-airline.git

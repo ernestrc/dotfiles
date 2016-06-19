@@ -71,7 +71,6 @@ set hidden
 "
 inoremap <C-@> <C-x><C-o>
 inoremap <C-SPACE> <C-x><C-o>
-noremap <C-w> :bd<cr>
 noremap <space> @q
 
 set copyindent
@@ -111,3 +110,7 @@ set nofoldenable
 nmap gd :YcmCompleter GoTo<CR>
 map <Tab> :NERDTreeToggle<CR>
 set nowrap
+
+let g:rustc_syntax_only = 0
+nnoremap <silent> <C-w> :lclose<CR>:bdelete<CR>
+let g:syntastic_always_populate_loc_list = 1
