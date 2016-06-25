@@ -112,5 +112,6 @@ map <Tab> :NERDTreeToggle<CR>
 set nowrap
 
 let g:rustc_syntax_only = 0
-nnoremap <silent> <C-w> :lclose<CR>:bdelete<CR>
+nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+nnoremap <silent> <C-w> :lclose<CR>:Bclose<CR>
 let g:syntastic_always_populate_loc_list = 1
