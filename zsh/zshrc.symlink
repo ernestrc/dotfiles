@@ -13,8 +13,10 @@ fi
 zplug "zplug/zplug"
 zplug 'junegunn/fzf', hook-build:"./install --all"
 zplug "supercrabtree/k"
-zplug "nojhan/liquidprompt"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
 zplug "huyng/bashmarks", use:"*.sh"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -95,3 +97,7 @@ function clean-steam {
     find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
     echo 'done cleaning steam'
 }
+
+
+# PROMPT
+autoload -U promptinit && promptinit
