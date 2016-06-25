@@ -28,12 +28,13 @@ zplug load --verbose
 
 # BINDINGS
 
-bindkey '^P' fzf-file-widget
+bindkey '^p' fzf-file-widget
+bindkey '^r' fzf-history-widget
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
@@ -42,12 +43,8 @@ bindkey '^?' backward-delete-char
 bindkey '^[[1;3D' backward-word ### Alt left
 bindkey '^[[1;3C' forward-word ### Alt right
 
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
 
 
 # OPTIONS
@@ -55,9 +52,6 @@ bindkey '^r' history-incremental-search-backward
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-bindkey -e
-
-export VISUAL="vim"
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
@@ -74,21 +68,21 @@ setopt IGNORE_EOF
 
 setopt APPEND_HISTORY # adds history
 setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+#setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
 setopt complete_aliases
 
-zle -N newtab
+# zle -N newtab
 
 TERMINAL="urxvtc"
 
 
 # ALIASES
 
-alias l=k
+alias l='k -h'
 alias c=g
 
 alias reload!='. ~/.zshrc'

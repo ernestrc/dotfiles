@@ -3,18 +3,19 @@
 " PLUGINS
 
 call plug#begin()
-Plug 'git@github.com:ryanoasis/vim-devicons.git'
-Plug 'derekwyatt/vim-scala'
+"Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'git@github.com:rbgrouleff/bclose.vim.git'
 Plug 'Chiel92/vim-autoformat'
 Plug 'git@github.com:scrooloose/syntastic.git'
-"Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
 Plug 'mhinz/vim-signify'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'mhartington/oceanic-next'
+Plug 'junegunn/fzf', { 'dir': '~/.zplug/repos/junegunn/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -96,25 +97,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers=['pyflakes']
 
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore ='target\|node_modules\|^\.DS_Store\|^\.git\|^\.coffee|^.class'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-function! SetupCtrlP()
-  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
-    augroup CtrlPExtension
-      autocmd!
-      autocmd FocusGained  * CtrlPClearCache
-      autocmd BufWritePost * CtrlPClearCache
-    augroup END
-  endif
-endfunction
-if has("autocmd")
-  autocmd VimEnter * :call SetupCtrlP()
-endif
-
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -137,7 +119,7 @@ set tags=./tags,tags,../tags
 
 " PLUGIN MAPPINGS
 
-map <c-b> :CtrlPBuffer<cr>
+nnoremap <C-p> :Files<CR>
 noremap <C-b> :Autoformat<CR><CR>
 nnoremap <C-y> :YRShow<CR>
 nmap gd :YcmCompleter GoTo<CR>
