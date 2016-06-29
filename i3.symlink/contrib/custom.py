@@ -77,7 +77,5 @@ if __name__ == '__main__':
         # insert information into the start of the json, but could be anywhere
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
         j.insert(0, docker_active())
-        j.insert(0, server_active('ycmd', '46641'))
-        j.insert(0, server_active('racerd', '54209'))
         # and echo back new encoded json
         print_line(prefix+json.dumps(j).replace('#00FF00', '#00D8FF').replace('#FF0000', '#A5473A'))

@@ -87,7 +87,6 @@ TERMINAL="urxvtc"
 alias l='k -h'
 alias c=g
 
-alias reload!='. ~/.zshrc'
 alias grep='grep --color'
 alias ls='ls --color'
 alias nvimrc='nvim ~/.config/nvim/init.vim'

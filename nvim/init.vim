@@ -4,18 +4,21 @@
 
 call plug#begin()
 "Plug 'derekwyatt/vim-scala'
+"Plug 'git@github.com:scrooloose/syntastic.git'
 Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'git@github.com:rbgrouleff/bclose.vim.git'
 Plug 'Chiel92/vim-autoformat'
-Plug 'git@github.com:scrooloose/syntastic.git'
 Plug 'mhinz/vim-signify'
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 Plug 'mhartington/oceanic-next'
 Plug 'junegunn/fzf', { 'dir': '~/.zplug/repos/junegunn/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'racer-rust/vim-racer'
+
+Plug 'critiqjo/lldb.nvim'
+Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -89,6 +92,8 @@ let g:rustc_syntax_only = 0
 let g:rust_recommended_style = 1
 let g:racer_cmd = "/usr/local/src/racer/target/release/racer"
 let $RUST_SRC_PATH="/usr/local/src/rustc-nightly/src"
+let $RUST_BACKTRACE=0
+let $RUST_LOG="error"
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -114,7 +119,22 @@ let g:deoplete#enable_at_startup = 1
 
 set tags=./tags,tags,../tags
 
-"let g:syntastic_debug = 1
+let errorformat  =
+      \ '%E%f:%l:%c: %\d%#:%\d%# %.%\{-}error:%.%\{-} %m,'   .
+      \ '%W%f:%l:%c: %\d%#:%\d%# %.%\{-}warning:%.%\{-} %m,' .
+      \ '%C%f:%l %m,' .
+      \ '%-Z%.%#'
+
+let g:neomake_rust_bcargo_maker = {
+      \ 'exe': 'cargo',
+      \ 'args' : ['build'],
+      \ 'append_file': 0,
+      \ 'errorformat': errorformat
+      \ }
+
+let g:neomake_rust_enabled_makers = ['bcargo']
+let g:neomake_logfile ="/var/log/neomake.log"
+autocmd! BufWritePost * Neomake
 
 
 " PLUGIN MAPPINGS
