@@ -101,3 +101,8 @@ function clean-steam {
 
 # PROMPT
 autoload -U promptinit && promptinit
+
+
+# PATH
+
+PATH=$HOME/.dotfiles/bin:$PATH
