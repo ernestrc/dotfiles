@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 cd $HOME/.dotfiles
 BRANCH=`git rev-parse --abbrev-ref HEAD`
-HOST=`cat /etc/hostname/`
+HOST=`cat /etc/hostname`
 git pull origin $BRANCH
 git add --all .
 git commit -m "dotsync of $USER on $HOST"
