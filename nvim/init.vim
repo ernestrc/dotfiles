@@ -7,7 +7,7 @@ call plug#begin()
 "Plug 'git@github.com:scrooloose/syntastic.git'
 Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'git@github.com:rbgrouleff/bclose.vim.git'
+Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mhinz/vim-signify'
 Plug 'rust-lang/rust.vim'
