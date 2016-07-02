@@ -136,6 +136,11 @@ let g:neomake_rust_enabled_makers = ['bcargo']
 let g:neomake_logfile ="/var/log/neomake.log"
 autocmd! BufWritePost * Neomake
 
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+
+"au BufWrite * :Autoformat
+
 
 " PLUGIN MAPPINGS
 

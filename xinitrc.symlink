@@ -1,6 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 compton -bcCf --backend glx --vsync opengl --sw-opti
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 urxvtd -q -o -f
 xset r rate 200 50
 exec i3
