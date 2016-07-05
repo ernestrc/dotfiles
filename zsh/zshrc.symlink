@@ -106,3 +106,6 @@ autoload -U promptinit && promptinit
 # PATH
 
 PATH=$HOME/.dotfiles/bin:$PATH
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+export GIT_EDITOR="$VISUAL"
