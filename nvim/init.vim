@@ -39,7 +39,7 @@ colorscheme OceanicNext
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 set exrc
-set encoding=utf8
+"set encoding=UTF8
 set secure
 set hidden
 set tabstop=4
@@ -61,6 +61,8 @@ set laststatus=2
 set relativenumber
 set undofile
 highlight LineNr ctermfg=darkgrey ctermbg=None
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 set clipboard+=unnamed
 set clipboard+=unnamedplus
 set go+=a
