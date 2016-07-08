@@ -8,6 +8,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
+Plug 'https://github.com/rking/ag.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mhinz/vim-signify'
 Plug 'rust-lang/rust.vim'
@@ -38,7 +39,7 @@ colorscheme OceanicNext
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 set exrc
-set encoding=utf8
+"set encoding=UTF8
 set secure
 set hidden
 set tabstop=4
@@ -60,6 +61,8 @@ set laststatus=2
 set relativenumber
 set undofile
 highlight LineNr ctermfg=darkgrey ctermbg=None
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 set clipboard+=unnamed
 set clipboard+=unnamedplus
 set go+=a
@@ -135,6 +138,11 @@ let g:neomake_rust_bcargo_maker = {
 let g:neomake_rust_enabled_makers = ['bcargo']
 let g:neomake_logfile ="/var/log/neomake.log"
 autocmd! BufWritePost * Neomake
+
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+
+"au BufWrite * :Autoformat
 
 
 " PLUGIN MAPPINGS
