@@ -8,6 +8,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
+Plug 'https://github.com/rking/ag.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mhinz/vim-signify'
 Plug 'rust-lang/rust.vim'

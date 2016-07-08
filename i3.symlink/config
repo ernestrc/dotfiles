@@ -254,7 +254,7 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/arch.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpaper/everest.jpg
 
 # startup processes
 exec --no-startup-id nm-applet
