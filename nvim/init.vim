@@ -93,6 +93,9 @@ nnoremap <silent> <C-w> :lclose<CR>:Bclose<CR>
 
 " PLUGIN SETTINGS
 
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 let g:rustc_syntax_only = 0
 let g:rust_recommended_style = 1
 let g:racer_cmd = "/usr/local/src/racer/target/release/racer"
