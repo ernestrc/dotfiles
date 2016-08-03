@@ -18,6 +18,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'racer-rust/vim-racer'
 
+Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
+
 Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
 function! DoRemote(arg)
@@ -148,6 +150,7 @@ let g:formatters_rust = ['rustfmt']
 " PLUGIN MAPPINGS
 
 nnoremap <C-p> :Files<CR>
+nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
 nnoremap <C-y> :YRShow<CR>
 nmap gd :YcmCompleter GoTo<CR>
