@@ -12,18 +12,15 @@ order += "run_watch DHCP"
 order += "path_exists VPN"
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 0"
+order += "volume master"
 order += "tztime local"
 
-battery 0 {
-        format = "%status %percentage %remaining" 		
-		format_down = "No battery"
-		status_chr = "⚇ CHR"
-		status_bat = "⚡ BAT"
-		status_full = "☻ FULL"
-		path = "/sys/class/power_supply/BAT%d/uevent"
-		low_threshold = 20
-		threshold_type = "percentage"
+volume master {
+  format = "♪: %volume"
+  format_muted = "♪: muted (%volume)"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
 }
 
 wireless _first_ {
