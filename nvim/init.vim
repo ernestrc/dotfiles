@@ -20,7 +20,11 @@ Plug 'racer-rust/vim-racer'
 
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
-Plug 'critiqjo/lldb.nvim'
+" scala
+Plug 'ensime/ensime-vim'
+Plug 'derekwyatt/vim-scala'
+
+" Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -151,10 +155,18 @@ let g:formatters_rust = ['rustfmt']
 
 
 " PLUGIN MAPPINGS
+" TODO config :SortScalaImports autoCmd with .scala autoFormat
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
+noremap <C-q> :q!<CR>
 nnoremap <C-y> :YRShow<CR>
 nmap gd :YcmCompleter GoTo<CR>
+au FileType scala nnoremap gd :EnDeclaration<CR>
 map <Tab> :NERDTreeToggle<CR>
+
+autocmd BufWritePost *.scala :EnTypeCheck
+nnoremap <localleader>t :EnTypeCheck<CR>
+
+
