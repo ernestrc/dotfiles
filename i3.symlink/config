@@ -61,7 +61,8 @@ set $ws10 10
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-new_window pixel 0
+# disable title bar
+new_window none
 
 # take a screenshot
 bindsym shift+ctrl+3 exec scrot
@@ -205,8 +206,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id j4-dmenu-desktop
+# start rofi (a program launcher)
+bindsym $mod+p exec --no-startup-id "rofi -combi-modi window,run -show combi"
 
 #set $bg     #21252B
 set $bg     #000000
@@ -257,13 +258,16 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/milky.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpaper/aurora.jpg
+
+# set up locker
+# exec xautolock -time 5 -locker ~/.dotfiles/bin/lock &
 
 # startup processes
 exec --no-startup-id nm-applet
 
 gaps inner 10
 # gaps outer -10
-smart_gaps on
+# smart_gaps on
 #smart_borders on|no_gaps
-hide_edge_borders both
+# hide_edge_borders both
