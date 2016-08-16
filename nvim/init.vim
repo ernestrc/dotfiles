@@ -11,25 +11,31 @@ Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'mhinz/vim-signify'
-Plug 'rust-lang/rust.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'junegunn/fzf', { 'dir': '~/.zplug/repos/junegunn/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'fntlnz/atags.vim'
+
+" rust
+Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
+" js
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
 " scala
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
-" Plug 'critiqjo/lldb.nvim'
+Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
+
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
 call plug#end()
 
 
@@ -88,11 +94,13 @@ nnoremap ,h <C-w>s
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-a> :bufdo bd<CR>
+noremap <C-q> :q!<CR>
 inoremap <C-@> <C-x><C-o>
 inoremap <C-SPACE> <C-x><C-o>
 noremap <space> @q
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 nnoremap <silent> <C-w> :lclose<CR>:Bclose<CR>
+map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 
 
 " PLUGIN SETTINGS
@@ -146,27 +154,28 @@ let g:neomake_rust_bcargo_maker = {
 
 let g:neomake_rust_enabled_makers = ['bcargo']
 let g:neomake_logfile ="/var/log/neomake.log"
-autocmd! BufWritePost * Neomake
+
+" requires gentag in PATH
+let g:atags_build_commands_list = [ "gentags" ]
+
+"FIXME autocmd! BufWritePost * Neomake
+autocmd! BufWritePost *.cpp call atags#generate()
+autocmd! BufWritePost *.c call atags#generate()
+
+" Scala
+au FileType scala nnoremap gd :EnDeclaration<CR>
+autocmd BufWritePost *.scala :EnTypeCheck
 
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
 
-"au BufWrite * :Autoformat
-
-
 " PLUGIN MAPPINGS
-" TODO config :SortScalaImports autoCmd with .scala autoFormat
-
+"
 nnoremap <C-p> :Files<CR>
+nnoremap <C-n> :Tags<CR>
+nnoremap <C-e> :History<CR>
 nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
-noremap <C-q> :q!<CR>
-nnoremap <C-y> :YRShow<CR>
-nmap gd :YcmCompleter GoTo<CR>
-au FileType scala nnoremap gd :EnDeclaration<CR>
+" nnoremap <C-y> :YRShow<CR>
+"nmap gd :YcmCompleter GoTo<CR>
 map <Tab> :NERDTreeToggle<CR>
-
-autocmd BufWritePost *.scala :EnTypeCheck
-nnoremap <localleader>t :EnTypeCheck<CR>
-
-
