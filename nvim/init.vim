@@ -158,7 +158,7 @@ let g:neomake_logfile ="/var/log/neomake.log"
 " requires gentag in PATH
 let g:atags_build_commands_list = [ "gentags" ]
 
-"FIXME autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
 autocmd! BufWritePost *.cpp call atags#generate()
 autocmd! BufWritePost *.c call atags#generate()
 
