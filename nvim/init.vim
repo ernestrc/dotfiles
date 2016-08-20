@@ -145,9 +145,10 @@ let errorformat  =
       \ '%C%f:%l %m,' .
       \ '%-Z%.%#'
 
+" TODO RUST_NEW_ERROR_FORMAT=true
 let g:neomake_rust_bcargo_maker = {
-      \ 'exe': 'cargo',
-      \ 'args' : ['build'],
+      \ 'exe': 'rustup',
+      \ 'args' : ['run', 'stable', 'cargo', 'build'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
@@ -175,7 +176,13 @@ nnoremap <C-p> :Files<CR>
 nnoremap <C-n> :Tags<CR>
 nnoremap <C-e> :History<CR>
 nnoremap <C-_> :Ag<CR>
+
 noremap <C-b> :Autoformat<CR><CR>
+
+noremap <C-q> :q!<CR>
+au FileType scala nnoremap gd :EnDeclaration<CR>
+au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
+
 " nnoremap <C-y> :YRShow<CR>
 "nmap gd :YcmCompleter GoTo<CR>
 map <Tab> :NERDTreeToggle<CR>

@@ -2,7 +2,8 @@
 # compton -bcCf --backend glx --vsync opengl --sw-opti
 # compton -cCf --backend glx --vsync opengl --sw-opti &
 # compton -cCf --backend glx --vsync opengl --sw-opti -i 0.8 &
+xrandr --dpi 190
 compton -cCf --backend glx --vsync opengl --sw-opti &
 urxvtd -q -o -f
-xset r rate 200 50
+xset r rate 200 80
 exec i3
