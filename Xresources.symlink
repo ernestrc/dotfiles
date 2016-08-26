@@ -2,6 +2,7 @@
 
 *background: #111111
 *foreground: #babdb6
+! *foreground: #60BFBF
 ! Black (not tango) + DarkGrey
 *color0:  #000000
 *color8:  #555753
@@ -38,7 +39,9 @@ xterm*VT100.geometry:     80x25
 xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=8
 xterm*dynamicColors:      true
 ! xterm*utf8:               2
-xterm*eightBitInput:      true
+XTerm*eightBitInput:   false
+XTerm.VT100.EightBitInput: false
+XTerm*eightBitOutput:  true
 xterm*saveLines:          2000
 xterm*scrollKey:          true
 xterm*scrollTtyOutput:    false
@@ -384,3 +387,21 @@ Xft*hintstyle: hintfull
 Xft*hinting: 1
 Xft*antialias: 1
 Xft*rgba: rgb
+
+! Rofi ------------------------------------------------------------------------
+! Window opacity
+rofi.opacity:                        70
+! Font to use
+rofi.font:                           DejaVu Sans Mono for Powerline 10
+! Border width
+rofi.bw:                             0
+! Padding
+rofi.padding:                        0
+! Separator style (none, dash, solid)
+rofi.separator-style:                none
+ 
+rofi.color-enabled: true
+rofi.color-window: argb:ee222222, #60bfbf, #60bfbf
+rofi.color-normal: argb:0000000, #60BFBF, argb:0000000, #60bfbf, #1b2b34
+rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #1b2b34
+rofi.color-urgent: argb:0000000, #60bfbf, argb:0000000, #60bfbf, #1b2b34
