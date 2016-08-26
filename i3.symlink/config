@@ -267,7 +267,7 @@ exec --no-startup-id feh --bg-fill ~/.wallpaper/aurora.jpg
 exec --no-startup-id nm-applet
 
 # exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-exec --no-startup-id compton -cCGfb --backend glx --vsync opengl --sw-opti
+# exec --no-startup-id compton -cCGfb --backend glx --vsync opengl --sw-opti
 
 gaps inner 20
 # gaps outer -10
