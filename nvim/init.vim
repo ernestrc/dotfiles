@@ -93,6 +93,8 @@ nnoremap ,v <C-w>v
 nnoremap ,h <C-w>s
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bn<CR>
+nnoremap <S-l> :lnext<CR>
+nnoremap <S-h> :lprev<CR>
 nnoremap <C-a> :bufdo bd<CR>
 noremap <C-q> :q!<CR>
 inoremap <C-@> <C-x><C-o>
