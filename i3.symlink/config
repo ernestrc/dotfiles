@@ -258,7 +258,7 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/aurora.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpaper/wallhaven.jpg
 
 # set up locker
 # exec xautolock -time 5 -locker ~/.dotfiles/bin/lock &
