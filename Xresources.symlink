@@ -398,7 +398,7 @@ rofi.padding:                        0
 rofi.separator-style:                none
  
 rofi.color-enabled: true
-rofi.color-window: argb:ee222222, #60bfbf, #60bfbf
-rofi.color-normal: argb:0000000, #60BFBF, argb:0000000, #60bfbf, #1b2b34
-rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #1b2b34
-rofi.color-urgent: argb:0000000, #60bfbf, argb:0000000, #60bfbf, #1b2b34
+rofi.color-window: argb:ee222222, #F76564, #F76564
+rofi.color-normal: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
+rofi.color-active: argb:0000000, #CA76EF, argb:0000000, #CA76EF, #1b2b34
+rofi.color-urgent: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
