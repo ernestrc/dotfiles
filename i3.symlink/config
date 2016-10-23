@@ -65,7 +65,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 new_window none
 
 # take a screenshot
-bindsym shift+ctrl+3 exec scrot
+bindsym shift+ctrl+3 exec scrot /tmp/$(date +%s).png
 
 # kill focused window
 bindsym $mod+w kill
@@ -266,10 +266,7 @@ exec --no-startup-id feh --bg-fill ~/.wallpaper/wallhaven.jpg
 # startup processes
 exec --no-startup-id nm-applet
 
-# exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-# exec --no-startup-id compton -cCGfb --backend glx --vsync opengl --sw-opti
-
-gaps inner 20
+gaps inner 10
 # gaps outer -10
 # smart_gaps on
 #smart_borders on|no_gaps
