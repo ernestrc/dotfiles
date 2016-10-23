@@ -36,6 +36,8 @@ endfunction
 
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
+Plug 'https://github.com/jvirtanen/vim-octave.git'
+
 call plug#end()
 
 

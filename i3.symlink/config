@@ -65,7 +65,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 new_window none
 
 # take a screenshot
-bindsym shift+ctrl+3 exec scrot
+bindsym shift+ctrl+3 exec scrot /tmp/$(date +%s).png
 
 # kill focused window
 bindsym $mod+w kill
