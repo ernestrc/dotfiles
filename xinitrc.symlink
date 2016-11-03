@@ -1,6 +1,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+xrandr --dpi 190
 urxvtd -q -o -f
 xset r rate 200 80
 xmodmap ~/.Xmodmap
-compton -cCGf --backend glx --vsync opengl --sw-opti -i 0.95 &
 exec i3

@@ -60,3 +60,14 @@ cpu_temperature 0 {
 disk "/" {
         format = "%free"
 }
+
+battery 0 {
+        format = "%status %percentage %remaining"
+               format_down = "No battery"
+               status_chr = "⚇ CHR"
+               status_bat = "⚡ BAT"
+               status_full = "☻ FULL"
+               path = "/sys/class/power_supply/BAT%d/uevent"
+               low_threshold = 20
+               threshold_type = "percentage"
+}

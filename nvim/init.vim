@@ -10,6 +10,8 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'mhartington/oceanic-next'
 Plug 'junegunn/fzf', { 'dir': '~/.zplug/repos/junegunn/fzf', 'do': './install --all' }
@@ -114,10 +116,11 @@ let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 let g:rustc_syntax_only = 0
 let g:rust_recommended_style = 1
-let g:racer_cmd = "/usr/local/src/racer/target/release/racer"
-let $RUST_SRC_PATH="/usr/local/src/rustc-nightly/src"
+let $RUST_SRC_PATH="/home/ernest/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let $RUST_BACKTRACE=0
 let $RUST_LOG="error"
+let g:racer_cmd = "/home/ernest/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_always_populate_loc_list = 1
@@ -144,15 +147,24 @@ let g:deoplete#enable_at_startup = 1
 set tags=./tags,tags,../tags
 
 let errorformat  =
-      \ '%E%f:%l:%c: %\d%#:%\d%# %.%\{-}error:%.%\{-} %m,'   .
-      \ '%W%f:%l:%c: %\d%#:%\d%# %.%\{-}warning:%.%\{-} %m,' .
-      \ '%C%f:%l %m,' .
-      \ '%-Z%.%#'
+  \ '%-Gerror: aborting due to previous error,'.
+  \ '%-Gerror: aborting due to %\\d%\\+ previous errors,'.
+  \ '%-Gerror: Could not compile `%s`.,'.
+  \ '%Eerror[E%n]: %m,'.
+  \ '%Eerror: %m,'.
+  \ '%Wwarning: %m,'.
+  \ '%Inote: %m,'.
+  \ '%-Z\ %#-->\ %f:%l:%c,'.
+  \ '%G\ %#\= %*[^:]: %m,'.
+  \ '%G\ %#|\ %#%\\^%\\+ %m,'.
+  \ '%I%>help:\ %#%m,'.
+  \ '%Z\ %#%m,'.
+  \ '%-G%s'
 
 " TODO RUST_NEW_ERROR_FORMAT=true
 let g:neomake_rust_bcargo_maker = {
-      \ 'exe': 'rustup',
-      \ 'args' : ['run', 'stable', 'cargo', 'build'],
+      \ 'exe': 'cargo',
+      \ 'args' : ['build', '--release', '--example', 'smeagol'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
@@ -190,3 +202,6 @@ au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 " nnoremap <C-y> :YRShow<CR>
 "nmap gd :YcmCompleter GoTo<CR>
 map <Tab> :NERDTreeToggle<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
