@@ -211,6 +211,9 @@ bindsym $mod+p exec --no-startup-id "rofi -combi-modi window,drun -show combi"
 
 #set $bg     #21252B
 set $bg     #000000
+set $28     #282828
+set $18     #181818
+set $21     #21F06B
 set $fg     #282c34
 set $hi     #111111
 set $ac     #1A1A1A
@@ -239,13 +242,13 @@ bar {
     status_command i3status | ~/.i3/contrib/custom.py
 
         colors {
-                background          $bg
+                background          $18
                 statusline          $ia
                 separator           $hi
-                focused_workspace   $ia        $ia        $wh
-                active_workspace    $rd        $bg        $ac
-                inactive_workspace  $bg        $bg        $ia
-                urgent_workspace    $orang     $orange    $muesli
+                focused_workspace   $28        $28        $wh
+                active_workspace    $28        $28        $ac
+                inactive_workspace  $18        $18        $ia
+                urgent_workspace    $21        $21        $ia
         }
 }
 
