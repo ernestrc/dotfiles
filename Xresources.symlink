@@ -390,7 +390,7 @@ Xft*rgba: rgb
 ! Window opacity
 rofi.opacity:                        70
 ! Font to use
-rofi.font:                           DejaVu Sans Mono for Powerline 17
+rofi.font:                           DejaVu Sans Mono for Powerline 12
 ! Border width
 rofi.bw:                             0
 ! Padding
