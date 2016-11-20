@@ -36,7 +36,7 @@ Xcursor.size: 24
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=9
+xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=8
 xterm*dynamicColors:      true
 ! xterm*utf8:               2
 XTerm*eightBitInput:   false
@@ -366,7 +366,7 @@ URxvt.secondaryWheel: 1
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
 ! URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
-URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=9:antialias=true:hinting=true
+URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
 
 ! xpdf -----------------------------------------------------------------------
 

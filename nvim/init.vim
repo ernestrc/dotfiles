@@ -144,28 +144,37 @@ let g:deoplete#enable_at_startup = 1
 set tags=./tags,tags,../tags
 
 let errorformat  =
-      \ '%E%f:%l:%c: %\d%#:%\d%# %.%\{-}error:%.%\{-} %m,'   .
-      \ '%W%f:%l:%c: %\d%#:%\d%# %.%\{-}warning:%.%\{-} %m,' .
-      \ '%C%f:%l %m,' .
-      \ '%-Z%.%#'
+      \ '%-Gerror: aborting due to previous error,'.
+      \ '%-Gerror: aborting due to %\\d%\\+ previous errors,'.
+      \ '%-Gerror: Could not compile `%s`.,'.
+      \ '%Eerror[E%n]: %m,'.
+      \ '%Eerror: %m,'.
+      \ '%Wwarning: %m,'.
+      \ '%Inote: %m,'.
+      \ '%-Z\ %#-->\ %f:%l:%c,'.
+      \ '%G\ %#\= %*[^:]: %m,'.
+      \ '%G\ %#|\ %#%\\^%\\+ %m,'.
+      \ '%I%>help:\ %#%m,'.
+      \ '%Z\ %#%m,'.
+      \ '%-G%s'
 
-" TODO RUST_NEW_ERROR_FORMAT=true
-let g:neomake_rust_bcargo_maker = {
-      \ 'exe': 'rustup',
-      \ 'args' : ['run', 'stable', 'cargo', 'build'],
+let g:neomake_rust_cargo_maker = {
+      \ 'exe': 'cargo',
+      \ 'args' : ['build', '--example', 'smeagol'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
 
-let g:neomake_rust_enabled_makers = ['bcargo']
+let g:neomake_rust_enabled_makers = ["cargo"]
 let g:neomake_logfile ="/var/log/neomake.log"
 
-" requires gentag in PATH
+"requires gentag in PATH
 let g:atags_build_commands_list = [ "gentags" ]
 
 autocmd! BufWritePost * Neomake
 autocmd! BufWritePost *.cpp call atags#generate()
 autocmd! BufWritePost *.c call atags#generate()
+autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
 
 " Scala
 au FileType scala nnoremap gd :EnDeclaration<CR>
