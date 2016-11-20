@@ -258,7 +258,7 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/wallhaven.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpaper/pluto.jpg
 
 # set up locker
 # exec xautolock -time 5 -locker ~/.dotfiles/bin/lock &
@@ -266,8 +266,8 @@ exec --no-startup-id feh --bg-fill ~/.wallpaper/wallhaven.jpg
 # startup processes
 exec --no-startup-id nm-applet
 
-gaps inner 10
+# gaps inner 0
 # gaps outer -10
 # smart_gaps on
-#smart_borders on|no_gaps
+# smart_borders on|no_gaps
 hide_edge_borders both

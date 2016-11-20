@@ -163,7 +163,7 @@ let errorformat  =
 
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
-      \ 'args' : ['build', 'test'],
+      \ 'args' : ['test'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
@@ -205,3 +205,4 @@ map <Tab> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='distinguished'
