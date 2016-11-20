@@ -116,10 +116,10 @@ let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 let g:rustc_syntax_only = 0
 let g:rust_recommended_style = 1
-let $RUST_SRC_PATH="/home/ernest/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+let $RUST_SRC_PATH="/home/ernestrc/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let $RUST_BACKTRACE=0
 let $RUST_LOG="error"
-let g:racer_cmd = "/home/ernest/.cargo/bin/racer"
+let g:racer_cmd = "/home/ernestrc/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
 let g:syntastic_always_populate_loc_list = 1
@@ -168,7 +168,7 @@ let g:neomake_rust_bcargo_maker = {
       \ 'errorformat': errorformat
       \ }
 
-let g:neomake_rust_enabled_makers = ["cargo"]
+let g:neomake_rust_enabled_makers = ["bcargo"]
 let g:neomake_logfile ="/var/log/neomake.log"
 
 "requires gentag in PATH
@@ -177,7 +177,7 @@ let g:atags_build_commands_list = [ "gentags" ]
 autocmd! BufWritePost * Neomake
 autocmd! BufWritePost *.cpp call atags#generate()
 autocmd! BufWritePost *.c call atags#generate()
-autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
+" autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
 
 " Scala
 au FileType scala nnoremap gd :EnDeclaration<CR>
