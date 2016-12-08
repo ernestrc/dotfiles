@@ -5,7 +5,6 @@
 call plug#begin()
 "Plug 'derekwyatt/vim-scala'
 "Plug 'git@github.com:scrooloose/syntastic.git'
-Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'https://github.com/rking/ag.vim'
@@ -116,10 +115,10 @@ let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 let g:rustc_syntax_only = 0
 let g:rust_recommended_style = 1
-let $RUST_SRC_PATH="/home/ernest/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+let $RUST_SRC_PATH="/home/ernestrc/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let $RUST_BACKTRACE=0
 let $RUST_LOG="error"
-let g:racer_cmd = "/home/ernest/.cargo/bin/racer"
+let g:racer_cmd = "/home/ernestrc/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
 let g:syntastic_always_populate_loc_list = 1
@@ -133,9 +132,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
-
 let g:NERDTreeWinSize=30
 
 let g:gitgutter_enabled = 1
@@ -147,21 +143,20 @@ let g:deoplete#enable_at_startup = 1
 set tags=./tags,tags,../tags
 
 let errorformat  =
-  \ '%-Gerror: aborting due to previous error,'.
-  \ '%-Gerror: aborting due to %\\d%\\+ previous errors,'.
-  \ '%-Gerror: Could not compile `%s`.,'.
-  \ '%Eerror[E%n]: %m,'.
-  \ '%Eerror: %m,'.
-  \ '%Wwarning: %m,'.
-  \ '%Inote: %m,'.
-  \ '%-Z\ %#-->\ %f:%l:%c,'.
-  \ '%G\ %#\= %*[^:]: %m,'.
-  \ '%G\ %#|\ %#%\\^%\\+ %m,'.
-  \ '%I%>help:\ %#%m,'.
-  \ '%Z\ %#%m,'.
-  \ '%-G%s'
+      \ '%-Gerror: aborting due to previous error,'.
+      \ '%-Gerror: aborting due to %\\d%\\+ previous errors,'.
+      \ '%-Gerror: Could not compile `%s`.,'.
+      \ '%Eerror[E%n]: %m,'.
+      \ '%Eerror: %m,'.
+      \ '%Wwarning: %m,'.
+      \ '%Inote: %m,'.
+      \ '%-Z\ %#-->\ %f:%l:%c,'.
+      \ '%G\ %#\= %*[^:]: %m,'.
+      \ '%G\ %#|\ %#%\\^%\\+ %m,'.
+      \ '%I%>help:\ %#%m,'.
+      \ '%Z\ %#%m,'.
+      \ '%-G%s'
 
-" TODO RUST_NEW_ERROR_FORMAT=true
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
       \ 'args' : ['test'],
@@ -169,15 +164,16 @@ let g:neomake_rust_bcargo_maker = {
       \ 'errorformat': errorformat
       \ }
 
-let g:neomake_rust_enabled_makers = ['bcargo']
+let g:neomake_rust_enabled_makers = ["bcargo"]
 let g:neomake_logfile ="/var/log/neomake.log"
 
-" requires gentag in PATH
+"requires gentag in PATH
 let g:atags_build_commands_list = [ "gentags" ]
 
 autocmd! BufWritePost * Neomake
 autocmd! BufWritePost *.cpp call atags#generate()
 autocmd! BufWritePost *.c call atags#generate()
+" autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
 
 " Scala
 au FileType scala nnoremap gd :EnDeclaration<CR>
