@@ -378,7 +378,7 @@ xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/chromium %
 
 ! xft ---------------------------------------------------------------------
-!Xft*dpi: 100
+Xft*dpi: 190
 Xft*autohint: 0
 Xft*lcdfilter: lcddefault
 Xft*hintstyle: hintfull
@@ -390,7 +390,7 @@ Xft*rgba: rgb
 ! Window opacity
 rofi.opacity:                        70
 ! Font to use
-rofi.font:                           DejaVu Sans Mono for Powerline 12
+rofi.font:                           DejaVu Sans Mono for Powerline 17
 ! Border width
 rofi.bw:                             0
 ! Padding
