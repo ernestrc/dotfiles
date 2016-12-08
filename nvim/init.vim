@@ -5,7 +5,6 @@
 call plug#begin()
 "Plug 'derekwyatt/vim-scala'
 "Plug 'git@github.com:scrooloose/syntastic.git'
-Plug 'tpope/vim-sensible'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'https://github.com/rking/ag.vim'
@@ -132,9 +131,6 @@ let g:syntastic_python_checkers=['pyflakes']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
 
 let g:NERDTreeWinSize=30
 
