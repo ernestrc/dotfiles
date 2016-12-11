@@ -27,10 +27,10 @@ Plug 'racer-rust/vim-racer'
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
 " scala
-Plug 'ensime/ensime-vim'
+" Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
-Plug 'critiqjo/lldb.nvim'
+" Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
