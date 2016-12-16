@@ -277,3 +277,16 @@ exec --no-startup-id nm-applet
 # smart_gaps on
 # smart_borders on|no_gaps
 hide_edge_borders both
+
+# macbook keyboard screen brightness
+bindcode 232 exec --no-startup-id /usr/bin/gmux_backlight -50
+bindcode 233 exec --no-startup-id /usr/bin/gmux_backlight +50
+
+# macbook keyboard keyboard backlight
+bindcode 237 exec --no-startup-id kbdlight down
+bindcode 238 exec --no-startup-id kbdlight up
+
+# macbook keyboard music
+bindcode 171 exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindcode 172 exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindcode 173 exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
