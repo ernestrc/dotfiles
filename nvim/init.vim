@@ -15,7 +15,7 @@ Plug 'mhinz/vim-signify'
 Plug 'mhartington/oceanic-next'
 Plug 'junegunn/fzf', { 'dir': '~/.zplug/repos/junegunn/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'ernestrc/vim-snippets'
 Plug 'fntlnz/atags.vim'
 
 " rust
@@ -159,7 +159,7 @@ let errorformat  =
 
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
-      \ 'args' : ['test'],
+      \ 'args' : ['build', '--features', 'server'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
@@ -202,3 +202,8 @@ map <Tab> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='distinguished'
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-s>"
