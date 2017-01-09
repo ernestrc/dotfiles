@@ -26,7 +26,6 @@ Plug 'racer-rust/vim-racer'
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
 " scala
-" Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
 " Plug 'critiqjo/lldb.nvim'
@@ -176,8 +175,9 @@ autocmd! BufWritePost *.c call atags#generate()
 " autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
 
 " Scala
-au FileType scala nnoremap gd :EnDeclaration<CR>
-autocmd BufWritePost *.scala :EnTypeCheck
+" au FileType scala nnoremap gd :EnDeclaration<CR>
+" autocmd BufWritePost *.scala :EnTypeCheck
+" au FileType scala nnoremap gd :EnDeclaration<CR>
 
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
@@ -192,7 +192,6 @@ nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
 
 noremap <C-q> :q!<CR>
-au FileType scala nnoremap gd :EnDeclaration<CR>
 au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 
 " nnoremap <C-y> :YRShow<CR>
