@@ -125,9 +125,19 @@ link_file () {
   fi
 }
 
-install_dotfiles () {
+install_zplug () {
+  info 'installing zplug'
+
   export ZPLUG_HOME=$HOME/.zplug
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
+
+  source ~/.zshrc
+
+  zplug update --self
+}
+
+install_dotfiles () {
+
   info 'installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
@@ -141,8 +151,7 @@ install_dotfiles () {
 
 setup_gitconfig
 install_dotfiles
-
-curl -sL get.zplug.sh | zsh
+install_zplug
 
 echo ''
 echo '  All installed!'

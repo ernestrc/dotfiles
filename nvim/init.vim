@@ -1,5 +1,3 @@
-
-
 " PLUGINS
 
 call plug#begin()
@@ -26,10 +24,9 @@ Plug 'racer-rust/vim-racer'
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
 " scala
-Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
-Plug 'critiqjo/lldb.nvim'
+" Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
 function! DoRemote(arg)
   UpdateRemotePlugins
@@ -57,15 +54,12 @@ set exrc
 "set encoding=UTF8
 set secure
 set hidden
-set tabstop=4
-set softtabstop=4
+set softtabstop=2
 set smarttab
-set expandtab
 set copyindent
 set history=1000
 set undolevels=1000
 set wildignore+=*.swp,*.bak,*.pyc,*.class
-set shiftwidth=2
 set scrolloff=3
 set autoindent
 set visualbell
@@ -84,6 +78,9 @@ set go+=a
 set switchbuf=usetab
 set nofoldenable
 set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 
 " MAPPINGS
@@ -114,7 +111,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 let g:rustc_syntax_only = 0
-let g:rust_recommended_style = 1
+let g:rust_recommended_style = 0
 let $RUST_SRC_PATH="/home/ernest/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let $RUST_BACKTRACE=0
 let $RUST_LOG="error"
@@ -157,6 +154,10 @@ let errorformat  =
       \ '%Z\ %#%m,'.
       \ '%-G%s'
 
+      "\ 'args' : ['build','--features', 'server', '--example',  'proxy'],
+      "\ 'args' : ['build','--example',  'sync_mux_echo'],
+      "\ 'args' : ['build'],
+      "\ 'args' : ['test'],
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
       \ 'args' : ['build', '--features', 'server'],
@@ -176,8 +177,9 @@ autocmd! BufWritePost *.c call atags#generate()
 " autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
 
 " Scala
-au FileType scala nnoremap gd :EnDeclaration<CR>
-autocmd BufWritePost *.scala :EnTypeCheck
+" au FileType scala nnoremap gd :EnDeclaration<CR>
+" autocmd BufWritePost *.scala :EnTypeCheck
+" au FileType scala nnoremap gd :EnDeclaration<CR>
 
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
@@ -192,7 +194,6 @@ nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
 
 noremap <C-q> :q!<CR>
-au FileType scala nnoremap gd :EnDeclaration<CR>
 au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 
 " nnoremap <C-y> :YRShow<CR>
@@ -205,5 +206,5 @@ let g:airline_theme='distinguished'
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-i>"
+let g:UltiSnipsJumpBackwardTrigger="<c-o>"

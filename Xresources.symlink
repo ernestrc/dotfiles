@@ -36,7 +36,7 @@ Xcursor.size: 24
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=8
+xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=12
 xterm*dynamicColors:      true
 ! xterm*utf8:               2
 XTerm*eightBitInput:   false
@@ -390,7 +390,7 @@ Xft*rgba: rgb
 ! Window opacity
 rofi.opacity:                        70
 ! Font to use
-rofi.font:                           DejaVu Sans Mono for Powerline 17
+rofi.font:                           DejaVu Sans Mono for Powerline 16
 ! Border width
 rofi.bw:                             0
 ! Padding
