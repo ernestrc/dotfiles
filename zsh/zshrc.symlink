@@ -79,7 +79,8 @@ setopt complete_aliases
 
 # zle -N newtab
 
-TERMINAL="urxvtc"
+# TERMINAL="urxvtc"
+TERMINAL="alacritty"
 
 
 # ALIASES
@@ -114,3 +115,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export SYSTEMD_EDITOR="nvim"
 alias octave="octave --no-gui"
+
+export RUST_BACKTRACE=1;

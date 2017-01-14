@@ -1,5 +1,3 @@
-
-
 " PLUGINS
 
 call plug#begin()
@@ -56,15 +54,12 @@ set exrc
 "set encoding=UTF8
 set secure
 set hidden
-set tabstop=4
-set softtabstop=4
+set softtabstop=2
 set smarttab
-set expandtab
 set copyindent
 set history=1000
 set undolevels=1000
 set wildignore+=*.swp,*.bak,*.pyc,*.class
-set shiftwidth=2
 set scrolloff=3
 set autoindent
 set visualbell
@@ -83,6 +78,9 @@ set go+=a
 set switchbuf=usetab
 set nofoldenable
 set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 
 " MAPPINGS
@@ -113,7 +111,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 let g:rustc_syntax_only = 0
-let g:rust_recommended_style = 1
+let g:rust_recommended_style = 0
 let $RUST_SRC_PATH="/home/ernestrc/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let $RUST_BACKTRACE=0
 let $RUST_LOG="error"
@@ -156,9 +154,13 @@ let errorformat  =
       \ '%Z\ %#%m,'.
       \ '%-G%s'
 
+      "\ 'args' : ['build','--features', 'server', '--example',  'proxy'],
+      "\ 'args' : ['build','--example',  'sync_mux_echo'],
+      "\ 'args' : ['build'],
+      "\ 'args' : ['test'],
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
-      \ 'args' : ['test'],
+      \ 'args' : ['build','--features', 'server', '--example',  'proxy'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
@@ -201,3 +203,8 @@ map <Tab> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='distinguished'
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-i>"
+let g:UltiSnipsJumpBackwardTrigger="<c-o>"
