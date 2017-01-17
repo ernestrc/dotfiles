@@ -110,35 +110,18 @@ map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-let g:rustc_syntax_only = 0
+" rust
+let g:rustc_syntax_only = 1
 let g:rust_recommended_style = 0
-let $RUST_SRC_PATH="/home/ernest/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-let $RUST_BACKTRACE=0
-let $RUST_LOG="error"
-let g:racer_cmd = "/home/ernest/.cargo/bin/racer"
+let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers=['pyflakes']
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:NERDTreeWinSize=30
-
-let g:gitgutter_enabled = 1
-
-let g:yankring_replace_n_pkey = '<C-I-O>'
-
-let g:deoplete#enable_at_startup = 1
-
-set tags=./tags,tags,../tags
-
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
+au FileType rust nmap gd :call racer#GoToDefinition()<CR>
+au FileType rust nmap gs :split<CR>:call racer#GoToDefinition()<CR>
+au FileType rust nmap gx :vsplit<CR>:call racer#GoToDefinition()<CR>
+au FileType rust nmap <leader>gd :call racer#ShowDocumentation()<CR>
 let errorformat  =
       \ '%-Gerror: aborting due to previous error,'.
       \ '%-Gerror: aborting due to %\\d%\\+ previous errors,'.
@@ -160,13 +143,26 @@ let errorformat  =
       "\ 'args' : ['test'],
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
-      \ 'args' : ['build', '--features', 'server'],
+      \ 'args' : ['build'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
-
 let g:neomake_rust_enabled_makers = ["bcargo"]
-let g:neomake_logfile ="/var/log/neomake.log"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:NERDTreeWinSize=30
+
+let g:gitgutter_enabled = 1
+
+let g:yankring_replace_n_pkey = '<C-I-O>'
+
+let g:deoplete#enable_at_startup = 1
+
+set tags=./tags,tags,../tags
+" let g:neomake_logfile ="/var/log/neomake.log"
 
 "requires gentag in PATH
 let g:atags_build_commands_list = [ "gentags" ]
@@ -181,20 +177,14 @@ autocmd! BufWritePost *.c call atags#generate()
 " autocmd BufWritePost *.scala :EnTypeCheck
 " au FileType scala nnoremap gd :EnDeclaration<CR>
 
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
-
 " PLUGIN MAPPINGS
 "
 nnoremap <C-p> :Files<CR>
 nnoremap <C-n> :Tags<CR>
 nnoremap <C-e> :History<CR>
 nnoremap <C-_> :Ag<CR>
-
 noremap <C-b> :Autoformat<CR><CR>
-
 noremap <C-q> :q!<CR>
-au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 
 " nnoremap <C-y> :YRShow<CR>
 "nmap gd :YcmCompleter GoTo<CR>
