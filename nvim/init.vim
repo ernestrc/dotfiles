@@ -15,6 +15,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.zplug/repos/junegunn/fzf', 'do': './install --
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'fntlnz/atags.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 
 " rust
 Plug 'rust-lang/rust.vim'
@@ -75,6 +77,7 @@ highlight NonText ctermbg=none
 set clipboard+=unnamed
 set clipboard+=unnamedplus
 set go+=a
+set tags=./tags,tags,../tags
 set switchbuf=usetab
 set nofoldenable
 set nowrap
@@ -102,8 +105,6 @@ inoremap <C-SPACE> <C-x><C-o>
 noremap <space> @q
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 nnoremap <silent> <C-w> :lclose<CR>:Bclose<CR>
-map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
-
 
 " PLUGIN SETTINGS
 
@@ -122,33 +123,13 @@ au FileType rust nmap gd :call racer#GoToDefinition()<CR>
 au FileType rust nmap gs :split<CR>:call racer#GoToDefinition()<CR>
 au FileType rust nmap gx :vsplit<CR>:call racer#GoToDefinition()<CR>
 au FileType rust nmap <leader>gd :call racer#ShowDocumentation()<CR>
-let errorformat  =
-      \ '%-Gerror: aborting due to previous error,'.
-      \ '%-Gerror: aborting due to %\\d%\\+ previous errors,'.
-      \ '%-Gerror: Could not compile `%s`.,'.
-      \ '%Eerror[E%n]: %m,'.
-      \ '%Eerror: %m,'.
-      \ '%Wwarning: %m,'.
-      \ '%Inote: %m,'.
-      \ '%-Z\ %#-->\ %f:%l:%c,'.
-      \ '%G\ %#\= %*[^:]: %m,'.
-      \ '%G\ %#|\ %#%\\^%\\+ %m,'.
-      \ '%I%>help:\ %#%m,'.
-      \ '%Z\ %#%m,'.
-      \ '%-G%s'
+" Neomake configuration.
+augroup rust_commands
+  autocmd!
+  autocmd BufWritePost *.rs Neomake! clippy
+augroup END
 
-      "\ 'args' : ['build','--features', 'server', '--example',  'proxy'],
-      "\ 'args' : ['build','--example',  'sync_mux_echo'],
-      "\ 'args' : ['build'],
-      "\ 'args' : ['test'],
-let g:neomake_rust_bcargo_maker = {
-      \ 'exe': 'cargo',
-      \ 'args' : ['build'],
-      \ 'append_file': 0,
-      \ 'errorformat': errorformat
-      \ }
-let g:neomake_rust_enabled_makers = ["bcargo"]
-
+" snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -161,21 +142,18 @@ let g:yankring_replace_n_pkey = '<C-I-O>'
 
 let g:deoplete#enable_at_startup = 1
 
-set tags=./tags,tags,../tags
-" let g:neomake_logfile ="/var/log/neomake.log"
+let g:neomake_logfile ="/var/log/neomake.log"
 
+
+" C
+"
 "requires gentag in PATH
 let g:atags_build_commands_list = [ "gentags" ]
-
-autocmd! BufWritePost * Neomake
-autocmd! BufWritePost *.cpp call atags#generate()
-autocmd! BufWritePost *.c call atags#generate()
-" autocmd! BufWritePost *.rs call neomake#makers#cargo#cargo()
-
-" Scala
-" au FileType scala nnoremap gd :EnDeclaration<CR>
-" autocmd BufWritePost *.scala :EnTypeCheck
-" au FileType scala nnoremap gd :EnDeclaration<CR>
+au FileType c nmap <F5> :call atags#generate()<CR>
+augroup c_neo
+  autocmd!
+  autocmd BufRead,BufWritePost *.c Neomake
+augroup END
 
 " PLUGIN MAPPINGS
 "

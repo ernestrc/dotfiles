@@ -77,7 +77,7 @@ URxvt.keysym.Control-0x3d: perl:font-size:increase
 URxvt.keysym.Control-0x2d: perl:font-size:decrease
 
 ! Transparency w/out compositor
-URxvt*.transparent: true
+URxvt*.transparent: false
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 20
 
@@ -91,7 +91,7 @@ Rxvt*fadeColor:                       black
 URxvt*visualBell:                     true
 URxvt*cursorUnderline:                false
 URxvt*cursorBlink:                    true
-URxvt*background:                     [95]#000000
+URxvt*background:                     #0f0000
 URxvt*highlightColor:                 rgb:20/30/20
 URxvt*cursorColor:                    red
 URxvt*saveLines:                      8192
