@@ -16,7 +16,7 @@ zplug "supercrabtree/k"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 zplug "huyng/bashmarks", use:"*.sh"
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -25,7 +25,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load #--verbose
+zplug load # --verbose
 
 
 # BINDINGS

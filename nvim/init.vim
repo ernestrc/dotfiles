@@ -143,7 +143,7 @@ let errorformat  =
       "\ 'args' : ['test'],
 let g:neomake_rust_bcargo_maker = {
       \ 'exe': 'cargo',
-      \ 'args' : ['build'],
+      \ 'args' : ['build','--features', 'server', '--example',  'proxy'],
       \ 'append_file': 0,
       \ 'errorformat': errorformat
       \ }
