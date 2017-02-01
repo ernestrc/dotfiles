@@ -1,6 +1,6 @@
 ! terminal colors ------------------------------------------------------------
 
-*background: #1f0000
+*background: #0f0000
 *foreground: #babdb6
 ! *foreground: #60BFBF
 ! Black (not tango) + DarkGrey
@@ -91,7 +91,7 @@ Rxvt*fadeColor:                       black
 URxvt*visualBell:                     true
 URxvt*cursorUnderline:                false
 URxvt*cursorBlink:                    true
-URxvt*background:                     [95]#1f0000
+URxvt*background:                     [95]#0f0000
 URxvt*highlightColor:                 rgb:20/30/20
 URxvt*cursorColor:                    red
 URxvt*saveLines:                      8192
