@@ -49,6 +49,10 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 
 
+# enable vi mode
+bindkey -v
+
+
 # OPTIONS
 
 HISTFILE=~/.zsh_history
