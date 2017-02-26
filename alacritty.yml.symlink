@@ -44,10 +44,10 @@ font:
 render_timer: false
 
 # Colors (Tomorrow Night Bright)
-colors:
+#colors:
   # Default colors
   primary:
-    background: '0x0f0000'
+    background: '0x1f0000'
     foreground: '0xeaeaea'
 
   # Normal colors
