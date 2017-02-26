@@ -5,7 +5,6 @@ call plug#begin()
 "Plug 'git@github.com:scrooloose/syntastic.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
-Plug 'https://github.com/rking/ag.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
