@@ -110,6 +110,17 @@ nnoremap <silent> <C-w> :lclose<CR>:Bclose<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+autocmd! BufWritePost *.js Neomake
+
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
+" JS
+let g:formatdef_eslint = '"eslint-formatter"'
+let g:formatters_javascript = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
+
 " rust
 let g:rustc_syntax_only = 1
 let g:rust_recommended_style = 0
@@ -117,7 +128,7 @@ let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
-au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
+" au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 au FileType rust nmap gd :call racer#GoToDefinition()<CR>
 au FileType rust nmap gs :split<CR>:call racer#GoToDefinition()<CR>
 au FileType rust nmap gx :vsplit<CR>:call racer#GoToDefinition()<CR>
@@ -142,7 +153,6 @@ let g:yankring_replace_n_pkey = '<C-I-O>'
 let g:deoplete#enable_at_startup = 1
 
 let g:neomake_logfile ="/var/log/neomake.log"
-
 
 " C
 "
