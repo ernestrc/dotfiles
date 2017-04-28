@@ -17,6 +17,7 @@ zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 zplug "huyng/bashmarks", use:"*.sh"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
