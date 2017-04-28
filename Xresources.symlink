@@ -1,7 +1,8 @@
 ! terminal colors ------------------------------------------------------------
 
-*background: #111111
+*background: #1f0000
 *foreground: #babdb6
+! *foreground: #60BFBF
 ! Black (not tango) + DarkGrey
 *color0:  #000000
 *color8:  #555753
@@ -35,10 +36,12 @@ Xcursor.size: 24
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=9
+xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=12
 xterm*dynamicColors:      true
 ! xterm*utf8:               2
-xterm*eightBitInput:      true
+XTerm*eightBitInput:   false
+XTerm.VT100.EightBitInput: false
+XTerm*eightBitOutput:  true
 xterm*saveLines:          2000
 xterm*scrollKey:          true
 xterm*scrollTtyOutput:    false
@@ -59,9 +62,9 @@ URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,font-size,url-s
 
 URxvt.keysym.Control-Escape:  perl:keyboard-select:activate
 URxvt.keysym.Control-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.launcher: /usr/bin/chromium
 URxvt.url-select.underline: true
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/chromium
 URxvt.matcher.button: 1
 URxvt.colorUL: #4682B4
 URxvt.keysym.Mod4-v:   perl:clipboard:paste
@@ -70,13 +73,13 @@ URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
 ! Change font size on Control-Plus/Minus
-URxvt.keysym.C-Up: perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.Control-0x3d: perl:font-size:increase
+URxvt.keysym.Control-0x2d: perl:font-size:decrease
 
 ! Transparency w/out compositor
-URxvt*.transparent: true
+URxvt*.transparent: false
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading:8
+URxvt*.shading: 20
 
 ! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
 URxvt*scrollBar: 0
@@ -84,18 +87,21 @@ URxvt*scrollBar: 0
 URxvt*loginShell:                     true
 URxvt*jumpScroll:                     true
 URxvt*fading:                         30
+Rxvt*fadeColor:                       black 
 URxvt*visualBell:                     true
 URxvt*cursorUnderline:                false
 URxvt*cursorBlink:                    true
-URxvt*background:                     [95]#000000
+URxvt*background:                     [95]#1f0000
 URxvt*highlightColor:                 rgb:20/30/20
-URxvt*cursorColor:                    green
+URxvt*cursorColor:                    red
 URxvt*saveLines:                      8192
 URxvt*buffered:                       true
 URxvt*depth:                          32
 URxvt.meta8:                          false
 URxvt.keysym.C-f:                     perl:keyboard-select:search
+URxvt.keysym.C-s:                     perl:keyboard-select:activate
 URxvt.modifier:                       Alt
+URxvt.letterSpace: -1
 
 ! Compile xft: Turn on/off double-buffering for xft (default enabled).  On some card/driver combination enabling it slightly decreases performance, on most it greatly helps it. The slowdown is
 ! URxvt*buffered: boolean
@@ -127,9 +133,6 @@ URxvt.modifier:                       Alt
 ! If set, use the specified colour as the background for highlighted characters. If unset, use reverse video.
 ! URxvt*highlightColor: colour
 
-! If set and highlightColor is set, use the specified colour as the foreground for highlighted characters.
-! URxvt*highlightTextColor: colour
-
 ! Use the specified colour for the cursor. The default is to use the foreground colour; option -cr.
 ! URxvt*cursorColor: colour
 
@@ -157,7 +160,7 @@ URxvt.modifier:                       Alt
 ! Use the specified colour for the scrollbar [default #B2B2B2].
 ! URxvt*scrollColor: colour
 
-! Use the specified colour for the scrollbars trough area [default #969696]. Only relevant for rxvt (non XTerm/NeXT) scrollbar.
+! Use the specified colour for the scrollbars trough area [default #220220220]. Only relevant for rxvt (non XTerm/NeXT) scrollbar.
 ! URxvt*troughColor: colour
 
 ! The colour of the border around the text area and between the scrollbar and the text.
@@ -363,7 +366,8 @@ URxvt.secondaryWheel: 1
 ! Activate Home/End-key
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
-URxvt.font:                           xft:DejaVu Sans Mono for Powerline:style=Regular:size=9:antialias=true:hinting=true
+! URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
+URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
 
 ! xpdf -----------------------------------------------------------------------
 
@@ -371,13 +375,31 @@ xpdf*enableFreetype:    yes
 xpdf*antialias:         yes
 xpdf*foreground:        black
 xpdf*background:        white
-xpdf*urlCommand:        /usr/bin/firefox %
+xpdf*urlCommand:        /usr/bin/chromium %
 
 ! xft ---------------------------------------------------------------------
-Xft*dpi: 120
-! Xft*autohint: 0
-! Xft*lcdfilter: lcddefault
-! Xft*hintstyle: hintfull
-Xft*hinting: true
-Xft*antialias: true
+Xft*dpi: 190
+Xft*autohint: 0
+Xft*lcdfilter: lcddefault
+Xft*hintstyle: hintfull
+Xft*hinting: 1
+Xft*antialias: 1
 Xft*rgba: rgb
+
+! Rofi ------------------------------------------------------------------------
+! Window opacity
+rofi.opacity:                        70
+! Font to use
+rofi.font:                           DejaVu Sans Mono for Powerline 16
+! Border width
+rofi.bw:                             0
+! Padding
+rofi.padding:                        0
+! Separator style (none, dash, solid)
+rofi.separator-style:                none
+ 
+rofi.color-enabled: true
+rofi.color-window: argb:ee222222, #F76564, #F76564
+rofi.color-normal: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
+rofi.color-active: argb:0000000, #CA76EF, argb:0000000, #CA76EF, #1b2b34
+rofi.color-urgent: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34

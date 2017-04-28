@@ -10,7 +10,10 @@
 # `functions/_dev`. 
 #
 if [ ! -z "$1" ] && [ -s "$TB/$1" ]; then
-  cd "$TB/$1"
+    cd "$TB/$1"
+elif [ ! -z "$1" ] && [ -s "$CLASS/$1" ]; then
+    cd "$CLASS/$1"
 else
-  cd "$PROJECTS/$1"
+    cd "$PROJECTS/$1"
 fi
+

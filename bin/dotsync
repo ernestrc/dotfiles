@@ -1,26 +1,8 @@
-#!/bin/sh
-#
-# dot
-#
-# `dot` handles installation, updates, things like that. Run it periodically
-# to make sure you're on the latest and greatest.
-export ZSH=$HOME/.dotfiles
-
-# Set OS X defaults
-# Install the correct homebrew for each OS type
-if test "$(uname)" = "Darwin"
-then
-    $ZSH/osx/set-defaults.sh
-fi
-
-
-# Upgrade homebrew
-brew update
-
-# Install homebrew packages
-$ZSH/homebrew/install.sh 2>&1
-
+#!/bin/bash
 cd $HOME/.dotfiles
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+HOST=`cat /etc/hostname`
+git pull origin $BRANCH
 git add --all .
-git commit -m "dotsync"
-git push origin master
+git commit -m "dotsync of $USER on $HOST"
+git push origin $BRANCH

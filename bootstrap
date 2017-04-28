@@ -125,7 +125,19 @@ link_file () {
   fi
 }
 
+install_zplug () {
+  info 'installing zplug'
+
+  export ZPLUG_HOME=$HOME/.zplug
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+
+  source ~/.zshrc
+
+  zplug update --self
+}
+
 install_dotfiles () {
+
   info 'installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
@@ -139,18 +151,7 @@ install_dotfiles () {
 
 setup_gitconfig
 install_dotfiles
-
-# If we're on a Mac, let's install and setup homebrew.
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-  if source bin/dot > /tmp/dotfiles-dot 2>&1
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
-fi
+install_zplug
 
 echo ''
 echo '  All installed!'

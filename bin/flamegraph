@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+if [ "$1" == "" ]; then
+  echo "missing executable at \$1";
+  exit 1;
+fi
+
+if [ ! -e ./target/perf ]
+then
+  mkdir -p ./target/perf;
+fi
+
+FLAMEGRAPH="$(pwd)/target/perf/FlameGraph"
+
+if [ ! -e $FLAMEGRAPH ]
+then
+  git clone https://github.com/BrendanGregg/FlameGraph $FLAMEGRAPH || exit 1;
+fi
+
+BIN="$1"
+
+if [ ! -e $BIN ]
+then
+  echo "$BIN not found"
+  exit 1;
+fi
+
+NAME=`echo "$BIN" | sed -e 's/\//_/g'`
+PERF="$(pwd)/target/perf/$NAME.data"
+SVG="$(pwd)/target/perf/$NAME.svg"
+
+trap draw_svg INT
+
+function draw_svg() {
+  sudo perf script -i $PERF | ./target/perf/FlameGraph/stackcollapse-perf.pl | ./target/perf/FlameGraph/flamegraph.pl --width 1920 > $SVG
+  echo "Flame graph created at file://$SVG"
+  exit 0;
+}
+
+echo "Starting recording of $BIN.."
+
+sudo perf record -o $PERF -g -F 99 $BIN
+
+draw_svg

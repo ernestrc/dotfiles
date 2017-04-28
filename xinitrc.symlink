@@ -1,8 +1,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-# xrandr --output DP-2 --auto --output HDMI-0 --auto --left-of DP-2
-compton -b --backend glx --vsync opengl
-# xrandr --dpi 160
-# nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+xrandr --dpi 190
 urxvtd -q -o -f
-xset r rate 200 50
+xset r rate 200 80
+xmodmap ~/.Xmodmap
 exec i3

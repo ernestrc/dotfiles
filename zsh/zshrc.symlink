@@ -1,52 +1,119 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+source ~/.zplug/init.zsh
 
-# for autocompletion with dev [dev]
-export PROJECTS=~/dev
-export TB=~/tokbox
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
-
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
-
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
-
-unset config_files
-
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
 
-# extra config
 
-echo "
-    ______                     __  ____  ______
-   / ____/________  ___  _____/ /_/ __ \/ ____/
-  / __/ / ___/ __ \/ _ \/ ___/ __/ /_/ / /
- / /___/ /  / / / /  __(__  ) /_/ _, _/ /___
-/_____/_/  /_/ /_/\___/____/\__/_/ |_|\____/
-"
+# PLUGINS
+
+zplug "zplug/zplug"
+zplug 'junegunn/fzf', hook-build:"./install --all"
+zplug "supercrabtree/k"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
+zplug "huyng/bashmarks", use:"*.sh"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load # --verbose
+
+
+# BINDINGS
+
+bindkey '^p' fzf-file-widget
+bindkey '^r' fzf-history-widget
+
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[^N' newtab
+bindkey '^?' backward-delete-char
+
+## xterm arch linux
+bindkey '^[[1;3D' backward-word ### Alt left
+bindkey '^[[1;3C' forward-word ### Alt right
+
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+
+# OPTIONS
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+setopt NO_BG_NICE # don't nice background tasks
+setopt NO_HUP
+setopt NO_LIST_BEEP
+setopt LOCAL_OPTIONS # allow functions to have local options
+setopt LOCAL_TRAPS # allow functions to have local traps
+setopt HIST_VERIFY
+setopt SHARE_HISTORY # share history between sessions ???
+setopt EXTENDED_HISTORY # add timestamps to history
+setopt PROMPT_SUBST
+setopt CORRECT
+setopt COMPLETE_IN_WORD
+setopt IGNORE_EOF
+
+setopt APPEND_HISTORY # adds history
+setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+#setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
+
+# don't expand aliases _before_ completion has finished
+#   like: git comm-[tab]
+setopt complete_aliases
+
+# zle -N newtab
+
+# TERMINAL="urxvtc"
+TERMINAL="alacritty"
+
+
+# ALIASES
+
+alias l='k -h'
+alias c=g
+
+alias grep='grep --color'
+alias ls='ls --color'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias vim=nvim
+
+function clean-steam {
+    find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
+    find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
+    echo 'done cleaning steam'
+}
+
+
+# PROMPT
+autoload -U promptinit && promptinit
+
+
+# PATH
+
+PATH=$HOME/.dotfiles/bin:$PATH
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+export GIT_EDITOR="$VISUAL"
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export SYSTEMD_EDITOR="nvim"
+alias octave="octave --no-gui"
+
+export RUST_BACKTRACE=1;
+export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src

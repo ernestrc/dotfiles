@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+if [ "$1" != "--bin" ] && [ "$1" != "--example" ]; then
+  echo "missing --bin <arg> or --example <arg>";
+  exit 1;
+fi
+
+if [ ! -e ./target/perf ]
+then
+  mkdir -p ./target/perf;
+fi
+
+FLAMEGRAPH="$(pwd)/target/perf/FlameGraph"
+
+if [ ! -e $FLAMEGRAPH ]
+then
+  git clone https://github.com/BrendanGregg/FlameGraph $FLAMEGRAPH || exit 1;
+fi
+
+if [ "$1" == "--bin" ]; then
+  BIN="$(pwd)/target/release/$2";
+else
+  BIN="$(pwd)/target/release/examples/$2";
+fi
+
+
+if [ ! -e $BIN ]
+then
+  cargo build --release $1 $2 || exit 1;
+  echo "compiled $BIN"
+else
+  echo "$BIN already compiled!"
+fi
+
+SVG="$(pwd)/target/perf/$2.svg"
+
+echo "Starting recording of $2.."
+sudo perf record -g -F 99 $BIN
+
+sudo perf script | ./target/perf/FlameGraph/stackcollapse-perf.pl | ./target/perf/FlameGraph/flamegraph.pl --width 1920 > $SVG
+
+echo "Flame graph created at file://$SVG"

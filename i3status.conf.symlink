@@ -9,11 +9,20 @@ order += "load"
 order += "cpu_temperature 0"
 order += "disk /"
 order += "run_watch DHCP"
-order += "run_watch VPNC"
 order += "path_exists VPN"
 order += "wireless _first_"
 order += "ethernet _first_"
+order += "volume master"
+order += "battery 0"
 order += "tztime local"
+
+volume master {
+  format = "♪: %volume"
+  format_muted = "♪: muted (%volume)"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
 
 wireless _first_ {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -28,11 +37,6 @@ ethernet _first_ {
 
 run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
-}
-
-run_watch VPNC {
-        # file containing the PID of a vpnc process
-        pidfile = "/var/run/vpnc/pid"
 }
 
 path_exists VPN {
@@ -55,4 +59,15 @@ cpu_temperature 0 {
 
 disk "/" {
         format = "%free"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+               format_down = "No battery"
+               status_chr = "⚇ CHR"
+               status_bat = "⚡ BAT"
+               status_full = "☻ FULL"
+               path = "/sys/class/power_supply/BAT%d/uevent"
+               low_threshold = 20
+               threshold_type = "percentage"
 }

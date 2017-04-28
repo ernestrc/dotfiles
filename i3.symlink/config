@@ -61,6 +61,15 @@ set $ws10 10
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# disable title bar
+new_window none
+
+# take a screenshot
+bindsym shift+ctrl+3 exec scrot /tmp/screenshot_$(date +%s).png
+
+# Take a screenshot (select an area)
+bindsym --release shift+ctrl+4 exec --no-startup-id import /tmp/screenshot_$(date +%s).png
+
 # kill focused window
 bindsym $mod+w kill
 bindsym $mod+q kill
@@ -168,9 +177,9 @@ bindsym XF86AudioMute exec amixer set Master toggle
 focus_follows_mouse no
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'Do you really want to restart X server?' -b 'Yes' 'kill `pidof Xorg` && startx'"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -182,7 +191,7 @@ mode "resize" {
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
-    bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
@@ -200,13 +209,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id j4-dmenu-desktop
+# start rofi (a program launcher)
+bindsym $mod+p exec --no-startup-id "rofi -combi-modi window,drun -show combi"
 
-set $bg     #21252B
+#set $bg     #21252B
+set $bg     #000000
+set $28     #282828
+set $18     #181818
+set $21     #21F06B
 set $fg     #282c34
 set $hi     #111111
-set $ac     #353b45
+set $ac     #1A1A1A
 set $tx     #ABB2B1
 set $ia     #656b77
 set $yw     #d19a64
@@ -228,30 +241,39 @@ client.urgent               $orange    $kourni     $hi
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
+#    position top
+    status_command i3status | ~/.i3/contrib/custom.py
 
         colors {
-            background          $bg
+                background          $18
                 statusline          $ia
                 separator           $hi
-                focused_workspace   $bu        $bu        $wh
-                active_workspace    $rd        $bg        $ac
-                inactive_workspace  $bg        $bg        $ia
-                urgent_workspace    $orang     $orange    $muesli
+                focused_workspace   $28        $28        $wh
+                active_workspace    $28        $28        $ac
+                inactive_workspace  $18        $18        $ia
+                urgent_workspace    $21        $21        $ia
         }
 }
 
 # assigments
 assign [class="Spotify"] $ws6
 assign [class="Thunderbird"] $ws2
-assign [class="Firefox"] $ws3
+assign [class="chromium"] $ws3
 assign [class="Scudcloud"] $ws7
 assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/wallpaper-2.png
+exec --no-startup-id feh --bg-fill ~/.wallpaper/pluto.jpg
+
+# set up locker
+# exec xautolock -time 5 -locker ~/.dotfiles/bin/lock &
 
 # startup processes
 exec --no-startup-id nm-applet
-exec --no-startup-id dropbox
+
+# gaps inner 0
+# gaps outer -10
+# smart_gaps on
+# smart_borders on|no_gaps
+hide_edge_borders both
