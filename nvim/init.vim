@@ -161,7 +161,7 @@ let g:atags_build_commands_list = [ "gentags" ]
 au FileType c nmap <F5> :call atags#generate()<CR>
 augroup c_neo
   autocmd!
-  autocmd BufRead,BufWritePost *.c Neomake
+  autocmd BufRead,BufWritePost *.c* Neomake
 augroup END
 
 " PLUGIN MAPPINGS
