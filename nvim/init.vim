@@ -167,7 +167,7 @@ augroup END
 " PLUGIN MAPPINGS
 "
 nnoremap <C-p> :Files<CR>
-nnoremap <C-n> :Tags<CR>
+nnoremap <C-t> :Tags<CR>
 nnoremap <C-e> :History<CR>
 nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
