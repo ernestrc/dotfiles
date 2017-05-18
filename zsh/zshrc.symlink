@@ -54,6 +54,7 @@ bindkey '^w' backward-kill-word
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+SRC=$HOME/src
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
@@ -86,7 +87,6 @@ TERMINAL="alacritty"
 # ALIASES
 
 alias l='k -h'
-alias c=g
 
 alias grep='grep --color'
 alias ls='ls --color'
@@ -99,6 +99,26 @@ function clean-steam {
     echo 'done cleaning steam'
 }
 
+# bashmarks override. keep dependency as we need `s` to save
+c () {
+	check_help $1
+	source $SDIRS
+	target="$(eval $(echo echo $(echo \$DIR_$1)))" 
+	if [ -d "$target" ]
+	then
+		cd "$target"
+	elif [ ! -n "$target" ]
+	then
+    if [ ! -z "$1" ] && [ -s "$SRC/$1" ]; then
+        cd "$SRC/$1"
+    else
+        echo -e "\033[${RED}WARNING: '${1}' bashmark does not exist\033[00m"
+    fi
+	else
+		echo -e "\033[${RED}WARNING: '${target}' does not exist\033[00m"
+	fi
+}
+
 
 # PROMPT
 autoload -U promptinit && promptinit
@@ -106,14 +126,15 @@ autoload -U promptinit && promptinit
 
 # PATH
 
-PATH=$HOME/.dotfiles/bin:$PATH
+export DOTFILES=$HOME/.dotfiles
+export PATH=$DOTFILES/bin:$PATH
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export SYSTEMD_EDITOR="$VISUAL"
 export GIT_EDITOR="$VISUAL"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export SYSTEMD_EDITOR="nvim"
 alias octave="octave --no-gui"
 
 export RUST_BACKTRACE=1;

@@ -1,0 +1,2 @@
+# reinstall (deps will be pulled in automatically)
+xargs sudo pacman -S --needed --noconfirm < $DOTFILES/pacman
