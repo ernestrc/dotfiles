@@ -2,7 +2,7 @@
 cd $HOME/.dotfiles
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 HOST=`cat /etc/hostname`
-./pacexport
+pacexport
 git pull origin $BRANCH
 git add --all .
 git commit -m "dotsync of $USER on $HOST"
