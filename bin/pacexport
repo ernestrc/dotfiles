@@ -1,2 +1,2 @@
 # put all explicitly installed packages (minus AUR) into a file
-pacman -Qqe | grep -Fvx "$(pacman -Qqm)" > $DOTFILES/pacman
+pacman -Qqe | grep -Fvx "$(pacman -Qqm)" > $DOTFILES/$1.pacman
