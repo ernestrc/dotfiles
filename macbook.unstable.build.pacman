@@ -49,6 +49,7 @@ intellij-idea-community-edition
 iproute2
 iputils
 jfsutils
+jq
 less
 libtool
 licenses
@@ -72,6 +73,7 @@ nodejs
 npm
 nvidia
 nvidia-settings
+octave
 openssh
 pacman
 patch
@@ -101,6 +103,7 @@ systemd-sysvcompat
 tar
 texinfo
 the_silver_searcher
+unzip
 usbutils
 util-linux
 vi
