@@ -19,12 +19,6 @@ fi
 
 BIN="$1"
 
-if [ ! -e $BIN ]
-then
-  echo "$BIN not found"
-  exit 1;
-fi
-
 NAME=`echo "$BIN" | sed -e 's/\//_/g'`
 PERF="$(pwd)/target/perf/$NAME.data"
 SVG="$(pwd)/target/perf/$NAME.svg"

@@ -80,10 +80,6 @@ setopt complete_aliases
 
 # zle -N newtab
 
-# TERMINAL="urxvtc"
-TERMINAL="alacritty"
-
-
 # ALIASES
 
 alias l='k -h'
