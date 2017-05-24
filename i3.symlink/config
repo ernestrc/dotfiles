@@ -242,7 +242,7 @@ client.urgent               $orange    $kourni     $hi
 # finds out, if available)
 bar {
 #    position top
-    status_command i3status | ~/.i3/contrib/custom.py
+    status_command i3status
 
         colors {
                 background          $18

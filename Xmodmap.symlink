@@ -1,3 +1,4 @@
 clear Lock
 keycode 66 = Escape
+keycode 94 = grave asciitilde acute
 keycode 9 = NoSymbol
