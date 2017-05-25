@@ -1,0 +1,2 @@
+#!/bin/mksh
+ponysay $(fortune -s)

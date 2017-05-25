@@ -1,8 +1,6 @@
 " PLUGINS
 
-call plug#begin()
-"Plug 'derekwyatt/vim-scala'
-"Plug 'git@github.com:scrooloose/syntastic.git'
+call plug#begin('~/.dotfiles/nvim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'Chiel92/vim-autoformat'
@@ -23,9 +21,6 @@ Plug 'racer-rust/vim-racer'
 
 " js
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
-
-" scala
-Plug 'derekwyatt/vim-scala'
 
 " Plug 'critiqjo/lldb.nvim'
 Plug 'neomake/neomake'
