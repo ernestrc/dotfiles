@@ -16,21 +16,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: DejaVu Sans Mono for Powerline # should be "Menlo" or something on macOS.
+    family: DejaVu Sans Mono for Powerline
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # The bold font face
   bold:
-    family: DejaVu Sans Mono for Powerline # should be "Menlo" or something on macOS.
+    family: DejaVu Sans Mono for Powerline
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style: Bold
 
   # The italic font face
   italic:
-    family: DejaVu Sans Mono for Powerline # should be "Menlo" or something on macOS.
+    family: DejaVu Sans Mono for Powerline
     # Style can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size of the font
   size: 8.0
@@ -215,3 +215,22 @@ key_bindings:
 # - Copy (TODO)
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
+<<<<<<< Updated upstream
+=======
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+hide_cursor_when_typing: true
+
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+shell:
+  program: /bin/zsh
+>>>>>>> Stashed changes
