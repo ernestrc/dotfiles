@@ -48,9 +48,8 @@ syntax enable
 filetype on
 filetype plugin indent on
 set number
-colorscheme OceanicNext
+
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
 set exrc
 "set encoding=UTF8
 set secure
@@ -83,6 +82,14 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+if $VBG == "light"
+  set background=light
+  colorscheme zellner
+else
+  set background=dark
+  colorscheme OceanicNext
+endif
 
 
 " MAPPINGS
