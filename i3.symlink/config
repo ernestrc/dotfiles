@@ -279,8 +279,8 @@ exec --no-startup-id nm-applet
 hide_edge_borders both
 
 # macbook keyboard screen brightness
-bindcode 232 exec --no-startup-id /usr/bin/gmux_backlight -50
-bindcode 233 exec --no-startup-id /usr/bin/gmux_backlight +50
+bindcode 232 exec --no-startup-id /usr/bin/light -U 2.5
+bindcode 233 exec --no-startup-id /usr/bin/light -A 2.5
 
 # macbook keyboard keyboard backlight
 bindcode 237 exec --no-startup-id kbdlight down
