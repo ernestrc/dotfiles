@@ -37,8 +37,8 @@ function draw_svg() {
   exit 0;
 }
 
-echo "Starting recording of $BIN.."
+echo "Starting recording of $BIN ${@:2}.."
 
-sudo perf record -o $PERF -g -F 99 $BIN
+sudo perf record -o $PERF -g -F 99 $BIN ${@:2}
 
 draw_svg
