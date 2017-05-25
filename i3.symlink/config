@@ -275,9 +275,9 @@ exec --no-startup-id /usr/bin/pasystray
 # smart_borders on|no_gaps
 hide_edge_borders both
 
-# razer blade
-bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/light -A 10
-bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/light -U 10
+# macbook keyboard screen brightness
+bindcode 232 exec --no-startup-id /usr/bin/light -U 2.5
+bindcode 233 exec --no-startup-id /usr/bin/light -A 2.5
 
 # lock screen
 bindcode 179 exec --no-startup-id i3lock -c 000000

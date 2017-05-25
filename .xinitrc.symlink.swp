@@ -1,0 +1,13 @@
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+/usr/bin/prime-offload
+xrandr --dpi 166
+urxvtd -q -o -f
+xset r rate 200 80
+xmodmap ~/.Xmodmap
+<<<<<<< HEAD
+dunst -config ~/.dotfiles/dunstrc.symlink &
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+=======
+>>>>>>> b8da9cc6 (dotsync of ernestrc on macbook.unstable.build)
+exec i3
