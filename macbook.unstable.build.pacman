@@ -3,6 +3,7 @@ arandr
 autoconf
 automake
 bash
+bc
 binutils
 bison
 bzip2
@@ -30,6 +31,7 @@ file
 filesystem
 findutils
 flex
+fortune-mod
 gawk
 gcc
 gcc-libs
@@ -89,6 +91,7 @@ pcmciautils
 perf
 perl
 pkg-config
+ponysay
 postgresql
 procps-ng
 psmisc
