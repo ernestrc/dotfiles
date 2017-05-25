@@ -4,6 +4,7 @@ autoconf
 autocutsel
 automake
 bash
+bc
 binutils
 bison
 bzip2
