@@ -3,6 +3,7 @@
 [user]
         name = ErnestRC
         email = ernest@unstable.build
+	signingkey = D2821ADEAC5192579A677592246CBDA48B8B8B5C
 [alias]
 	    st = status
         co = checkout
@@ -32,3 +33,5 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[commit]
+	gpgsign = true

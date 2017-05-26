@@ -44,21 +44,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: monospace # should be "Menlo" or something on macOS.
+    family: DejaVu Sans Mono for Powerline
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # The bold font face
   bold:
-    family: monospace # should be "Menlo" or something on macOS.
+    family: DejaVu Sans Mono for Powerline
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style: Bold
 
   # The italic font face
   italic:
-    family: monospace # should be "Menlo" or something on macOS.
+    family: DejaVu Sans Mono for Powerline
     # Style can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size of the font
   size: 8.0
@@ -296,5 +296,3 @@ hide_cursor_when_typing: true
 # Entries in shell.args are passed unmodified as arguments to the shell.
 shell:
   program: /bin/zsh
-  args:
-    - --login
