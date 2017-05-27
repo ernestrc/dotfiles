@@ -169,6 +169,7 @@ tree
 ttf-liberation
 ttf-symbola
 udiskie
+unrar
 unzip
 usbutils
 util-linux
@@ -247,4 +248,5 @@ xscreensaver
 xterm
 yasm
 zeal
+zip
 zsh
