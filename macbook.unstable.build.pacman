@@ -23,6 +23,7 @@ diffutils
 docbook-xsl
 docker
 docker-compose
+dosfstools
 e2fsprogs
 efibootmgr
 fakeroot
@@ -81,6 +82,7 @@ network-manager-applet
 networkmanager
 nodejs
 npm
+nvidia
 nvidia-settings
 octave
 openssh
@@ -113,6 +115,8 @@ systemd-sysvcompat
 tar
 texinfo
 the_silver_searcher
+tlp
+tlp-rdw
 unzip
 usbutils
 util-linux
