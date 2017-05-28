@@ -34,8 +34,7 @@ findutils
 flex
 fortune-mod
 gawk
-gcc
-gcc-libs
+gcc-multilib
 gettext
 git
 glibc
