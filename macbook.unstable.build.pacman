@@ -34,13 +34,11 @@ findutils
 flex
 fortune-mod
 gawk
-gcc
-gcc-libs
+gcc-multilib
 gettext
 git
 glibc
 gparted
-gradle
 grep
 grub
 gzip
@@ -77,13 +75,8 @@ mdadm
 nano
 neovim
 netctl
-netdata
 network-manager-applet
 networkmanager
-nodejs
-npm
-nvidia
-nvidia-settings
 octave
 openssh
 pacman
@@ -122,7 +115,6 @@ usbutils
 util-linux
 vi
 vim
-vpnc
 wget
 which
 wpa_actiond
