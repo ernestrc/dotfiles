@@ -26,6 +26,7 @@ docker-compose
 dosfstools
 e2fsprogs
 efibootmgr
+eslint
 fakeroot
 feh
 file
@@ -77,6 +78,7 @@ neovim
 netctl
 network-manager-applet
 networkmanager
+nginx
 octave
 openssh
 pacman

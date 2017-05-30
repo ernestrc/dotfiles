@@ -1,6 +1,6 @@
 #!/bin/bash
 SRC=`mktemp`
 cat - >$SRC
-eslint -c ./.eslintrc.js -o /var/log/vim-eslint.log --no-color --fix $SRC 2&>1 /var/log/vim-eslint.log
+eslint -c ./.eslintrc.js -o /var/log/vim-eslint.log --no-color --fix $SRC 2>&1 /var/log/vim-eslint.log
 cat $SRC
 rm -f $SRC
