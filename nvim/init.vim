@@ -49,8 +49,6 @@ set exrc
 "set encoding=UTF8
 set secure
 set hidden
-set softtabstop=2
-set smarttab
 set copyindent
 set history=1000
 set undolevels=1000
@@ -74,9 +72,11 @@ set tags=./tags,tags,../tags
 set switchbuf=usetab
 set nofoldenable
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+set smarttab
 
 if $VBG == "light"
   set background=light
@@ -114,9 +114,9 @@ let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 autocmd! BufWritePost *.js Neomake
 
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
+let g:autoformat_autoindent = 1
+let g:autoformat_retab = 1
+let g:autoformat_remove_trailing_spaces = 1
 
 " JS
 let g:formatdef_eslint = '"eslint-formatter"'

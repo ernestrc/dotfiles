@@ -3,7 +3,7 @@
 [user]
         name = ErnestRC
         email = ernest@unstable.build
-	signingkey = D2821ADEAC5192579A677592246CBDA48B8B8B5C
+	signingkey = D3F9E65DE72888CC03D45CF5064D4ABCFA6D9338
 [alias]
 	    st = status
         co = checkout
