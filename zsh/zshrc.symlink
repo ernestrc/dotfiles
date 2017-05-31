@@ -87,7 +87,6 @@ alias l='k -h'
 alias grep='grep --color'
 alias ls='ls --color'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
-alias vim=nvim
 
 function clean-steam {
     find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
@@ -135,3 +134,6 @@ alias octave="octave --no-gui"
 
 export RUST_BACKTRACE=1;
 export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+
+# Set GPG TTY
+export GPG_TTY=$(tty)
