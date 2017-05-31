@@ -26,7 +26,6 @@ docker-compose
 dosfstools
 e2fsprogs
 efibootmgr
-eslint
 fakeroot
 feh
 file
@@ -67,6 +66,8 @@ linux-headers
 llvm
 logrotate
 lshw
+lua
+lua-socket
 lvm2
 m4
 make
@@ -79,6 +80,7 @@ netctl
 network-manager-applet
 networkmanager
 nginx
+npm
 octave
 openssh
 pacman
