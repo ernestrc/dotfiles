@@ -44,6 +44,7 @@ firefox
 flashplugin
 flex
 fontforge
+fortune-mod
 gawk
 gdb
 gettext
@@ -66,6 +67,7 @@ htop
 i3lock
 i3status
 inetutils
+intel-ucode
 intellij-idea-community-edition
 iproute2
 iputils
@@ -133,6 +135,7 @@ pcmciautils
 perf
 perl
 pkg-config
+ponysay
 procps-ng
 psmisc
 pulseaudio
