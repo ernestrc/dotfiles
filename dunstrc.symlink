@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 14
+    font = DejaVu Sans Mono for Powerline 14
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -33,7 +33,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<b>%a</b>\n<i>%s</i>\n%b"
 
     # Sort messages by urgency.
     sort = yes
@@ -289,7 +289,6 @@
 #    summary = *says*
 #    urgency = critical
 #
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
+[spotify]
+    appname = Spotify
+    urgency = low
