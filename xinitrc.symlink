@@ -3,5 +3,5 @@ xrandr --dpi 190
 urxvtd -q -o -f
 xset r rate 200 80
 xmodmap ~/.Xmodmap
-dunst &
+dunst -config ~/.dotfiles/dunstrc.symlink &
 exec i3
