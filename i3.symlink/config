@@ -275,6 +275,9 @@ exec --no-startup-id /usr/bin/pasystray
 # smart_borders on|no_gaps
 hide_edge_borders both
 
+# macbook keyboard toggle config
+bindcode 128 exec --no-startup-id ~/.dotfiles/bin/toggle-conf
+
 # macbook keyboard screen brightness
 bindcode 232 exec --no-startup-id /usr/bin/light -U 2.5
 bindcode 233 exec --no-startup-id /usr/bin/light -A 2.5
