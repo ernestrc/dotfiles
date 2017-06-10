@@ -170,13 +170,13 @@
     browser = /usr/bin/chromium
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/Adwaita/32x32/actions:/usr/share/icons/Adwaita/32x32/apps:/usr/share/icons/Adwaita/32x32/categories:/usr/share/icons/Adwaita/32x32/devices:/usr/share/icons/Adwaita/32x32/emblems:/usr/share/icons/Adwaita/32x32/emotes:/usr/share/icons/Adwaita/32x32/mimetypes:/usr/share/icons/Adwaita/32x32/places:/usr/share/icons/Adwaita/32x32/status:/usr/share/icons/hicolor/22x22/apps/:/usr/share/icons/hicolor/16x16/apps/:/usr/share/icons/hicolor/32x32/apps/:/usr/share/icons/hicolor/32x32/devices/:/usr/share/icons/hicolor/16x16/devices/:/usr/share/icons/hicolor/64x64/apps/
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -218,24 +218,24 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282828"
-    foreground = "#FFFFFF"
+    foreground = "#c0c0c0"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
+    # icon = user-invisible.png
 
 [urgency_normal]
     background = "#282828"
     foreground = "#00FF00"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    #icon = /path/to/icon
+    # icon = user-available.png
 
 [urgency_critical]
     background = "#282828"
     foreground = "#FF0000"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
-    #icon = /path/to/icon
+    # icon = user-busy.png
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -292,3 +292,4 @@
 [spotify]
     appname = Spotify
     urgency = low
+    new_icon = /usr/share/icons/hicolor/32x32/apps/spotify.png
