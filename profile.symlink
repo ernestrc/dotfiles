@@ -1,0 +1,5 @@
+export DOTCONF=$DOTFILES/conf.sh
+
+if [[ -e $DOTCONF ]]; then
+	source $DOTCONF
+fi
