@@ -3,5 +3,5 @@ xrandr --dpi 190
 urxvtd -q -o -f
 xset r rate 200 80
 xmodmap ~/.Xmodmap
-eval $(dbus-launch --sh-syntax --exit-with-session)
+dunst &
 exec i3
