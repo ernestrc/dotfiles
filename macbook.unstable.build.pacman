@@ -20,6 +20,7 @@ dhclient
 dhcpcd
 dialog
 diffutils
+dmenu
 docbook-xsl
 docker
 docker-compose

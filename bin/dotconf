@@ -23,6 +23,10 @@ done
 
 CNEXT=${CAVAIL[${CNEXTI}]}
 
+# change configuration
 cp "$DOTCONFDIR/$CNEXT" $DOTCONF
 echo "export CCONFIG=$CNEXT;" >> $DOTCONF
-notify-send "toggled dotfiles configuration to $CNEXT"
+
+wallpaper
+
+notify-send -a dotconf "dotconf: toggled configuration to $CNEXT"

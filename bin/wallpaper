@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DOTCONF=$DOTFILES/conf.sh
+
+if [[ -e $DOTCONF ]]; then
+	source $DOTCONF
+fi
+
+feh --bg-fill $WALLPAPER
