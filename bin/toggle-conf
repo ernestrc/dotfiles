@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# sets the next available conf file in $DOTFILES/conf to $DOTFILES/conf.sh
+# for the use for other scripts (like $DOTFILES/bin/terminal)
+
+DOTCONFDIR=$DOTFILES/conf
+DOTCONF=$DOTFILES/conf.sh
+
+if [[ -e $DOTCONF ]]; then
+	source $DOTCONF
+fi
+
+# configurations
+IFS=$'\n' CAVAIL=($(ls $DOTCONFDIR))
+CAVAILN=${#CAVAIL[@]}
+CNEXTI=0
+
+for i in "${!CAVAIL[@]}"; do
+	if [[ "${CAVAIL[$i]}" = "${CCONFIG}" ]]; then
+		CNEXTI=$((($i + 1) % $CAVAILN))
+	fi
+done
+
+CNEXT=${CAVAIL[${CNEXTI}]}
+
+cp "$DOTCONFDIR/$CNEXT" $DOTCONF
+echo "export CCONFIG=$CNEXT;" >> $DOTCONF

@@ -59,7 +59,7 @@ set $ws10 10
 # workspace $ws10 output HDMI-0
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminal
 
 # disable title bar
 new_window none
@@ -264,7 +264,7 @@ assign [class="jetbrains-idea"] $ws4
 assign [class="Zeal"] $ws10
 
 # set up wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpaper/pluto.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpaper/milky.jpg	
 
 # set up locker
 # exec xautolock -time 5 -locker ~/.dotfiles/bin/lock &

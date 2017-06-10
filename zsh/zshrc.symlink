@@ -7,6 +7,11 @@ then
   source ~/.localrc
 fi
 
+export DOTCONF=$DOTFILES/conf.sh
+
+if [[ -e $DOTCONF ]]; then
+	source $DOTCONF
+fi
 
 # PLUGINS
 
@@ -79,10 +84,6 @@ setopt HIST_REDUCE_BLANKS
 setopt complete_aliases
 
 # zle -N newtab
-
-# TERMINAL="urxvtc"
-TERMINAL="alacritty"
-
 
 # ALIASES
 
