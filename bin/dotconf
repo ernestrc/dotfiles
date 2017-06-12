@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# sets the next available conf file in $DOTFILES/conf to $DOTFILES/conf.sh
+# for the use for other scripts (like $DOTFILES/bin/terminal)
+
+DOTCONFDIR=$DOTFILES/conf
+DOTCONF=$DOTFILES/conf.sh
+
+if [[ -e $DOTCONF ]]; then
+	source $DOTCONF
+fi
+
+# configurations
+IFS=$'\n' CAVAIL=($(ls $DOTCONFDIR))
+CAVAILN=${#CAVAIL[@]}
+CNEXTI=0
+
+for i in "${!CAVAIL[@]}"; do
+	if [[ "${CAVAIL[$i]}" = "${CCONFIG}" ]]; then
+		CNEXTI=$((($i + 1) % $CAVAILN))
+	fi
+done
+
+CNEXT=${CAVAIL[${CNEXTI}]}
+
+# change configuration
+cp "$DOTCONFDIR/$CNEXT" $DOTCONF
+echo "export CCONFIG=$CNEXT;" >> $DOTCONF
+
+# restart process if running
+function rs {
+	PSS=`ps aux | grep $1`
+	[[ `echo "$PSS" | wc -l` -eq 1 ]] && return;
+	echo "$PSS" | awk '{print $2}' | xargs kill -s KILL
+	sh -lc "$1" &
+}
+
+# refresh
+wallpaper
+rs chromium
+
+notify-send -a dotconf "toggled configuration to $CNEXT"

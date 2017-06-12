@@ -6,13 +6,14 @@ Plug 'https://github.com/rbgrouleff/bclose.vim.git'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
-Plug 'mhartington/oceanic-next'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips' | Plug 'ernestrc/vim-snippets'
 Plug 'vim-utils/vim-alt-mappings'
 Plug 'w0rp/ale'
 Plug 'Chiel92/vim-autoformat'
+Plug 'felixhummel/setcolors.vim'
+Plug 'saalaa/ancient-colors.vim'
 
 " rust
 Plug 'rust-lang/rust.vim'
@@ -31,7 +32,6 @@ call plug#end()
 set foldmethod=indent
 set foldlevel=99
 syntax enable
-filetype on
 filetype plugin indent on
 set number
 set hlsearch
@@ -66,14 +66,11 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set smarttab
-au FileType html set spell spelllang=en_us
 
 " COLORS
 if $VBG == "light"
-  set background=light
-  colorscheme zellner
+  colorscheme ancient
 else
-  set background=dark
   colorscheme torte
 endif
 " hi SpellBad	cterm=NONE ctermfg=grey ctermbg=blue
