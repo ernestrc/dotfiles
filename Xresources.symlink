@@ -91,7 +91,7 @@ Rxvt*fadeColor:                       black
 URxvt*visualBell:                     true
 URxvt*cursorUnderline:                false
 URxvt*cursorBlink:                    true
-URxvt*background:                     [95]#1f0000
+URxvt*background:                     [95]#100000
 URxvt*highlightColor:                 rgb:20/30/20
 URxvt*cursorColor:                    red
 URxvt*saveLines:                      8192

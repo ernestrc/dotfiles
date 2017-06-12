@@ -126,7 +126,7 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0xffd3bf'
+    background: '0xffffff'
     foreground: '0x000000'
 
   # Normal colors
