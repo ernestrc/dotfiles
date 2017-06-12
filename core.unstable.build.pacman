@@ -114,6 +114,7 @@ namcap
 nano
 neovim
 netctl
+netdata
 network-manager-applet
 networkmanager
 nmap
@@ -175,7 +176,6 @@ systemd-sysvcompat
 tar
 texinfo
 the_silver_searcher
-thunderbird
 transset-df
 tree
 ttf-liberation
