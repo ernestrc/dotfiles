@@ -20,6 +20,7 @@ dialog
 diffutils
 docker
 docker-compose
+dunst
 e2fsprogs
 efibootmgr
 fakeroot
@@ -95,6 +96,7 @@ pulseaudio-alsa
 python-neovim
 python-pip
 python2-neovim
+redis
 reiserfsprogs
 rofi
 rust
