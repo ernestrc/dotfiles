@@ -40,6 +40,7 @@ gcc-multilib
 gettext
 git
 glibc
+go
 gparted
 grep
 grub
@@ -116,6 +117,7 @@ texinfo
 the_silver_searcher
 tlp
 tlp-rdw
+tree
 unrar
 unzip
 usbutils
@@ -126,6 +128,7 @@ wget
 which
 wpa_actiond
 wpa_supplicant
+xdotool
 xf86-input-synaptics
 xf86-video-intel
 xf86-video-vesa

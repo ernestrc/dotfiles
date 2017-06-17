@@ -17,10 +17,12 @@ Plug 'saalaa/ancient-colors.vim'
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 " js
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
+
+" go
+Plug 'fatih/vim-go'
 
 Plug 'https://github.com/jvirtanen/vim-octave.git'
 
@@ -72,7 +74,7 @@ set smarttab
 
 " COLORS
 if $VBG == "light"
-  colorscheme ancient
+  colorscheme default
 else
   colorscheme torte
 endif
@@ -129,15 +131,13 @@ let g:autoformat_remove_trailing_spaces = 1
 " rust
 let g:rustc_syntax_only = 1
 let g:rust_recommended_style = 0
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
 " au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
-au FileType rust nmap gd :call racer#GoToDefinition()<CR>
-au FileType rust nmap gs :split<CR>:call racer#GoToDefinition()<CR>
-au FileType rust nmap gx :vsplit<CR>:call racer#GoToDefinition()<CR>
-au FileType rust nmap <leader>gd :call racer#ShowDocumentation()<CR>
+
+" go
+let g:ale_linters = {'go': ['gometalinter']}
+let g:ale_go_gometalinter_options = '--fast'
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
