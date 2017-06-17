@@ -5,6 +5,7 @@ automake
 bash
 binutils
 bison
+broadcom-wl-dkms
 bzip2
 cargo
 chromium
