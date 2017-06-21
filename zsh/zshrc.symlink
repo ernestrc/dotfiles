@@ -128,7 +128,7 @@ autoload -U promptinit && promptinit
 
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR="$VISUAL"
 export SYSTEMD_EDITOR="$VISUAL"
 export GIT_EDITOR="$VISUAL"
