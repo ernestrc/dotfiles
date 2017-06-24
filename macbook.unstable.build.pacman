@@ -25,7 +25,6 @@ docbook-xsl
 docker
 docker-compose
 dosfstools
-dunst
 e2fsprogs
 efibootmgr
 fakeroot
@@ -37,6 +36,7 @@ flex
 fortune-mod
 gawk
 gcc-multilib
+gdb
 gettext
 git
 glibc
