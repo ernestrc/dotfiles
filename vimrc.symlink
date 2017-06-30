@@ -138,6 +138,10 @@ let g:formatters_rust = ['rustfmt']
 " au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 
 " go
+set completeopt=menu
+let g:go_def_mapping_enabled = 0
+au FileType go nnoremap gd :GoDef<cr>
+let g:go_gocode_unimported_packages = 1
 let g:ale_linters = {'go': ['gometalinter']}
 let g:ale_go_gometalinter_options = '--fast'
 let g:go_list_type = "quickfix"
