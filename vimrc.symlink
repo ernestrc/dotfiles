@@ -40,7 +40,7 @@ set number
 set hlsearch
 set directory=/tmp
 set backupdir=/tmp
-set undodir=~/tmp
+set undodir=/tmp
 
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set exrc
