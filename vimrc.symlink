@@ -23,6 +23,7 @@ Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
 " go
 Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 Plug 'https://github.com/jvirtanen/vim-octave.git'
 
@@ -39,7 +40,7 @@ set number
 set hlsearch
 set directory=/tmp
 set backupdir=/tmp
-set undodir=~/tmp
+set undodir=/tmp
 
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set exrc
@@ -136,6 +137,10 @@ let g:formatters_rust = ['rustfmt']
 " au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
 
 " go
+set completeopt=menu
+let g:go_def_mapping_enabled = 0
+au FileType go nnoremap gd :GoDef<cr>
+let g:go_gocode_unimported_packages = 1
 let g:ale_linters = {'go': ['gometalinter']}
 let g:ale_go_gometalinter_options = '--fast'
 let g:go_list_type = "quickfix"
