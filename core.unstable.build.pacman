@@ -34,7 +34,6 @@ diffutils
 dmenu
 docker
 docker-compose
-dunst
 e2fsprogs
 eslint
 fakeroot
@@ -43,7 +42,6 @@ file
 filelight
 filesystem
 findutils
-firefox
 flashplugin
 flex
 fontforge
