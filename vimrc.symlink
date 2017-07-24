@@ -8,7 +8,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'SirVer/ultisnips' | Plug 'ernestrc/vim-snippets'
 Plug 'vim-utils/vim-alt-mappings'
 Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
@@ -61,8 +60,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
 set undofile
-set clipboard+=unnamed
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set go+=a
 set tags=./tags,tags,../tags
 set switchbuf=usetab
@@ -75,6 +73,7 @@ set noexpandtab
 set smarttab
 set autowrite
 set completeopt=menu
+set mouse=a
 
 " COLORS
 if $VBG == "light"
@@ -165,7 +164,7 @@ let g:go_list_type = "quickfix"
 function! s:build_go_files()
 	let l:file = expand('%')
 	if l:file =~# '^\f\+_test\.go$'
-		call go#test#Test(0, 1)
+		call go#test#Test(1, 1)
 	elseif l:file =~# '^\f\+\.go$'
 		call go#cmd#Build(0)
 	endif

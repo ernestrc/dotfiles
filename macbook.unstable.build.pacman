@@ -1,6 +1,7 @@
 alsa-utils
 arandr
 autoconf
+autocutsel
 automake
 bash
 bc
@@ -60,6 +61,7 @@ iputils
 jfsutils
 jq
 less
+libretro-genesis-plus-gx
 libssh
 libtool
 licenses
@@ -102,6 +104,8 @@ pulseaudio-alsa
 python-neovim
 python2-neovim
 reiserfsprogs
+retroarch
+retroarch-assets-xmb
 rofi
 rust
 rxvt-unicode
