@@ -6,8 +6,8 @@ arduino-builder
 atom
 autoconf
 autoconf-archive
-autogen
 autocutsel
+autogen
 automake
 awesome
 bash
@@ -36,6 +36,7 @@ dmenu
 docker
 docker-compose
 e2fsprogs
+eclipse-cpp
 eslint
 fakeroot
 feh
@@ -107,6 +108,7 @@ man-pages
 mate-power-manager
 maven
 mdadm
+mesa-demos
 mpc
 mpd
 namcap
@@ -119,6 +121,7 @@ networkmanager
 nmap
 nodejs
 npm
+ntp
 nvidia
 nvidia-settings
 octave
