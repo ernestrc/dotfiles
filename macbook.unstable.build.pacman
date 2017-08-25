@@ -8,9 +8,11 @@ bc
 binutils
 bison
 bzip2
-cargo
 chromium
-clang
+clang-analyzer-svn
+clang-compiler-rt-svn
+clang-svn
+clang-tools-extra-svn
 cmake
 coreutils
 cpio
@@ -68,7 +70,6 @@ licenses
 linux
 linux-docs
 linux-headers
-llvm
 logrotate
 lshw
 lua
@@ -107,7 +108,8 @@ reiserfsprogs
 retroarch
 retroarch-assets-xmb
 rofi
-rust
+rust-racer
+rustup
 rxvt-unicode
 s-nail
 scrot
@@ -122,10 +124,12 @@ the_silver_searcher
 tlp
 tlp-rdw
 tree
+ttf-liberation
 unrar
 unzip
 usbutils
 util-linux
+valgrind
 vi
 vim
 wget
