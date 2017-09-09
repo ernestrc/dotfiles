@@ -15,9 +15,7 @@ fi
 
 # PLUGINS
 
-zplug "zplug/zplug"
 zplug 'junegunn/fzf', hook-build:"./install --all"
-zplug "supercrabtree/k"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 zplug "huyng/bashmarks", use:"*.sh"
@@ -92,12 +90,6 @@ setopt complete_aliases
 alias grep='grep --color'
 alias ls='ls --color'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
-
-function clean-steam {
-    find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
-    find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
-    echo 'done cleaning steam'
-}
 
 # bashmarks override. keep dependency as we need `s` to save
 c () {
