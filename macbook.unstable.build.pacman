@@ -9,10 +9,7 @@ binutils
 bison
 bzip2
 chromium
-clang-analyzer-svn
-clang-compiler-rt-svn
-clang-svn
-clang-tools-extra-svn
+clang
 cmake
 coreutils
 cpio
@@ -70,6 +67,8 @@ licenses
 linux
 linux-docs
 linux-headers
+llvm
+llvm-libs
 logrotate
 lshw
 lua
