@@ -7,6 +7,7 @@ atom
 autoconf
 autoconf-archive
 autogen
+autocutsel
 automake
 awesome
 bash
@@ -34,7 +35,6 @@ diffutils
 dmenu
 docker
 docker-compose
-dunst
 e2fsprogs
 eslint
 fakeroot
@@ -43,7 +43,6 @@ file
 filelight
 filesystem
 findutils
-firefox
 flashplugin
 flex
 fontforge

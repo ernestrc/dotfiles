@@ -15,9 +15,7 @@ fi
 
 # PLUGINS
 
-zplug "zplug/zplug"
 zplug 'junegunn/fzf', hook-build:"./install --all"
-zplug "supercrabtree/k"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 zplug "huyng/bashmarks", use:"*.sh"
@@ -93,12 +91,6 @@ alias grep='grep --color'
 alias ls='ls --color'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 
-function clean-steam {
-    find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
-    find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete && \
-    echo 'done cleaning steam'
-}
-
 # bashmarks override. keep dependency as we need `s` to save
 c () {
 	check_help $1
@@ -128,7 +120,7 @@ autoload -U promptinit && promptinit
 
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR="$VISUAL"
 export SYSTEMD_EDITOR="$VISUAL"
 export GIT_EDITOR="$VISUAL"
