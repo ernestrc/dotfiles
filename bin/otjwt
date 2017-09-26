@@ -1,0 +1,16 @@
+#!/bin/env node
+var jwt = require('jsonwebtoken');
+var moment = require('moment');
+
+const secret = process.env.OT_API_SECRET; //Replace this with your OpenTok API Secret
+var token = jwt.sign({ iss: parseInt(process.env.OT_API_KEY), //Replace this with your OpenTok API Key
+ ist: "project",
+ iat: moment().unix() - 100, // e.g. 1472691002
+ exp: moment().unix() + 600 // e.g. 1472691302
+ }, secret);
+
+console.log(token);
+
+// decode
+// var decoded = jwt.verify(token, secret);
+// console.log('Decoded: ' + JSON.stringify(decoded));

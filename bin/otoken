@@ -1,0 +1,4 @@
+#!/bin/env node
+var Opentok = require('opentok');
+var opentok = new Opentok(process.env.OT_API_KEY, process.env.OT_API_SECRET);
+console.log(opentok.generateToken(process.env.OT_SESSION_ID));
