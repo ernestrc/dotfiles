@@ -6,8 +6,8 @@
 export GOOGLE_DRIVE_SETTINGS=~/.duplicity/credentials
 enc_key=064D4ABCFA6D9338
 sign_key=064D4ABCFA6D9338
-src="/srv/git/"
-dest="gdocs://ernest@unstable.build/git"
+dest="/srv/git/"
+src="gdocs://ernest@unstable.build/git"
 
 # Keychain is used to source the ssh-agent keys when running from a cron job
 type -P keychain &>/dev/null || { echo "I require keychain but it's not installed.  Aborting." >&2; exit 1; }
