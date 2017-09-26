@@ -1,34 +1,28 @@
 " PLUGINS
 
-call plug#begin('~/.dotfiles/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/rbgrouleff/bclose.vim.git'
-Plug 'Chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
-Plug 'mhartington/oceanic-next'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'SirVer/ultisnips' | Plug 'ernestrc/vim-snippets'
-Plug 'fntlnz/atags.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
+Plug 'vim-utils/vim-alt-mappings'
+Plug 'vim-syntastic/syntastic'
+Plug 'Chiel92/vim-autoformat'
+Plug 'felixhummel/setcolors.vim'
+Plug 'saalaa/ancient-colors.vim'
 
 " rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 " js
 Plug 'pangloss/vim-javascript' | Plug 'https://github.com/mxw/vim-jsx'
 
-" Plug 'critiqjo/lldb.nvim'
-Plug 'neomake/neomake'
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" go
+Plug 'fatih/vim-go'
+" Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 Plug 'https://github.com/jvirtanen/vim-octave.git'
 
@@ -40,12 +34,15 @@ call plug#end()
 set foldmethod=indent
 set foldlevel=99
 syntax enable
-filetype on
 filetype plugin indent on
 set number
-colorscheme OceanicNext
+set hlsearch
+set directory=/tmp
+set backupdir=/tmp
+set undodir=/tmp
+set signcolumn=yes
+
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
 set exrc
 "set encoding=UTF8
 set secure
@@ -63,11 +60,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
 set undofile
-highlight LineNr ctermfg=darkgrey ctermbg=None
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-set clipboard+=unnamed
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set go+=a
 set tags=./tags,tags,../tags
 set switchbuf=usetab
@@ -78,6 +71,25 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set smarttab
+set autowrite
+set completeopt=menu
+set mouse=a
+
+" COLORS
+if $VBG == "light"
+	colorscheme default
+else
+	colorscheme torte
+endif
+" hi SpellBad	cterm=NONE ctermfg=grey ctermbg=blue
+" highlight SpellBad cterm=NONE ctermfg=grey ctermbg=blue
+" hi SpellCap	word not capitalised			|hl-SpellCap|
+" hi SpellRare	rare word				|hl-SpellRare|
+" hi SpellLocal	wrong spelling for selected region	|hl-SpellLocal|
+highlight LineNr ctermfg=darkgrey ctermbg=None
+" highlight LineNr ctermfg=darkgrey ctermbg=None
+" highlight Normal ctermbg=none
+" highlight NonText ctermbg=none
 
 
 " MAPPINGS
@@ -99,40 +111,69 @@ inoremap <C-SPACE> <C-x><C-o>
 noremap <space> @q
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 nnoremap <silent> <C-w> :lclose<CR>:Bclose<CR>
+nnoremap <silent> <C-k> :lprev<CR>
+nnoremap <silent> <C-j> :lnext<CR>
+
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " PLUGIN SETTINGS
+" let g:ale_sign_error = 'x'
+" let g:ale_sign_warning = '--'
+" let g:ale_sign_column_always = 1
+" let g:ale_lint_on_text_changed = 'always'
+" let g:ale_lint_on_enter = 1
+" let g:ale_linters = {'go': ['gometalinter']}
+" let g:ale_go_gometalinter_options = '--fast'
+
+let g:syntastic_go_checkers = ['gometalinter']
+let g:syntastic_go_gometalinter_args = ['--fast']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-autocmd! BufWritePost *.js Neomake
-
 let g:autoformat_autoindent = 1
 let g:autoformat_retab = 1
 let g:autoformat_remove_trailing_spaces = 1
-
-" JS
-let g:formatdef_eslint = '"eslint-formatter"'
-let g:formatters_javascript = ['eslint']
-let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:ale_fixers = { "javascript": ['eslint'], "c": [ 'ClangFormat' ] }
+" let g:ale_fixers.c = ['clangtidy']
 
 " rust
 let g:rustc_syntax_only = 1
 let g:rust_recommended_style = 0
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
 " au FileType rust nnoremap <C-b> :RustFmt<CR><CR>
-au FileType rust nmap gd :call racer#GoToDefinition()<CR>
-au FileType rust nmap gs :split<CR>:call racer#GoToDefinition()<CR>
-au FileType rust nmap gx :vsplit<CR>:call racer#GoToDefinition()<CR>
-au FileType rust nmap <leader>gd :call racer#ShowDocumentation()<CR>
-" Neomake configuration.
-augroup rust_commands
-  autocmd!
-  autocmd BufWritePost *.rs Neomake! clippy
-augroup END
+
+" go
+let g:go_def_mapping_enabled = 0
+au FileType go nnoremap gd :GoDef<cr>
+let g:go_gocode_unimported_packages = 1
+let g:go_list_type = "quickfix"
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+	let l:file = expand('%')
+	if l:file =~# '^\f\+_test\.go$'
+		call go#test#Test(1, 1)
+	elseif l:file =~# '^\f\+\.go$'
+		call go#cmd#Build(0)
+	endif
+endfunction
+let g:go_fmt_command = "goimports"
+
+" autocmd FileType go nmap   <Plug>(go-build)
+autocmd FileType go nmap  :<C-u>call <SID>build_go_files()<CR>
+
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -147,17 +188,6 @@ let g:yankring_replace_n_pkey = '<C-I-O>'
 
 let g:deoplete#enable_at_startup = 1
 
-let g:neomake_logfile ="/var/log/neomake.log"
-
-" C
-"
-"requires gentag in PATH
-let g:atags_build_commands_list = [ "gentags" ]
-au FileType c nmap <F5> :call atags#generate()<CR>
-augroup c_neo
-  autocmd!
-  autocmd BufRead,BufWritePost *.c* Neomake
-augroup END
 
 " PLUGIN MAPPINGS
 "

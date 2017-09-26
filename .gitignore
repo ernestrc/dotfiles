@@ -2,3 +2,5 @@ amazonkeys.sh
 *.pyc
 sources_non_forked/ack.vim/.netrwhist
 vim/sources_non_forked/ctrlp.vim/.netrwhist
+*.un~
+conf.sh

@@ -50,7 +50,7 @@ xterm*scrollTtyOutput:    false
 xterm*jumpScroll:         true
 xterm*multiScroll:        true
 xterm*toolBar:            false
-xterm*loginShell: true
+xterm*loginShell: false
 ! XTerm*metaSendsEscape: true
 xterm*termName: xterm-256color
 
@@ -84,14 +84,14 @@ URxvt*.shading: 20
 ! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
 URxvt*scrollBar: 0
 
-URxvt*loginShell:                     true
+URxvt*loginShell:                     false
 URxvt*jumpScroll:                     true
 URxvt*fading:                         30
 Rxvt*fadeColor:                       black 
 URxvt*visualBell:                     true
 URxvt*cursorUnderline:                false
 URxvt*cursorBlink:                    true
-URxvt*background:                     [95]#1f0000
+URxvt*background:                     [95]#100000
 URxvt*highlightColor:                 rgb:20/30/20
 URxvt*cursorColor:                    red
 URxvt*saveLines:                      8192
