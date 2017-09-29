@@ -5,7 +5,7 @@ function printUsage() {
 }
 
 function dtob(decimal, order) {
-	console.log('converting '+dec+' decimal into signed integer used two\'s complement encoding of order ' + order);
+	console.log('converting '+dec+' decimal into unsigned integer used two\'s complement encoding of order ' + order);
 	var res = [];
 
 	var i;
