@@ -1,0 +1,40 @@
+#!/bin/env node
+
+function printUsage() {
+	console.log('usage: <decimal> <order>');
+}
+
+function dtob(decimal, order) {
+	console.log('converting '+dec+' decimal into signed integer used two\'s complement encoding of order ' + order);
+	var res = [];
+
+	var i;
+
+	for	(i = 0; i < order; i++) {
+		res.push('0');
+	}
+
+	i = order - 1;
+	while (decimal > 0) {
+		var num = decimal % 2;
+		res[i--] = num.toString();
+		decimal = Math.floor(decimal/2);
+	}
+
+	if (i < 0) {
+		console.log('overflow! try increasing order');
+		process.exit(1);
+	}
+
+	return res.join("");
+}
+
+var dec = process.argv[2];
+var order = process.argv[3];
+
+if (typeof dec === 'undefined' || typeof order === 'undefined') {
+	printUsage();
+	process.exit(1);
+}
+
+console.log(dtob(parseInt(dec), order));

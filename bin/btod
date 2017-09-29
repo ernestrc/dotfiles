@@ -1,0 +1,35 @@
+#!/bin/env node
+
+// two's complement decoding from binary to decimal
+function toDecimal(b) {
+  // remove 0b
+  var string = b.slice(2, b.length);
+  var n_1 = string.length - 1;
+
+  console.log('converting \''+string+'\' binary string into signed integer used two\'s complement encoding of order ' + (n_1 + 1));
+
+  return string.split('').reduce(function(acc, char, i) {
+    var value = 0;
+    var order = n_1 - i;
+    switch(char) {
+      case '1':
+        if (order === n_1) {
+          value = -Math.pow(2, order);
+        } else {
+          value = Math.pow(2, order);
+        }
+        break;
+
+      case '0':
+        break;
+
+      default:
+        throw new Error('not 0 or 1: ' + char);
+    }
+    return acc + value;
+  }, 0);
+}
+
+var arg = process.argv[2];
+
+console.log(toDecimal(arg));
