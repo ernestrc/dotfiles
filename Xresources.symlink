@@ -36,7 +36,7 @@ Xcursor.size: 24
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=12
+xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=10
 xterm*dynamicColors:      true
 ! xterm*utf8:               2
 XTerm*eightBitInput:   false
@@ -367,7 +367,7 @@ URxvt.secondaryWheel: 1
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
 ! URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
-URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
+URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=9:antialias=true:hinting=true
 
 ! xpdf -----------------------------------------------------------------------
 
@@ -378,7 +378,7 @@ xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/chromium %
 
 ! xft ---------------------------------------------------------------------
-Xft*dpi: 190
+! Xft*dpi: 90
 Xft*autohint: 0
 Xft*lcdfilter: lcddefault
 Xft*hintstyle: hintfull
@@ -390,7 +390,7 @@ Xft*rgba: rgb
 ! Window opacity
 rofi.opacity:                        70
 ! Font to use
-rofi.font:                           DejaVu Sans Mono for Powerline 16
+rofi.font:                           DejaVu Sans Mono for Powerline 10
 ! Border width
 rofi.bw:                             0
 ! Padding

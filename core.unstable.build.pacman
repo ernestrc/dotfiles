@@ -35,6 +35,7 @@ diffutils
 dmenu
 docker
 docker-compose
+dtc
 e2fsprogs
 eclipse-cpp
 eslint
@@ -77,10 +78,7 @@ iputils
 iw
 jdk8-openjdk
 jfsutils
-kdeaccessibility-jovie
 kdeaccessibility-kaccessible
-kdeaccessibility-kmag
-kdeaccessibility-kmousetool
 kdeaccessibility-kmouth
 less
 lib32-alsa-plugins
@@ -176,6 +174,7 @@ sudo
 sysfsutils
 systemd-sysvcompat
 tar
+tcpdump
 texinfo
 the_silver_searcher
 transset-df
@@ -197,6 +196,7 @@ weechat
 wget
 which
 wicd
+wireshark-cli
 wmname
 wpa_supplicant
 xautolock
