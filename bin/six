@@ -1,0 +1,16 @@
+#!/bin/env bash
+[[ -z "${SIXCONF}" ]] && SIXCONF="$HOME/sixconf.go"
+
+function fusage {
+	echo "\$SIXCONF ($SIXCONF) not found. Set SIXCONF environment variable and/or download a template from https://unstable.build/six/getting-started.html";
+	exit 1;
+}
+
+[[ -e "${SIXCONF}" ]] || fusage
+TMP=$(mktemp)
+TMPDIR=$(dirname $TMP)
+TARGET=$TMPDIR/six
+CONFIGT=`date +%s -r "${SIXCONF}"`
+TARGETT=`date +%s -r "${TARGET}" 2>/dev/null`
+[[ "$CONFIGT" -gt "$TARGETT" ]] && go build -o $TARGET $SIXCONF
+exec $TARGET $@
