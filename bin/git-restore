@@ -1,0 +1,34 @@
+#!/bin/bash
+## Remote backup script. Requires duplicity and gpg-agent with the keys and passphrases loaded as root.
+## Uses separate encryption and signing keys
+## Usage:  'backup_remote.sh'
+
+export GOOGLE_DRIVE_SETTINGS=~/.duplicity/credentials
+enc_key=064D4ABCFA6D9338
+sign_key=064D4ABCFA6D9338
+dest="/srv/git/"
+src="gdocs://ernest@unstable.build/git"
+
+# Keychain is used to source the ssh-agent keys when running from a cron job
+type -P keychain &>/dev/null || { echo "I require keychain but it's not installed.  Aborting." >&2; exit 1; }
+eval `keychain` || exit 1
+## Note: can't use keychain for gpg-agent because it doesn't currently (2.7.1) read in all the keys correctly. 
+## Gpg will ask for a passphrase twice for each key...once for encryption/decryption and once for signing. 
+## This makes unattended backups impossible, especially when trying to resume an interrupted backup.
+if [ -f "${HOME}/.gnupg/gpg-agent-info" ]; then
+      . "${HOME}/.gnupg/gpg-agent-info"
+      export GPG_AGENT_INFO
+fi
+
+duplicity --use-agent \
+         --verbosity notice \
+         --encrypt-key "$enc_key" \
+         --sign-key "$sign_key" \
+         --full-if-older-than 60D \
+	 --exclude-filelist ~/.duplicity/ignore \
+         --num-retries 3 \
+         --asynchronous-upload \
+         --volsize 100 \
+         --archive-dir ~/.cache/duplicity \
+         --exclude '**rdiff-backup-data' \
+         "$src" "$dest"
