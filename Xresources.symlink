@@ -35,8 +35,9 @@ Xcursor.size: 24
 
 ! xterm ----------------------------------------------------------------------
 
+xterm*background: #7c0000
 xterm*VT100.geometry:     80x25
-xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=12
+xterm*faceName:           DejaVu Sans Mono for Powerline:style=Regular:size=8
 xterm*dynamicColors:      true
 ! xterm*utf8:               2
 XTerm*eightBitInput:   false
