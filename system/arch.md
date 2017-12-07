@@ -90,6 +90,10 @@ https://wiki.archlinux.org/index.php/Systemd-boot
 Make sure that the entry in /boot/efi/loader/entries/{entry}.conf paths' to the images are something like /boot/...
 or if you want to keep efi system partition images separate setup systemd service for automated copying: https://wiki.archlinux.org/index.php/EFISTUB#Using_systemd
 
+Use lsblk to find out partuuid and uuids: `lsblk -o name,mountpoint,size,type,ro,label,uuid,partuuid`
+the volume referenced in `cryptedvice` hook should be the encrypted volume (i.e. /dev/nvme0n1p3), and root should be the mapped volume (i.e. /dev/mapper/vg0-root)
+cryptdevice should be appended with `:<volume-group>` (i.e. :vg0)
+
 # Exit new system and go into the cd shell
 exit
 
