@@ -85,10 +85,10 @@ vim /etc/mkinitcpio.conf
 # Regenerate initrd image
 mkinitcpio -p linux
 
-# Setup grub
-grub-install
-In /etc/default/grub edit the line GRUB_CMDLINE_LINUX to GRUB_CMDLINE_LINUX="cryptdevice=/dev/sdX3:luks:allow-discards" then run:
-grub-mkconfig -o /boot/grub/grub.cfg
+# setup systemd-boot
+https://wiki.archlinux.org/index.php/Systemd-boot
+Make sure that the entry in /boot/efi/loader/entries/{entry}.conf paths' to the images are something like /boot/...
+or if you want to keep efi system partition images separate setup systemd service for automated copying: https://wiki.archlinux.org/index.php/EFISTUB#Using_systemd
 
 # Exit new system and go into the cd shell
 exit
