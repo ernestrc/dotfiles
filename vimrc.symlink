@@ -11,8 +11,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-utils/vim-alt-mappings'
 Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
-Plug 'felixhummel/setcolors.vim'
-Plug 'saalaa/ancient-colors.vim'
 
 " rust
 Plug 'rust-lang/rust.vim'
