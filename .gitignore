@@ -4,3 +4,5 @@ sources_non_forked/ack.vim/.netrwhist
 vim/sources_non_forked/ctrlp.vim/.netrwhist
 *.un~
 conf.sh
+gnupg.symlink/*
+!gnupg.symlink/gpg.conf
