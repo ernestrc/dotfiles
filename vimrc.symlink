@@ -8,7 +8,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-utils/vim-alt-mappings'
+" Plug 'vim-utils/vim-alt-mappings'
 Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
 

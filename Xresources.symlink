@@ -389,18 +389,18 @@ Xft*rgba: rgb
 
 ! Rofi ------------------------------------------------------------------------
 ! Window opacity
-rofi.opacity:                        70
-! Font to use
+!rofi.opacity:                        70
+!! Font to use
 rofi.font:                           DejaVu Sans Mono for Powerline 16
-! Border width
-rofi.bw:                             0
-! Padding
-rofi.padding:                        0
-! Separator style (none, dash, solid)
-rofi.separator-style:                none
- 
-rofi.color-enabled: true
-rofi.color-window: argb:ee222222, #F76564, #F76564
-rofi.color-normal: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
-rofi.color-active: argb:0000000, #CA76EF, argb:0000000, #CA76EF, #1b2b34
-rofi.color-urgent: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
+!! Border width
+!rofi.bw:                             0
+!! Padding
+!rofi.padding:                        0
+!! Separator style (none, dash, solid)
+!rofi.separator-style:                none
+! 
+!rofi.color-enabled: true
+!rofi.color-window: argb:ee222222, #F76564, #F76564
+!rofi.color-normal: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
+!rofi.color-active: argb:0000000, #CA76EF, argb:0000000, #CA76EF, #1b2b34
+!rofi.color-urgent: argb:0000000, #F76564, argb:0000000, #F76564, #1b2b34
