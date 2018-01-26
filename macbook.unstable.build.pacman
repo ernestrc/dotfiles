@@ -25,6 +25,7 @@ docbook-xsl
 docker
 docker-compose
 dosfstools
+duplicity
 e2fsprogs
 efibootmgr
 fakeroot
@@ -32,10 +33,11 @@ feh
 file
 filesystem
 findutils
+firefox
 flex
 fortune-mod
 gawk
-gcc-multilib
+gcc
 gdb
 gettext
 git
@@ -48,7 +50,6 @@ gzip
 htop
 i3-wm
 i3blocks
-i3lock
 i3status
 iasl
 imagemagick
@@ -59,6 +60,7 @@ iproute2
 iputils
 jfsutils
 jq
+keychain
 less
 libretro-genesis-plus-gx
 libssh
@@ -86,6 +88,7 @@ network-manager-applet
 networkmanager
 nginx
 npm
+ntp
 octave
 openssh
 pacman
@@ -135,6 +138,7 @@ wget
 which
 wpa_actiond
 wpa_supplicant
+xautolock
 xdotool
 xf86-input-synaptics
 xf86-video-intel
