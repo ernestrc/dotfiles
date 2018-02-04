@@ -12,6 +12,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
 
+" snippets start
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+" snippets end
+
+
 " rust
 Plug 'rust-lang/rust.vim'
 
