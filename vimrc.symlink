@@ -11,6 +11,15 @@ Plug 'junegunn/fzf.vim'
 " Plug 'vim-utils/vim-alt-mappings'
 Plug 'vim-syntastic/syntastic'
 Plug 'Chiel92/vim-autoformat'
+Plug 'rhysd/vim-clang-format'
+
+" snippets start
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+" snippets end
+
 
 " rust
 Plug 'rust-lang/rust.vim'
@@ -184,6 +193,8 @@ nnoremap <C-e> :History<CR>
 nnoremap <C-_> :Ag<CR>
 noremap <C-b> :Autoformat<CR><CR>
 noremap <C-q> :q!<CR>
+
+autocmd FileType c,cpp nnoremap <C-b> :ClangFormat<Cr>
 
 " nnoremap <C-y> :YRShow<CR>
 "nmap gd :YcmCompleter GoTo<CR>
