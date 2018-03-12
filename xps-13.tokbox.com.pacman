@@ -12,6 +12,7 @@ bluez-utils
 bzip2
 chromium
 clang
+clang-tools-extra
 cmake
 coreutils
 cryptsetup
@@ -38,6 +39,7 @@ fwupd
 gawk
 gcc
 gcc-libs
+gdb
 gettext
 git
 glibc
@@ -101,6 +103,7 @@ procps-ng
 psmisc
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 python-neovim
 python-pip
 python2-neovim
@@ -130,6 +133,7 @@ unzip
 usbutils
 util-linux
 vi
+visualvm
 vpnc
 wget
 which
