@@ -1,11 +1,7 @@
 #!/bin/bash
-if [ "$1" == "" ]; then
-  echo "usage: $0 <stream-key>";
-  exit 1;
-fi
 
-INRES="1920x1080" # input resolution
-OUTRES="1920x1080" # output resolution
+INRES="3840x2160" # input resolution
+OUTRES="$INRES" # output resolution
 FPS="15" # target FPS
 GOP="30" # i-frame interval, should be double of FPS, 
 GOPMIN="15" # min i-frame interval, should be equal to fps, 
@@ -13,10 +9,23 @@ THREADS="2" # max 6
 CBR="1000k" # constant bitrate (should be between 1000k - 3000k)
 QUALITY="ultrafast"  # one of the many FFMPEG preset
 AUDIO_RATE="44100"
-STREAM_KEY="$1"
-SERVER="rtmp://live-sjc.twitch.tv/app" # twitch server in frankfurt, see http://bashtech.net/twitch/ingest.php for list
+SERVER="live-sjc"
+DISPLAY=":0.0+2304"
+
+if [ "$1" != "" ]; then
+  TWITCH_KEY=$1
+fi
+
+if [ "$2" != "" ]; then
+  DISPLAY="$2"
+fi
+
+if [ "$TWITCH_KEY" == "" ]; then
+  echo "usage: $0 <stream-key> [<display>]";
+  exit 1;
+fi
      
-ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f alsa -i pulse -f flv -ac 2 -ar $AUDIO_RATE \
+ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i "$DISPLAY" -f alsa -i pulse -f flv -ac 2 -ar $AUDIO_RATE \
   -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\
   -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
-  -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
+  -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$TWITCH_KEY"
