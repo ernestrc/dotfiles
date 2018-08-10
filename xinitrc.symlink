@@ -2,6 +2,7 @@
 urxvtd -q -o -f
 xset r rate 200 80
 xmodmap ~/.Xmodmap
+xrand --dpi 190
 dunst -config ~/.dotfiles/dunstrc.symlink &
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &

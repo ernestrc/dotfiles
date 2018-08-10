@@ -379,7 +379,7 @@ xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/chromium %
 
 ! xft ---------------------------------------------------------------------
-! Xft*dpi: 90
+Xft*dpi: 190
 Xft*autohint: 0
 Xft*lcdfilter: lcddefault
 Xft*hintstyle: hintfull
