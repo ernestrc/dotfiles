@@ -1,0 +1,39 @@
+#!/bin/env bash
+
+[[ -z $1 ]] && echo "usage: $0 <url> [timeout]" && exit 1
+
+SLEEP=2
+URL=$1
+TIMEOUT=
+if [[ -z $2 ]]; then
+	TIMEOUT=10
+else
+	printf -v TIMEOUT '%d' "$2" 2>/dev/null
+
+	if [ $? -ne 0 ]; then
+		echo "invalid timeout: $2"
+		exit 1
+	fi
+fi
+
+echo "INFO: timeout is $TIMEOUT"
+
+while :
+do
+	echo "INFO: testing HTTP endpoint $URL"
+	RES=`curl -sS $URL 2>&1`
+	if [ $? -eq 0 ]
+	then
+	  echo "INFO: Endpoint is up and running: "
+	  echo $RES
+	  exit 0
+	else
+	  TIMEOUT=`expr $TIMEOUT - $SLEEP`
+	  if [ $TIMEOUT -le 0 ]; then
+		  printf "ERR: consumed timeout: %s\n" "$RES"
+		  exit 1
+	  fi
+	  printf "WARN: Endpoint is not responsive yet: %s\n" "$RES"
+	  sleep $SLEEP;
+	fi
+done
