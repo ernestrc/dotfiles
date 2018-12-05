@@ -1,3 +1,7 @@
+DOTFILES=$HOME/.dotfiles
+
 export TERMINAL=alacritty;
 export WALLPAPER=~/Downloads/pnn-svalbard-scene.jpg
 export GTK_THEME=Adwaita:light
+export I3_CONFIG=$DOTFILES/i3light
+export I3_STATUS_CONFIG=$DOTFILES/i3statuslight.conf

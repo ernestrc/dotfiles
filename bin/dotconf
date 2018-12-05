@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sets the next available conf file in $DOTFILES/conf to $DOTFILES/conf.sh
+# loads the next available conf file in $DOTFILES/conf to $DOTFILES/conf.sh
 # for the use for other scripts (like $DOTFILES/bin/terminal)
 
 DOTCONFDIR=$DOTFILES/conf
@@ -16,7 +16,7 @@ CAVAILN=${#CAVAIL[@]}
 CNEXTI=0
 
 for i in "${!CAVAIL[@]}"; do
-	if [[ "${CAVAIL[$i]}" = "${CCONFIG}" ]]; then
+	if [[ "${CAVAIL[$i]}" = "${CURRCONFIG}" ]]; then
 		CNEXTI=$((($i + 1) % $CAVAILN))
 	fi
 done
@@ -25,7 +25,7 @@ CNEXT=${CAVAIL[${CNEXTI}]}
 
 # change configuration
 cp "$DOTCONFDIR/$CNEXT" $DOTCONF
-echo "export CCONFIG=$CNEXT;" >> $DOTCONF
+echo "export CURRCONFIG=$CNEXT;" >> $DOTCONF
 
 # restart process if running
 function rs {
@@ -35,8 +35,11 @@ function rs {
 	sh -lc "$1" &
 }
 
+source $DOTCONF
+
 # refresh
 wallpaper
 rs chromium
+i3-install-config
 
 notify-send -a dotconf "toggled configuration to $CNEXT"
