@@ -1,0 +1,22 @@
+if [[ ! -d $I3_CONFIG ]]; then
+	echo "directory defined by I3_CONFIG='$I3_CONFIG' does not exist";
+	exit 1;
+fi
+
+if [[ ! -f $I3_STATUS_CONFIG ]]; then
+	echo "file defined by I3_STATUS_CONFIG='$I3_STATUS_CONFIG' does not exist";
+	exit 1;
+fi
+
+DEST_I3_STATUS_CONFIG=$HOME/.i3status.conf
+DEST_I3_CONFIG=$HOME/.i3
+
+rm -r $DEST_I3_STATUS_CONFIG $DEST_I3_CONFIG
+
+echo "installing i3 status config '$I3_STATUS_CONFIG'"
+ln -s $I3_STATUS_CONFIG $DEST_I3_STATUS_CONFIG
+
+echo "installing i3 config '$I3_CONFIG'"
+ln -s $I3_CONFIG $DEST_I3_CONFIG
+
+i3 reload
