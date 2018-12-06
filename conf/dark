@@ -4,4 +4,5 @@ export TERMINAL=urxvt;
 export WALLPAPER=~/.wallpaper/pluto.jpg
 export GTK_THEME=Adwaita:dark
 export I3_CONFIG=$DOTFILES/i3.symlink
-export I3_STATUS_CONFIG=$DOTFILES/i3status.conf.symlink
+export I3_CONFIG=$DOTFILES/i3.symlink
+export DUNST_CONFIG=$DOTFILES/dunstrc.symlink

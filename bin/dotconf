@@ -28,11 +28,15 @@ cp "$DOTCONFDIR/$CNEXT" $DOTCONF
 echo "export CURRCONFIG=$CNEXT;" >> $DOTCONF
 
 # restart process if running
-function rs {
+function killinst {
 	PSS=`ps aux | grep $1`
 	[[ `echo "$PSS" | wc -l` -eq 1 ]] && return;
 	echo "$PSS" | awk '{print $2}' | xargs kill -s KILL
-	sh -lc "$1" &
+}
+
+function rs {
+	killinst "$1"
+	sh -lc "$@" &
 }
 
 source $DOTCONF
@@ -41,5 +45,7 @@ source $DOTCONF
 wallpaper
 rs chromium
 i3-install-config
+killinst dunst
+dunst -config $DUNST_CONFIG &
 
-notify-send -a dotconf "toggled configuration to $CNEXT"
+sleep 1 && notify-send -a dotconf "toggled configuration to $CNEXT"
