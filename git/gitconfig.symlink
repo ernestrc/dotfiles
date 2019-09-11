@@ -34,4 +34,6 @@
         # Setting to git 2.0 default to suppress warning message
         default = simple
 [commit]
-		gpgsign = true
+		gpgsign = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/

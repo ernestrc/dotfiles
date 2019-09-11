@@ -259,9 +259,6 @@ assign [class="Chromium"] $ws3
 # set up wallpaper
 exec --no-startup-id wallpaper
 
-# set up locker
-# exec xautolock -time 5 -locker ~/.dotfiles/bin/lock &
-
 # startup processes
 exec --no-startup-id nm-applet
 
@@ -279,10 +276,4 @@ bindcode 233 exec --no-startup-id /usr/bin/gmux_backlight +50
 bindcode 237 exec --no-startup-id kbdlight down
 bindcode 238 exec --no-startup-id kbdlight up
 
-# macbook keyboard music
-bindcode 173 exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-bindcode 172 exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindcode 171 exec --no-startup-id dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-
-
-exec --no-startup-id xautolock -time 5 -locker 'i3lock --fuzzy' &
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000' &

@@ -12,7 +12,6 @@ bluez-utils
 bzip2
 chromium
 clang
-clang-tools-extra
 cmake
 coreutils
 cryptsetup
@@ -45,7 +44,6 @@ git
 glibc
 go
 gparted
-gradle
 grep
 groff
 grub
@@ -53,22 +51,19 @@ gzip
 htop
 i3-wm
 i3status
-imagemagick
 inetutils
 intel-ucode
-intellij-idea-community-edition
 iproute2
 iputils
 jake
-jdk8-openjdk
 jfsutils
 jq
 less
 libtool
 licenses
 linux
+linux-firmware
 llvm
-lm_sensors
 logrotate
 lvm2
 m4
@@ -94,7 +89,7 @@ pciutils
 pcsclite
 perf
 perl
-pkg-config
+pkgconf
 ponysay
 postgresql
 procps-ng
@@ -130,6 +125,7 @@ unzip
 usbutils
 util-linux
 vi
+vim
 visualvm
 vpnc
 wget
@@ -149,7 +145,6 @@ xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
 xorg-luit
-xorg-mkfontdir
 xorg-mkfontscale
 xorg-server
 xorg-server-common
