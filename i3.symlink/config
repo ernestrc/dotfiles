@@ -212,7 +212,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start rofi (a program launcher)
-bindsym $mod+p exec --no-startup-id sh -lc 'rofi -combi-modi drun -show combi'
+bindsym $mod+p exec --no-startup-id sh -lc 'rofi -combi-modi run -show combi'
 
 #set $bg     #21252B
 set $bg     #000000
@@ -268,12 +268,15 @@ exec --no-startup-id nm-applet
 # smart_borders on|no_gaps
 hide_edge_borders both
 
-# macbook keyboard screen brightness
-bindcode 232 exec --no-startup-id /usr/bin/gmux_backlight -50
-bindcode 233 exec --no-startup-id /usr/bin/gmux_backlight +50
+# # macbook keyboard screen brightness
+# bindcode 232 exec --no-startup-id /usr/bin/gmux_backlight -50
+# bindcode 233 exec --no-startup-id /usr/bin/gmux_backlight +50
+# 
+# # macbook keyboard keyboard backlight
+# bindcode 237 exec --no-startup-id kbdlight down
+# bindcode 238 exec --no-startup-id kbdlight up
 
-# macbook keyboard keyboard backlight
-bindcode 237 exec --no-startup-id kbdlight down
-bindcode 238 exec --no-startup-id kbdlight up
+# lock screen
+bindcode 179 exec --no-startup-id i3lock -c 000000
 
 exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000' &

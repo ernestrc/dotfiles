@@ -178,7 +178,7 @@ let g:gitgutter_enabled = 1
 nnoremap <C-p> :Files<CR>
 nnoremap <C-t> :Tags<CR>
 nnoremap <C-e> :History<CR>
-nnoremap <C-_> :Ag<CR>
+nnoremap <C-\> :Ag<CR>
 noremap <C-q> :q!<CR>
 
 " autocmd FileType c,cpp nnoremap <C-b> :ClangFormat<Cr>
@@ -217,7 +217,7 @@ let g:ale_completion_enabled = 1
 
 " let g:ale_linters = {'go': ['golangci-lint', 'golangserver']}
 let g:ale_linters = { 'go': ['gobuild', 'gofmt', 'golint', 'gopls', 'gotype', 'govet', 'golangci-lint'], 'python': ['flake8', 'mypy', 'pylint', 'pyls'] }
-let g:ale_fixers = { 'go': ['goimports', 'gofmt', 'remove_trailing_lines', 'trim_whitespace'], 'python': ['autopep8'] }
+let g:ale_fixers = { 'go': ['goimports', 'gofmt'], 'python': ['autopep8'] }
 let g:ale_fix_on_save = 1
 let g:ale_go_golangci_lint_options = '--fast -D typecheck'
 
@@ -245,13 +245,11 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " split navigation
-" enable ALT-X keys
-execute "set <A-J>=\ej"
-execute "set <A-K>=\ek"
-execute "set <A-L>=\el"
-execute "set <A-H>=\eh"
-
-" map keys
+" ^[j^[l^[h^[k
+" execute "set <A-J>=\ej"
+" execute "set <A-K>=\ek"
+" execute "set <A-L>=\el"
+" execute "set <A-H>=\eh"
 nnoremap <A-J> <C-W><C-J>
 nnoremap <A-K> <C-W><C-K>
 nnoremap <A-L> <C-W><C-L>
