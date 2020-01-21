@@ -1,7 +1,7 @@
 DOTFILES=$HOME/.dotfiles
 
 export TERMINAL=alacritty;
-export WALLPAPER=~/.wallpaper/hong-kong.jpg
+export WALLPAPER=~/.wallpaper/mercury_razer.jpg
 export GTK_THEME=Adwaita:light
 export I3_CONFIG=$DOTFILES/i3light
 export I3_STATUS_CONFIG=$DOTFILES/i3statuslight.conf

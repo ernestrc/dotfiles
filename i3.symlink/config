@@ -262,6 +262,11 @@ exec --no-startup-id wallpaper
 # startup processes
 exec --no-startup-id nm-applet
 
+exec --no-startup-id optimus-manager-qt
+
+exec --no-startup-id polychromatic-tray-applet
+
+
 # gaps inner 0
 # gaps outer -10
 # smart_gaps on

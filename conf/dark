@@ -1,7 +1,7 @@
 DOTFILES=$HOME/.dotfiles
 
 export TERMINAL=urxvt;
-export WALLPAPER=~/.wallpaper/aurora.jpg
+export WALLPAPER=~/.wallpaper/razer_Prism_1920x1200.png
 export GTK_THEME=Adwaita:dark
 export I3_CONFIG=$DOTFILES/i3.symlink
 export I3_CONFIG=$DOTFILES/i3.symlink
