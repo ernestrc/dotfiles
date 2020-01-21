@@ -7,9 +7,6 @@ dd if=archlinux.img of=/dev/sdX bs=16M && sync # on linux
 
 # Boot from the usb. If the usb fails to boot, make sure that secure boot is disabled in the BIOS configuration.
 
-# Set swedish keymap
-loadkeys sv-latin1
-
 # This assumes a wifi only system...
 wifi-menu
 
@@ -39,7 +36,7 @@ mkswap /dev/mapper/vg0-swap
 
 # Mount the new system 
 mount /dev/mapper/vg0-root /mnt # /mnt is the installed system
-swapon /dev/mapper/vg0-swap # Not needed but a good thing to test
+swapon /dev/mapper/vg0-swap
 mkdir /mnt/boot
 mount /dev/sdX2 /mnt/boot
 mkdir /mnt/boot/efi
