@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "disconnect 4C:87:5D:0D:9C:AB\npower off\n" | bluetoothctl
