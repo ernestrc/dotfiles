@@ -31,16 +31,22 @@ import subprocess
 def server_active(name, port):
     """ Get if there is a server listening on port """
     if subprocess.call('nc -zv 127.0.0.1 ' + port, shell=True) == 0:
-        return {'full_text' : name + ": yes", 'name' : name, 'color' : '#00FF00'}
+        return {'full_text' : name + ": yes", 'name' : name, 'color' : '##00ff9f'}
     else:
-        return {'full_text' : name + ": no", 'name' : name, 'color' : '#FF0000'}
+        return {'full_text' : name + ": no", 'name' : name, 'color' : '#fe0000'}
 
-def docker_active():
-    """ Get if docker daemon is active """
-    if subprocess.call('systemctl is-active docker &> /dev/null', shell=True) == 0:
-        return {'full_text' : "docker: yes", 'name' : 'docker', 'color' : '#00FF00'}
+def bluetooth_powered():
+    proc = subprocess.run(['sh','-c', 'bluetoothctl show | grep Powered | awk -F\'Powered:\' \'{print $2}\''], capture_output=True)
+    line = proc.stdout
+    if proc.returncode != 0 or not line:
+        return {'full_text' : "bluetooth: n/a", 'name' : 'bluetooth'}
+    line = line.decode('utf-8').rstrip()
+    color = None
+    if line == ' no':
+        color = '#fe0000'
     else:
-        return {'full_text' : "docker: no", 'name' : 'docker', 'color' : '#FF0000'}
+        color = '#00ff9f'
+    return {'full_text' : "bluetooth:" + line, 'name' : 'bluetooth', 'color' : color}
 
 def print_line(message):
     """ Non-buffered printing to stdout. """
@@ -76,7 +82,7 @@ if __name__ == '__main__':
         j = json.loads(line)
         # insert information into the start of the json, but could be anywhere
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-        j.insert(0, docker_active())
+        j.insert(0, bluetooth_powered())
         # and echo back new encoded json
-        # print_line(prefix+json.dumps(j).replace('#00FF00', '#CA76EF').replace('#FF0000', '#F76564'))
-        print_line(prefix+json.dumps(j).replace('#00FF00', '#21F06B').replace('#FF0000', '#F76564'))
+        # print_line(prefix+json.dumps(j).replace('#00ff9f', '#CA76EF').replace('#fe0000', '#F76564'))
+        print_line(prefix+json.dumps(j).replace('#00ff9f', '#21F06B').replace('#fe0000', '#FF00FF'))
