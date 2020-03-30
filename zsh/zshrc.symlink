@@ -115,6 +115,21 @@ c () {
 # PROMPT
 autoload -U promptinit && promptinit
 
+# Prompt Colors
+zmodload zsh/nearcolor
+zstyle :prompt:pure:execution_time       yellow
+zstyle :prompt:pure:git:arrow            cyan
+zstyle :prompt:pure:git:branch           color '#4D4E4F'
+zstyle :prompt:pure:git:branch:cached    red
+zstyle :prompt:pure:git:action           242
+zstyle :prompt:pure:git:dirty            218
+zstyle :prompt:pure:host                 242
+zstyle :prompt:pure:path				 color '#FF00FF'
+zstyle :prompt:pure:prompt:success		 color '#21F06B'
+zstyle :prompt:pure:prompt:error		 color '#FF00FF'
+zstyle :prompt:pure:prompt:continuation  242
+zstyle :prompt:pure:user                 242
+zstyle :prompt:pure:user:root            default
 
 # PATH
 
