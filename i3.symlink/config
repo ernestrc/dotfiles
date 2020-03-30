@@ -180,8 +180,8 @@ focus_follows_mouse no
 
 # reload the configuration file
 bindsym $mod+Shift+r restart
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'Do you really want to restart X server?' -b 'Yes' 'kill `pidof Xorg` && startx'"
+# force quit xserver
+bindsym $mod+Shift+w exec "i3-msg exit"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -266,6 +266,8 @@ exec --no-startup-id optimus-manager-qt
 
 exec --no-startup-id polychromatic-tray-applet
 
+exec --no-startup-id /usr/bin/pasystray
+
 
 # gaps inner 0
 # gaps outer -10
@@ -273,13 +275,9 @@ exec --no-startup-id polychromatic-tray-applet
 # smart_borders on|no_gaps
 hide_edge_borders both
 
-# # macbook keyboard screen brightness
-# bindcode 232 exec --no-startup-id /usr/bin/gmux_backlight -50
-# bindcode 233 exec --no-startup-id /usr/bin/gmux_backlight +50
-# 
-# # macbook keyboard keyboard backlight
-# bindcode 237 exec --no-startup-id kbdlight down
-# bindcode 238 exec --no-startup-id kbdlight up
+# razer blade
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/light -A 10
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/light -U 10
 
 # lock screen
 bindcode 179 exec --no-startup-id i3lock -c 000000
