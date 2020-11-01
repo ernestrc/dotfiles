@@ -1,0 +1,3 @@
+#!/bin/bash
+DEVICE="60:AB:D2:8F:34:86"
+echo -e "disconnect $DEVICE\npower off\n" | bluetoothctl
