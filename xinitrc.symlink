@@ -1,5 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-xrandr --dpi 190
+xrandr --dpi 120
 urxvtd -q -o -f
 xset r rate 200 80
 xmodmap ~/.Xmodmap

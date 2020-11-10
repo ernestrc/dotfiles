@@ -279,4 +279,4 @@ hide_edge_borders both
 # lock screen
 bindcode 179 exec --no-startup-id i3lock -c 000000
 
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000' &
+# exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000' &
