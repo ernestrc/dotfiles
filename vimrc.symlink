@@ -217,7 +217,7 @@ let g:ale_completion_enabled = 1
 
 " let g:ale_linters = {'go': ['golangci-lint', 'golangserver']}
 let g:ale_linters = { 'go': ['gobuild', 'gofmt', 'golint', 'gopls', 'govet'], 'python': ['flake8', 'mypy', 'pylint', 'pyls'] }
-let g:ale_fixers = { 'go': ['goimports', 'gofmt'], 'python': ['autopep8'] }
+let g:ale_fixers = { 'go': ['goimports', 'gofmt'], 'c': ['clang-format'], 'python': ['autopep8'], 'html': ['tidy'] }
 let g:ale_fix_on_save = 1
 let g:ale_go_golangci_lint_options = '--fast -D typecheck'
 

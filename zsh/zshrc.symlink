@@ -149,3 +149,5 @@ export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib
 
 # Set GPG TTY
 export GPG_TTY=$(tty)
+
+alias luamake=/home/ernestrc/src/lua-language-server/3rd/luamake/luamake
