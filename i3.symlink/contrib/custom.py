@@ -28,12 +28,28 @@ import sys
 import json
 import subprocess
 
+headphones_mac = "60:AB:D2:8F:34:86"
+
 def server_active(name, port):
     """ Get if there is a server listening on port """
     if subprocess.call('nc -zv 127.0.0.1 ' + port, shell=True) == 0:
         return {'full_text' : name + ": yes", 'name' : name, 'color' : '##00ff9f'}
     else:
         return {'full_text' : name + ": no", 'name' : name, 'color' : '#fe0000'}
+
+# def get_bluetooth_color(out):
+#     out = out.decode('utf-8').rstrip()
+#     if out == ' no':
+#         return '#fe0000'
+#     return '#00ff9f'
+
+# def headphones_connected():
+#     proc = subprocess.run(['sh','-c', 'bluetoothctl show | grep Powered | awk -F\'Powered:\' \'{print $2}\''], capture_output=True)
+#     line = proc.stdout
+#     if proc.returncode != 0 or not line:
+#         return {'full_text' : "Headphones: n/a", 'name' : 'headphones'}
+#     return {'full_text' : "Headphones:" + line, 'name' : 'headphones', 'color' : get_bluetooth_color(line)}
+# 
 
 def bluetooth_powered():
     proc = subprocess.run(['sh','-c', 'bluetoothctl show | grep Powered | awk -F\'Powered:\' \'{print $2}\''], capture_output=True)
@@ -83,6 +99,7 @@ if __name__ == '__main__':
         # insert information into the start of the json, but could be anywhere
         # CHANGE THIS LINE TO INSERT SOMETHING ELSE
         j.insert(0, bluetooth_powered())
+        # j.insert(0, headphones_connected())
         # and echo back new encoded json
         # print_line(prefix+json.dumps(j).replace('#00ff9f', '#CA76EF').replace('#fe0000', '#F76564'))
         print_line(prefix+json.dumps(j).replace('#00ff9f', '#21F06B').replace('#fe0000', '#FF00FF'))

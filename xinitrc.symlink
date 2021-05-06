@@ -1,5 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-/usr/bin/prime-offload
+# /usr/bin/prime-offload
 xrandr --dpi 166
 urxvtd -q -o -f
 xset r rate 200 80

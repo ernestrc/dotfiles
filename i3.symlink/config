@@ -282,4 +282,4 @@ bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/light -U 10
 # lock screen
 bindcode 179 exec --no-startup-id i3lock -c 000000
 
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000' &
+exec --no-startup-id xautolock -time 60 -locker 'i3lock -c 000000' &
