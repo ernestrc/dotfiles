@@ -1,0 +1,4 @@
+#!/bin/env bash
+xmodmap ~/.Xmodmap
+xset r rate 200 80
+
