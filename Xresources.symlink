@@ -367,8 +367,8 @@ URxvt.secondaryWheel: 1
 ! Activate Home/End-key
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
-! URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
-URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=7:antialias=true:hinting=true
+! URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=9:antialias=true:hinting=true
+URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Regular:size=8:antialias=true:hinting=true
 
 ! xpdf -----------------------------------------------------------------------
 
@@ -391,7 +391,7 @@ Xft*rgba: rgb
 ! Window opacity
 !rofi.opacity:                        70
 !! Font to use
-rofi.font:                           DejaVu Sans Mono for Powerline 14
+rofi.font:                           DejaVu Sans Mono for Powerline 15
 !! Border width
 !rofi.bw:                             0
 !! Padding
