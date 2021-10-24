@@ -1,6 +1,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 /usr/bin/prime-offload
-xrandr --dpi 166
+xrandr --dpi 196
 urxvtd -q -o -f
 xset r rate 200 80
 xmodmap ~/.Xmodmap
