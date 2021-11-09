@@ -1,0 +1,5 @@
+auth:
+  project-id: unstable-build-blue-dev
+  credentials-file: /home/ernestrc/.bluectl/gcloud-creds.json
+release:
+  collection: blue-release
