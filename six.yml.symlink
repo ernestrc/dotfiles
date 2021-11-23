@@ -1,0 +1,36 @@
+log_path: /home/ernestrc/.six/log
+log_level: info
+plugins:
+  sed:
+    path: /usr/local/bin/plugin_sed
+  sysclip:
+    path: /usr/local/bin/plugin_sysclip
+  file_bar:
+    path: /usr/local/bin/plugin_file_bar
+  git:
+    path: /usr/local/bin/plugin_git
+  fuzzy_file:
+    path: /home/ernestrc/src/go-tui/bin/plugin_fuzzy_file
+    # path: /usr/local/bin/plugin_fuzzy_file
+  fuzzy_line:
+    path: /usr/local/bin/plugin_fuzzy_line
+  lsp:
+    path: /usr/local/bin/plugin_lsp
+    config:
+      exec:
+        .go: gopls -mode stdio
+command:
+  frame: true
+  key_bindings:
+    <c-j>: lspNextDiagnostic
+    <c-k>: lspPrevDiagnostic
+    <c-t>: lspHover
+    <c-g>: lspGoToDefinition
+    <c-b>: lspFormat
+
+browser:
+  window_manager:
+    frame: false
+
+prompt:
+  frame: false
