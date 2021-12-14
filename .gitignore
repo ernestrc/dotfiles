@@ -6,3 +6,4 @@ vim/sources_non_forked/ctrlp.vim/.netrwhist
 conf.sh
 gnupg.symlink/*
 !gnupg.symlink/gpg.conf
+*.swp
